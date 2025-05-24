@@ -1,0 +1,26 @@
+CRITICAL - 2025-03-24 17:11:29 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "repositorio/nuevo.php"
+[Method: GET, Route: Repositorio/nuevo]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('repositorio/nuevo.php')
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('repositorio/nuevo', [], true)
+ 3 APPPATH/Controllers/Repositorio.php(18): view('repositorio/nuevo', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->nuevo()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-24 17:11:52 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Repositorio/nuevo.php"
+[Method: GET, Route: Repositorio/nuevo]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Repositorio/nuevo.php')
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('Repositorio/nuevo', [], true)
+ 3 APPPATH/Controllers/Repositorio.php(18): view('Repositorio/nuevo', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->nuevo()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')

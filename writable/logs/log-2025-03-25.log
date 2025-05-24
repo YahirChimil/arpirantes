@@ -1,0 +1,338 @@
+CRITICAL - 2025-03-25 09:43:58 --> ErrorException: Undefined variable $request
+[Method: GET, Route: Repositorio/nuevo]
+in APPPATH/Controllers/Repositorio.php on line 19.
+ 1 APPPATH/Controllers/Repositorio.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $request', '/Users/richard/ProyectosActivos/rockstar/app/Controllers/Repositorio.php', 19)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->nuevo()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-25 09:44:05 --> ErrorException: Undefined variable $request
+[Method: GET, Route: Repositorio/nuevo]
+in APPPATH/Controllers/Repositorio.php on line 19.
+ 1 APPPATH/Controllers/Repositorio.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $request', '/Users/richard/ProyectosActivos/rockstar/app/Controllers/Repositorio.php', 19)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->nuevo()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-25 09:49:06 --> ErrorException: Undefined variable $request
+[Method: GET, Route: Repositorio/nuevo]
+in APPPATH/Controllers/Repositorio.php on line 29.
+ 1 APPPATH/Controllers/Repositorio.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $request', '/Users/richard/ProyectosActivos/rockstar/app/Controllers/Repositorio.php', 29)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->nuevo()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-25 09:49:28 --> ErrorException: Undefined variable $request
+[Method: GET, Route: Repositorio/nuevo]
+in APPPATH/Controllers/Repositorio.php on line 29.
+ 1 APPPATH/Controllers/Repositorio.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $request', '/Users/richard/ProyectosActivos/rockstar/app/Controllers/Repositorio.php', 29)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->nuevo()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-25 18:18:09 --> TypeError: implode(): If argument #1 ($separator) is of type string, argument #2 ($array) must be of type array, null given
+[Method: POST, Route: Repositorio/nuevo]
+in APPPATH/Controllers/Repositorio.php on line 37.
+ 1 APPPATH/Controllers/Repositorio.php(37): implode(null)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->nuevo()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-25 18:19:04 --> TypeError: implode(): If argument #1 ($separator) is of type string, argument #2 ($array) must be of type array, null given
+[Method: POST, Route: Repositorio/nuevo]
+in APPPATH/Controllers/Repositorio.php on line 37.
+ 1 APPPATH/Controllers/Repositorio.php(37): implode(',', null)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->nuevo()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-25 18:20:53 --> TypeError: implode(): If argument #1 ($separator) is of type string, argument #2 ($array) must be of type array, null given
+[Method: POST, Route: Repositorio/nuevo]
+in APPPATH/Controllers/Repositorio.php on line 37.
+ 1 APPPATH/Controllers/Repositorio.php(37): implode(',', null)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->nuevo()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-25 18:23:09 --> TypeError: implode(): If argument #1 ($separator) is of type string, argument #2 ($array) must be of type array, null given
+[Method: POST, Route: Repositorio/nuevo]
+in APPPATH/Controllers/Repositorio.php on line 39.
+ 1 APPPATH/Controllers/Repositorio.php(39): implode(',', null)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->nuevo()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+ERROR - 2025-03-25 21:04:03 --> mysqli_sql_exception: Table 'discere_dev.ciit_repositrio' doesn't exist in /Users/richard/ProyectosActivos/rockstar/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Users/richard/ProyectosActivos/rockstar/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT * FROM c...', 0)
+#1 /Users/richard/ProyectosActivos/rockstar/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM c...')
+#2 /Users/richard/ProyectosActivos/rockstar/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM c...')
+#3 /Users/richard/ProyectosActivos/rockstar/app/Controllers/Repositorio.php(77): CodeIgniter\Database\BaseConnection->query('SELECT * FROM c...')
+#4 /Users/richard/ProyectosActivos/rockstar/system/CodeIgniter.php(933): App\Controllers\Repositorio->ver('1')
+#5 /Users/richard/ProyectosActivos/rockstar/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+#6 /Users/richard/ProyectosActivos/rockstar/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/richard/ProyectosActivos/rockstar/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 /Users/richard/ProyectosActivos/rockstar/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /Users/richard/ProyectosActivos/rockstar/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 /Users/richard/ProyectosActivos/rockstar/system/rewrite.php(44): require_once('/Users/richard/...')
+#11 {main}
+CRITICAL - 2025-03-25 21:04:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'discere_dev.ciit_repositrio' doesn't exist
+[Method: GET, Route: Repositorio/ver/1]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 APPPATH/Controllers/Repositorio.php(77): CodeIgniter\Database\BaseConnection->query('SELECT * FROM ciit_repositrio where deleted = 0 and id = 1')
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->ver('1')
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-25 21:04:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'discere_dev.ciit_repositrio' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM ciit_repositrio where deleted = 0 and id = 1')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM ciit_repositrio where deleted = 0 and id = 1')
+ 3 APPPATH/Controllers/Repositorio.php(77): CodeIgniter\Database\BaseConnection->query('SELECT * FROM ciit_repositrio where deleted = 0 and id = 1')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->ver('1')
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-25 21:04:03 --> [Caused by] mysqli_sql_exception: Table 'discere_dev.ciit_repositrio' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT * FROM ciit_repositrio where deleted = 0 and id = 1', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM ciit_repositrio where deleted = 0 and id = 1')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM ciit_repositrio where deleted = 0 and id = 1')
+ 4 APPPATH/Controllers/Repositorio.php(77): CodeIgniter\Database\BaseConnection->query('SELECT * FROM ciit_repositrio where deleted = 0 and id = 1')
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->ver('1')
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+ERROR - 2025-03-25 21:37:36 --> mysqli_sql_exception: Column 'id' in where clause is ambiguous in /Users/richard/ProyectosActivos/rockstar/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Users/richard/ProyectosActivos/rockstar/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT * FROM c...', 0)
+#1 /Users/richard/ProyectosActivos/rockstar/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM c...')
+#2 /Users/richard/ProyectosActivos/rockstar/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM c...')
+#3 /Users/richard/ProyectosActivos/rockstar/app/Controllers/Repositorio.php(77): CodeIgniter\Database\BaseConnection->query('SELECT * FROM c...')
+#4 /Users/richard/ProyectosActivos/rockstar/system/CodeIgniter.php(933): App\Controllers\Repositorio->ver('7')
+#5 /Users/richard/ProyectosActivos/rockstar/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+#6 /Users/richard/ProyectosActivos/rockstar/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/richard/ProyectosActivos/rockstar/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 /Users/richard/ProyectosActivos/rockstar/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /Users/richard/ProyectosActivos/rockstar/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 /Users/richard/ProyectosActivos/rockstar/system/rewrite.php(44): require_once('/Users/richard/...')
+#11 {main}
+CRITICAL - 2025-03-25 21:37:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in where clause is ambiguous
+[Method: GET, Route: Repositorio/ver/7]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 APPPATH/Controllers/Repositorio.php(77): CodeIgniter\Database\BaseConnection->query('SELECT * FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->ver('7')
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-25 21:37:36 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in where clause is ambiguous
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 3 APPPATH/Controllers/Repositorio.php(77): CodeIgniter\Database\BaseConnection->query('SELECT * FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->ver('7')
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-25 21:37:36 --> [Caused by] mysqli_sql_exception: Column 'id' in where clause is ambiguous
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT * FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 4 APPPATH/Controllers/Repositorio.php(77): CodeIgniter\Database\BaseConnection->query('SELECT * FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->ver('7')
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+ERROR - 2025-03-25 21:38:15 --> mysqli_sql_exception: Column 'id' in where clause is ambiguous in /Users/richard/ProyectosActivos/rockstar/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Users/richard/ProyectosActivos/rockstar/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT ciit_rep...', 0)
+#1 /Users/richard/ProyectosActivos/rockstar/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT ciit_rep...')
+#2 /Users/richard/ProyectosActivos/rockstar/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT ciit_rep...')
+#3 /Users/richard/ProyectosActivos/rockstar/app/Controllers/Repositorio.php(77): CodeIgniter\Database\BaseConnection->query('SELECT ciit_rep...')
+#4 /Users/richard/ProyectosActivos/rockstar/system/CodeIgniter.php(933): App\Controllers\Repositorio->ver('7')
+#5 /Users/richard/ProyectosActivos/rockstar/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+#6 /Users/richard/ProyectosActivos/rockstar/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/richard/ProyectosActivos/rockstar/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 /Users/richard/ProyectosActivos/rockstar/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /Users/richard/ProyectosActivos/rockstar/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 /Users/richard/ProyectosActivos/rockstar/system/rewrite.php(44): require_once('/Users/richard/...')
+#11 {main}
+CRITICAL - 2025-03-25 21:38:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in where clause is ambiguous
+[Method: GET, Route: Repositorio/ver/7]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 APPPATH/Controllers/Repositorio.php(77): CodeIgniter\Database\BaseConnection->query('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->ver('7')
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-25 21:38:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in where clause is ambiguous
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 3 APPPATH/Controllers/Repositorio.php(77): CodeIgniter\Database\BaseConnection->query('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->ver('7')
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-25 21:38:15 --> [Caused by] mysqli_sql_exception: Column 'id' in where clause is ambiguous
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 4 APPPATH/Controllers/Repositorio.php(77): CodeIgniter\Database\BaseConnection->query('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->ver('7')
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+ERROR - 2025-03-25 21:38:16 --> mysqli_sql_exception: Column 'id' in where clause is ambiguous in /Users/richard/ProyectosActivos/rockstar/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Users/richard/ProyectosActivos/rockstar/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT ciit_rep...', 0)
+#1 /Users/richard/ProyectosActivos/rockstar/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT ciit_rep...')
+#2 /Users/richard/ProyectosActivos/rockstar/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT ciit_rep...')
+#3 /Users/richard/ProyectosActivos/rockstar/app/Controllers/Repositorio.php(77): CodeIgniter\Database\BaseConnection->query('SELECT ciit_rep...')
+#4 /Users/richard/ProyectosActivos/rockstar/system/CodeIgniter.php(933): App\Controllers\Repositorio->ver('7')
+#5 /Users/richard/ProyectosActivos/rockstar/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+#6 /Users/richard/ProyectosActivos/rockstar/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/richard/ProyectosActivos/rockstar/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 /Users/richard/ProyectosActivos/rockstar/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /Users/richard/ProyectosActivos/rockstar/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 /Users/richard/ProyectosActivos/rockstar/system/rewrite.php(44): require_once('/Users/richard/...')
+#11 {main}
+CRITICAL - 2025-03-25 21:38:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in where clause is ambiguous
+[Method: GET, Route: Repositorio/ver/7]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 APPPATH/Controllers/Repositorio.php(77): CodeIgniter\Database\BaseConnection->query('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->ver('7')
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-25 21:38:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in where clause is ambiguous
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 3 APPPATH/Controllers/Repositorio.php(77): CodeIgniter\Database\BaseConnection->query('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->ver('7')
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-25 21:38:16 --> [Caused by] mysqli_sql_exception: Column 'id' in where clause is ambiguous
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 4 APPPATH/Controllers/Repositorio.php(77): CodeIgniter\Database\BaseConnection->query('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->ver('7')
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+ERROR - 2025-03-25 21:38:16 --> mysqli_sql_exception: Column 'id' in where clause is ambiguous in /Users/richard/ProyectosActivos/rockstar/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Users/richard/ProyectosActivos/rockstar/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT ciit_rep...', 0)
+#1 /Users/richard/ProyectosActivos/rockstar/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT ciit_rep...')
+#2 /Users/richard/ProyectosActivos/rockstar/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT ciit_rep...')
+#3 /Users/richard/ProyectosActivos/rockstar/app/Controllers/Repositorio.php(77): CodeIgniter\Database\BaseConnection->query('SELECT ciit_rep...')
+#4 /Users/richard/ProyectosActivos/rockstar/system/CodeIgniter.php(933): App\Controllers\Repositorio->ver('7')
+#5 /Users/richard/ProyectosActivos/rockstar/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+#6 /Users/richard/ProyectosActivos/rockstar/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/richard/ProyectosActivos/rockstar/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 /Users/richard/ProyectosActivos/rockstar/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /Users/richard/ProyectosActivos/rockstar/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 /Users/richard/ProyectosActivos/rockstar/system/rewrite.php(44): require_once('/Users/richard/...')
+#11 {main}
+CRITICAL - 2025-03-25 21:38:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in where clause is ambiguous
+[Method: GET, Route: Repositorio/ver/7]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 APPPATH/Controllers/Repositorio.php(77): CodeIgniter\Database\BaseConnection->query('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->ver('7')
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-25 21:38:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in where clause is ambiguous
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 3 APPPATH/Controllers/Repositorio.php(77): CodeIgniter\Database\BaseConnection->query('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->ver('7')
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-25 21:38:16 --> [Caused by] mysqli_sql_exception: Column 'id' in where clause is ambiguous
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 4 APPPATH/Controllers/Repositorio.php(77): CodeIgniter\Database\BaseConnection->query('SELECT ciit_repositorio.*, users.username, users.nombre, users.foto FROM ciit_repositorio left join users on ciit_repositorio.usuario=users.id where deleted = 0 and id = 7')
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Repositorio->ver('7')
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Repositorio))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')

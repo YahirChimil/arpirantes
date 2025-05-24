@@ -1,0 +1,58 @@
+CRITICAL - 2025-05-07 15:59:49 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Acceso/aspirante.php"
+[Method: POST, Route: analizar-curp]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Acceso/aspirante.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Acceso/aspirante', [], true)
+ 3 APPPATH\Controllers\Aspirante.php(203): view('Acceso/aspirante', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-05-07 16:02:38 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Acceso/aspirante.php"
+[Method: POST, Route: analizar-curp]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Acceso/aspirante.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Acceso/aspirante', [], true)
+ 3 APPPATH\Controllers\Aspirante.php(201): view('Acceso/aspirante', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-05-07 16:04:01 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Acceso/aspirante.php"
+[Method: POST, Route: analizar-curp]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Acceso/aspirante.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Acceso/aspirante', [], true)
+ 3 APPPATH\Controllers\Aspirante.php(201): view('Acceso/aspirante', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-05-07 16:05:50 --> ErrorException: Undefined variable $user_info
+[Method: POST, Route: analizar-curp]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\aspirantes.php(49): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(201): view('base/publico/aspirantes', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')

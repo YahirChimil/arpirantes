@@ -1,0 +1,222 @@
+CRITICAL - 2025-03-20 11:22:06 --> TypeError: CodeIgniter\Shield\Models\LoginModel::recordLoginAttempt(): Argument #2 ($identifier) must be of type string, null given, called in /Users/richard/ProyectosActivos/rockstar/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php on line 302
+[Method: GET, Route: login]
+in VENDORPATH/codeigniter4/shield/src/Models/LoginModel.php on line 63.
+ 1 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(302): CodeIgniter\Shield\Models\LoginModel->recordLoginAttempt('email_password', null, false, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', null)
+ 2 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(142): CodeIgniter\Shield\Authentication\Authenticators\Session->recordLoginAttempt([...], false, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36')
+ 3 VENDORPATH/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->attempt([...])
+ 4 APPPATH/Controllers/Acceso.php(47): CodeIgniter\Shield\Auth->__call('attempt', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Acceso->login()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceso))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-20 11:22:10 --> TypeError: CodeIgniter\Shield\Models\LoginModel::recordLoginAttempt(): Argument #2 ($identifier) must be of type string, null given, called in /Users/richard/ProyectosActivos/rockstar/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php on line 302
+[Method: GET, Route: login]
+in VENDORPATH/codeigniter4/shield/src/Models/LoginModel.php on line 63.
+ 1 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(302): CodeIgniter\Shield\Models\LoginModel->recordLoginAttempt('email_password', null, false, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', null)
+ 2 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(142): CodeIgniter\Shield\Authentication\Authenticators\Session->recordLoginAttempt([...], false, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36')
+ 3 VENDORPATH/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->attempt([...])
+ 4 APPPATH/Controllers/Acceso.php(47): CodeIgniter\Shield\Auth->__call('attempt', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Acceso->login()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceso))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-20 15:07:01 --> CodeIgniter\Shield\Exceptions\InvalidArgumentException: Invalid credentials passed to recordLoginAttempt.
+[Method: GET, Route: Acceso/login]
+in VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php on line 289.
+ 1 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(142): CodeIgniter\Shield\Authentication\Authenticators\Session->recordLoginAttempt([...], false, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36')
+ 2 VENDORPATH/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->attempt([...])
+ 3 APPPATH/Controllers/Acceso.php(47): CodeIgniter\Shield\Auth->__call('attempt', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Acceso->login()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceso))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-20 15:08:23 --> CodeIgniter\Shield\Exceptions\InvalidArgumentException: Invalid credentials passed to recordLoginAttempt.
+[Method: GET, Route: Acceso/login]
+in VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php on line 289.
+ 1 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(142): CodeIgniter\Shield\Authentication\Authenticators\Session->recordLoginAttempt([...], false, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36')
+ 2 VENDORPATH/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->attempt([...])
+ 3 APPPATH/Controllers/Acceso.php(47): CodeIgniter\Shield\Auth->__call('attempt', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Acceso->login()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceso))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-20 15:09:03 --> CodeIgniter\Shield\Exceptions\InvalidArgumentException: Invalid credentials passed to recordLoginAttempt.
+[Method: POST, Route: Acceso/login]
+in VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php on line 289.
+ 1 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(179): CodeIgniter\Shield\Authentication\Authenticators\Session->recordLoginAttempt([...], true, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', 1)
+ 2 VENDORPATH/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->attempt([...])
+ 3 APPPATH/Controllers/Acceso.php(47): CodeIgniter\Shield\Auth->__call('attempt', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Acceso->login()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceso))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+ERROR - 2025-03-20 15:14:20 --> mysqli_sql_exception: Unknown column 'users.user' in 'where clause' in /Users/richard/ProyectosActivos/rockstar/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Users/richard/ProyectosActivos/rockstar/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 /Users/richard/ProyectosActivos/rockstar/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /Users/richard/ProyectosActivos/rockstar/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /Users/richard/ProyectosActivos/rockstar/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/richard/ProyectosActivos/rockstar/system/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/richard/ProyectosActivos/rockstar/system/BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 /Users/richard/ProyectosActivos/rockstar/vendor/codeigniter4/shield/src/Models/UserModel.php(242): CodeIgniter\BaseModel->first()
+#7 /Users/richard/ProyectosActivos/rockstar/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(334): CodeIgniter\Shield\Models\UserModel->findByCredentials(Array)
+#8 /Users/richard/ProyectosActivos/rockstar/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(137): CodeIgniter\Shield\Authentication\Authenticators\Session->check(Array)
+#9 /Users/richard/ProyectosActivos/rockstar/vendor/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->attempt(Array)
+#10 /Users/richard/ProyectosActivos/rockstar/app/Controllers/Acceso.php(47): CodeIgniter\Shield\Auth->__call('attempt', Array)
+#11 /Users/richard/ProyectosActivos/rockstar/system/CodeIgniter.php(933): App\Controllers\Acceso->login()
+#12 /Users/richard/ProyectosActivos/rockstar/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceso))
+#13 /Users/richard/ProyectosActivos/rockstar/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#14 /Users/richard/ProyectosActivos/rockstar/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#15 /Users/richard/ProyectosActivos/rockstar/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#16 /Users/richard/ProyectosActivos/rockstar/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#17 /Users/richard/ProyectosActivos/rockstar/system/rewrite.php(44): require_once('/Users/richard/...')
+#18 {main}
+CRITICAL - 2025-03-20 15:14:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.user' in 'where clause'
+[Method: POST, Route: Acceso/login]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE LOWER(`users`.`user`) = :LOWER(`users`.`user`):
+AND `users`.`deleted_at` IS NULL
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 4 VENDORPATH/codeigniter4/shield/src/Models/UserModel.php(242): CodeIgniter\BaseModel->first()
+ 5 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(334): CodeIgniter\Shield\Models\UserModel->findByCredentials([...])
+ 6 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(137): CodeIgniter\Shield\Authentication\Authenticators\Session->check([...])
+ 7 VENDORPATH/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->attempt([...])
+ 8 APPPATH/Controllers/Acceso.php(47): CodeIgniter\Shield\Auth->__call('attempt', [...])
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Acceso->login()
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceso))
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-20 15:14:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.user' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `users`
+WHERE LOWER(`users`.`user`) = \'admin\'
+AND `users`.`deleted_at` IS NULL
+ LIMIT 1')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `users`
+WHERE LOWER(`users`.`user`) = \'admin\'
+AND `users`.`deleted_at` IS NULL
+ LIMIT 1')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE LOWER(`users`.`user`) = :LOWER(`users`.`user`):
+AND `users`.`deleted_at` IS NULL
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 6 VENDORPATH/codeigniter4/shield/src/Models/UserModel.php(242): CodeIgniter\BaseModel->first()
+ 7 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(334): CodeIgniter\Shield\Models\UserModel->findByCredentials([...])
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(137): CodeIgniter\Shield\Authentication\Authenticators\Session->check([...])
+ 9 VENDORPATH/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->attempt([...])
+10 APPPATH/Controllers/Acceso.php(47): CodeIgniter\Shield\Auth->__call('attempt', [...])
+11 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Acceso->login()
+12 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceso))
+13 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-20 15:14:20 --> [Caused by] mysqli_sql_exception: Unknown column 'users.user' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT *
+FROM `users`
+WHERE LOWER(`users`.`user`) = \'admin\'
+AND `users`.`deleted_at` IS NULL
+ LIMIT 1', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `users`
+WHERE LOWER(`users`.`user`) = \'admin\'
+AND `users`.`deleted_at` IS NULL
+ LIMIT 1')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `users`
+WHERE LOWER(`users`.`user`) = \'admin\'
+AND `users`.`deleted_at` IS NULL
+ LIMIT 1')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE LOWER(`users`.`user`) = :LOWER(`users`.`user`):
+AND `users`.`deleted_at` IS NULL
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 7 VENDORPATH/codeigniter4/shield/src/Models/UserModel.php(242): CodeIgniter\BaseModel->first()
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(334): CodeIgniter\Shield\Models\UserModel->findByCredentials([...])
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(137): CodeIgniter\Shield\Authentication\Authenticators\Session->check([...])
+10 VENDORPATH/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->attempt([...])
+11 APPPATH/Controllers/Acceso.php(47): CodeIgniter\Shield\Auth->__call('attempt', [...])
+12 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Acceso->login()
+13 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceso))
+14 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+17 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+18 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-20 15:14:32 --> CodeIgniter\Shield\Exceptions\InvalidArgumentException: Invalid credentials passed to recordLoginAttempt.
+[Method: POST, Route: Acceso/login]
+in VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php on line 289.
+ 1 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(179): CodeIgniter\Shield\Authentication\Authenticators\Session->recordLoginAttempt([...], true, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', 1)
+ 2 VENDORPATH/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->attempt([...])
+ 3 APPPATH/Controllers/Acceso.php(47): CodeIgniter\Shield\Auth->__call('attempt', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Acceso->login()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceso))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-20 15:22:23 --> ErrorException: Undefined array key "email"
+[Method: GET, Route: Acceso/principal]
+in APPPATH/Views/base/template/header.php on line 51.
+ 1 APPPATH/Views/base/template/header.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "email"', '/Users/richard/ProyectosActivos/rockstar/app/Views/base/template/header.php', 51)
+ 2 SYSTEMPATH/View/View.php(224): include('/Users/richard/ProyectosActivos/rockstar/app/Views/base/template/header.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH/Views/base/vista_base.php(49): view('base/template/header')
+ 6 SYSTEMPATH/View/View.php(224): include('/Users/richard/ProyectosActivos/rockstar/app/Views/base/vista_base.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('base/vista_base', [], true)
+ 9 APPPATH/Controllers/Acceso.php(33): view('base/vista_base', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Acceso->principal()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceso))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')
+CRITICAL - 2025-03-20 15:48:46 --> CodeIgniter\Shield\Exceptions\LogicException: The user has User Info in Session, so already logged in or in pending login state. If a logged in user logs in again with other account, the session data of the previous user will be used as the new user. Fix your code to prevent users from logging in without logging out or delete the session data. user_id: 1
+[Method: POST, Route: Acceso/login]
+in VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php on line 651.
+ 1 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(177): CodeIgniter\Shield\Authentication\Authenticators\Session->startLogin(Object(CodeIgniter\Shield\Entities\User))
+ 2 VENDORPATH/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->attempt([...])
+ 3 APPPATH/Controllers/Acceso.php(47): CodeIgniter\Shield\Auth->__call('attempt', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Acceso->login()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceso))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/richard/ProyectosActivos/rockstar/public/index.php')

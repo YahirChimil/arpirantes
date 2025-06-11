@@ -90,6 +90,9 @@ $routes->post('encuesta/guardar', 'Encuesta::create');
 $routes->get('Acceso/aspirante_registrados', 'Aspirante::indexAs');
 $routes->get('aspirante/editar/(:segment)', 'Aspirante::edit/$1');
 $routes->post('aspirante/actualizar/(:segment)', 'Aspirante::update/$1');
+$routes->get('Acceso/respondida', 'Acceso::encuesta_respondida');
+$routes->get('Acceso/generarFalsosAspirantes', 'Aspirante::generarFalsosAspirantes');
+$routes->get('Servicios/entrega', 'Preficha::vistaEntregaDocumentacion');
 
 
 

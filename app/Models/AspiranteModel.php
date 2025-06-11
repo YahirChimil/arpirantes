@@ -26,7 +26,8 @@ class AspiranteModel extends Model
         'carrera',
         'sede_alternativa',
         'carrera_alternativa',
-        'reingreso'
+        'reingreso',
+        'preficha',
     ];
 
     protected bool $allowEmptyInserts = false;
@@ -61,7 +62,7 @@ class AspiranteModel extends Model
 
     public function obtenerConRelaciones()
 {
-    return $this->select('aspirantes.curp, aspirantes.nombre, aspirantes.primer_apellido, aspirantes.segundo_apellido, sedes.nombre_sede as sede, carreras.nombre as carrera')
+    return $this->select('aspirantes.curp, aspirantes.nombre, aspirantes.primer_apellido, aspirantes.segundo_apellido, sedes.nombre_sede as sede, carreras.nombre as carrera, aspirantes.preficha')
         ->join('sedes', 'sedes.id_sede = aspirantes.sede')
         ->join('carreras', 'carreras.id = aspirantes.carrera')
         ->findAll();

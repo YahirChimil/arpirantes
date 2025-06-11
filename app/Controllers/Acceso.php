@@ -75,4 +75,24 @@ class Acceso extends BaseController
         // To get the complete user object with ID, we need to get from the database
         print_r($users->findById($users->getInsertID())) ;
     }
+
+    public function encuesta_respondida()
+{
+    {
+        if (auth()->loggedIn()) {
+
+            $data['titulo'] = 'Principal';
+            $data['miga'] = 'Tableros';
+            $data['url_miga'] = base_url() . 'principal';
+            $data['sub_miga'] = 'inicio';
+            $data['user_info'] = datos_usuario();
+
+            return view('base/publico/encuesta_contestada', $data); 
+
+        } else {
+            return redirect()->to(site_url('Acceso/login'));
+        }
+     // Crea esa vista simple
+}
+}
 }

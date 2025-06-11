@@ -30,3 +30,4 @@
 <link href="<?php echo base_url(); ?>assets/vendors/keenicons/styles.bundle.css" rel="stylesheet" />
 <link href="<?php echo base_url(); ?>assets/css/styles.css" rel="stylesheet" />
 <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

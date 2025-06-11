@@ -6,7 +6,7 @@ License:
 -->
 <!DOCTYPE html>
 
-<html class="h-full" data-theme="true" data-theme-mode="light" dir="ltr" lang="es-mx">
+<html class="h-full" data-theme="true"  dir="ltr" lang="es-mx">
 
 <head>
     <?php echo view('base/template/head'); ?>
@@ -14,8 +14,6 @@ License:
 </head>
 
 <body class="antialiased flex h-full text-base text-gray-700 [--tw-page-bg:#fefefe] demo1 sidebar-fixed header-fixed bg-[--tw-page-bg]"></body>    <!-- Theme Mode -->
-
-    <!-- Theme Mode -->
     
     <!-- End of Theme Mode -->
     <!-- Page -->
@@ -27,7 +25,7 @@ License:
         <!-- Wrapper -->
         <div class="wrapper flex grow flex-col">
             <!-- Header -->
-           
+            
 
             <!-- End of Header -->
             <!-- Content -->
@@ -40,6 +38,16 @@ License:
             <?= session()->getFlashdata('error') ?>
         </div>
     <?php endif; ?>
+    <!-- Mensaje de éxito -->
+<?php if (session()->getFlashdata('success')): ?>
+    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
+        <strong class="font-bold">¡Éxito! </strong>
+        <span class="block sm:inline"><?= session()->getFlashdata('success') ?></span>
+    </div>
+<?php endif; ?>
+
+<!-- Mensaje de error -->
+
 
     <!-- Formulario paso 1: Subir CURP -->
     <?php if (!isset($curp)): ?>
@@ -50,7 +58,7 @@ License:
         <span class="block text-xs font-normal text-gray-500 mt-1">
             Descárgala desde el sitio oficial: 
             <a href="https://www.gob.mx/curp" target="_blank" class="text-blue-600 hover:underline">www.gob.mx/curp</a>. 
-            Asegúrate de que sea la version digital, no deben ser fotos o capturas de pantaala en formato PDF.
+            Asegúrate de que sea la version digital, no deben ser fotos o capturas de pantala en formato PDF ya que tomaremos datos apartir de este.
         </span>
     </label>
     <input type="file" name="curp" accept=".pdf" required class="w-full border rounded p-2 mt-1 text-sm">
@@ -61,8 +69,13 @@ License:
     <!-- Formulario paso 2: Continuar registro -->
     <?php else: ?>
         <form action="<?= base_url('guardar-aspirante') ?>" method="post" class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
+        <span class="block text-xs font-normal text-gray-500 mt-1">
+        Los datos de CURP, FECHA DE NACIMIENTO, EDAD y GÉNERO se extraen directamente de tu documento CURP anteriormente cargado y no se pueden editar. En caso de encontrar algún error, te pedimos que completes tu registro y luego te pongas en contacto con la Coordinación de Servicios para solicitar la corrección.   
+    
+    </span>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Datos precargados -->
+         
         <div>
             <label class="block font-medium text-gray-700 mb-1">CURP</label>
             <input type="text" name="curp" value="<?= esc($curp) ?>" readonly 
@@ -101,38 +114,43 @@ License:
                    class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
         </div>
         <div>
-            <label class="block font-medium text-gray-700 mb-1">Correo</label>
-            <input type="email" name="correo" required 
-                   class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-        </div>
+    <label class="block font-medium text-gray-700 mb-1">Correo</label>
+    <span class="block text-xs text-gray-500 mb-1">
+        El correo debe ser personal ya que tu registro se asocia con tu correo.
+    </span>
+    <input type="email" name="correo" required 
+           class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+</div>
+
+        
         <div>
             <label class="block font-medium text-gray-700 mb-1">Teléfono</label>
             <input type="tel" name="telefono" required 
                    class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
         </div>
         <div>
-            <label class="block font-medium text-gray-700 mb-1">Sede</label>
+            <label class="block font-medium text-gray-700 mb-1">Sede Primera opcion</label>
             <select id="sede" name="sede" required 
                     class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                 <option value="">Selecciona una sede</option>
             </select>
         </div>
         <div>
-            <label class="block font-medium text-gray-700 mb-1">Carrera</label>
+            <label class="block font-medium text-gray-700 mb-1">Carrera Primera opcion</label>
             <select id="carrera" name="carrera" required 
                     class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                 <option value="">Selecciona una carrera</option>
             </select>
         </div>
         <div>
-    <label class="block font-medium text-gray-700 mb-1">Sede Alternativa</label>
+    <label class="block font-medium text-gray-700 mb-1">Sede Segunda opcion</label>
     <select id="sede_alt" name="sede_alternativa"
             class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
         <option value="">Selecciona una sede</option>
     </select>
 </div>
 <div>
-    <label class="block font-medium text-gray-700 mb-1">Carrera Alternativa</label>
+    <label class="block font-medium text-gray-700 mb-1">Carrera Segunda opcion</label>
     <select id="carrera_alt" name="carrera_alternativa"
             class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
         <option value="">Selecciona una carrera</option>
@@ -160,10 +178,7 @@ License:
 </form>
     <?php endif; ?>
 </div>
-
-    
-            </main>
-
+</main>
             <!-- End of Content -->
             <!-- Footer -->
             <?php echo view('base/template/footer'); ?>
@@ -178,6 +193,8 @@ License:
     <!-- Scripts -->
     <script src="<?php echo base_url(); ?>assets/js/core.bundle.js">
     </script>
+
+    <!-- End of Scripts -->
 
 
 
@@ -247,6 +264,15 @@ License:
 });
 
      </script>
+     <script>
+    setTimeout(() => {
+        document.querySelectorAll('[role="alert"]').forEach(alert => {
+            alert.classList.add('opacity-0');
+            setTimeout(() => alert.remove(), 500);
+        });
+    }, 4000); // se oculta después de 4 segundos
+</script>
+
 </body>
 
 </html>

@@ -13,6 +13,7 @@ class AspiranteModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields = [
+        'periodo',
         'curp',
         'primer_apellido',
         'segundo_apellido',
@@ -28,6 +29,8 @@ class AspiranteModel extends Model
         'carrera_alternativa',
         'reingreso',
         'preficha',
+        'periodo',
+        'examen',
     ];
 
     protected bool $allowEmptyInserts = false;

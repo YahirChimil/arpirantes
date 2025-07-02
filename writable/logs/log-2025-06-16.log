@@ -1,0 +1,1366 @@
+CRITICAL - 2025-06-16 12:51:49 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:51:56 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:52:04 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:52:13 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:52:26 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:53:47 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:54:09 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:54:21 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:54:23 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:54:24 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:54:24 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:54:24 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:54:24 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:54:25 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:54:25 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:54:25 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:54:25 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:54:26 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:54:26 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:54:26 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:54:26 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:54:27 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:54:27 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:54:27 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:55:15 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:55:16 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:55:17 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:55:19 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:55:20 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:55:21 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:55:29 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 12:56:02 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\sin_convocatoria.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\sin_convocatoria.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/sin_convocatoria', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(40): view('base/publico/sin_convocatoria')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 13:14:06 --> ErrorException: Undefined variable $convocatoria
+[Method: POST, Route: analizar-curp]
+in APPPATH\Views\base\publico\aspirantes.php on line 170.
+ 1 APPPATH\Views\base\publico\aspirantes.php(170): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $convocatoria', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php', 170)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(425): view('base/publico/aspirantes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 13:16:47 --> ErrorException: Undefined variable $convocatoria
+[Method: POST, Route: analizar-curp]
+in APPPATH\Views\base\publico\aspirantes.php on line 170.
+ 1 APPPATH\Views\base\publico\aspirantes.php(170): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $convocatoria', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php', 170)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(425): view('base/publico/aspirantes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 13:19:06 --> ErrorException: Undefined variable $convocatoria
+[Method: POST, Route: analizar-curp]
+in APPPATH\Views\base\publico\aspirantes.php on line 170.
+ 1 APPPATH\Views\base\publico\aspirantes.php(170): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $convocatoria', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php', 170)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(415): view('base/publico/aspirantes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 13:19:07 --> ErrorException: Undefined variable $convocatoria
+[Method: POST, Route: analizar-curp]
+in APPPATH\Views\base\publico\aspirantes.php on line 170.
+ 1 APPPATH\Views\base\publico\aspirantes.php(170): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $convocatoria', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php', 170)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(415): view('base/publico/aspirantes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 13:19:08 --> ErrorException: Undefined variable $convocatoria
+[Method: POST, Route: analizar-curp]
+in APPPATH\Views\base\publico\aspirantes.php on line 170.
+ 1 APPPATH\Views\base\publico\aspirantes.php(170): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $convocatoria', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php', 170)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(415): view('base/publico/aspirantes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 13:19:09 --> ErrorException: Undefined variable $convocatoria
+[Method: POST, Route: analizar-curp]
+in APPPATH\Views\base\publico\aspirantes.php on line 170.
+ 1 APPPATH\Views\base\publico\aspirantes.php(170): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $convocatoria', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php', 170)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(415): view('base/publico/aspirantes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 13:20:39 --> ErrorException: Undefined variable $convocatoria
+[Method: POST, Route: analizar-curp]
+in APPPATH\Views\base\publico\aspirantes.php on line 34.
+ 1 APPPATH\Views\base\publico\aspirantes.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $convocatoria', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php', 34)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(415): view('base/publico/aspirantes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 13:20:54 --> ErrorException: Undefined variable $convocatoria
+[Method: POST, Route: analizar-curp]
+in APPPATH\Views\base\publico\aspirantes.php on line 34.
+ 1 APPPATH\Views\base\publico\aspirantes.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $convocatoria', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php', 34)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(415): view('base/publico/aspirantes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 13:21:10 --> ErrorException: Undefined variable $convocatoria
+[Method: POST, Route: analizar-curp]
+in APPPATH\Views\base\publico\aspirantes.php on line 34.
+ 1 APPPATH\Views\base\publico\aspirantes.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $convocatoria', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php', 34)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(415): view('base/publico/aspirantes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 13:21:11 --> ErrorException: Undefined variable $convocatoria
+[Method: POST, Route: analizar-curp]
+in APPPATH\Views\base\publico\aspirantes.php on line 34.
+ 1 APPPATH\Views\base\publico\aspirantes.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $convocatoria', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php', 34)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(415): view('base/publico/aspirantes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 13:42:32 --> ErrorException: Undefined variable $convocatoria
+[Method: POST, Route: analizar-curp]
+in APPPATH\Views\base\publico\aspirantes.php on line 174.
+ 1 APPPATH\Views\base\publico\aspirantes.php(174): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $convocatoria', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php', 174)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(425): view('base/publico/aspirantes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 13:49:53 --> ErrorException: Undefined variable $convocatoria
+[Method: POST, Route: analizar-curp]
+in APPPATH\Views\base\publico\aspirantes.php on line 35.
+ 1 APPPATH\Views\base\publico\aspirantes.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $convocatoria', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php', 35)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(419): view('base/publico/aspirantes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 13:52:51 --> ErrorException: Undefined variable $convocatoria
+[Method: POST, Route: analizar-curp]
+in APPPATH\Views\base\publico\aspirantes.php on line 35.
+ 1 APPPATH\Views\base\publico\aspirantes.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $convocatoria', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php', 35)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(421): view('base/publico/aspirantes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 13:54:54 --> ErrorException: Undefined variable $convocatoria
+[Method: POST, Route: analizar-curp]
+in APPPATH\Views\base\publico\aspirantes.php on line 35.
+ 1 APPPATH\Views\base\publico\aspirantes.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $convocatoria', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php', 35)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(421): view('base/publico/aspirantes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 14:08:29 --> ErrorException: Undefined variable $convocatoria
+[Method: POST, Route: analizar-curp]
+in APPPATH\Views\base\publico\aspirantes.php on line 35.
+ 1 APPPATH\Views\base\publico\aspirantes.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $convocatoria', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php', 35)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(422): view('base/publico/aspirantes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 14:09:47 --> ErrorException: Undefined variable $convocatoria
+[Method: POST, Route: analizar-curp]
+in APPPATH\Views\base\publico\aspirantes.php on line 35.
+ 1 APPPATH\Views\base\publico\aspirantes.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $convocatoria', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php', 35)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(423): view('base/publico/aspirantes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 14:09:49 --> ErrorException: Undefined variable $convocatoria
+[Method: POST, Route: analizar-curp]
+in APPPATH\Views\base\publico\aspirantes.php on line 35.
+ 1 APPPATH\Views\base\publico\aspirantes.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $convocatoria', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php', 35)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(423): view('base/publico/aspirantes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 14:10:59 --> ErrorException: Undefined variable $convocatoria
+[Method: POST, Route: analizar-curp]
+in APPPATH\Views\base\publico\aspirantes.php on line 35.
+ 1 APPPATH\Views\base\publico\aspirantes.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $convocatoria', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php', 35)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(423): view('base/publico/aspirantes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 14:10:59 --> ErrorException: Undefined variable $convocatoria
+[Method: POST, Route: analizar-curp]
+in APPPATH\Views\base\publico\aspirantes.php on line 35.
+ 1 APPPATH\Views\base\publico\aspirantes.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $convocatoria', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php', 35)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\publico\\aspirantes.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(423): view('base/publico/aspirantes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->analizar_curp()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 14:20:08 --> ErrorException: Undefined variable $totalPaginas
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\administrador\aspirantes_registrados.php on line 109.
+ 1 APPPATH\Views\base\administrador\aspirantes_registrados.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalPaginas', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\administrador\\aspirantes_registrados.php', 109)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\administrador\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(353): view('base/administrador/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 14:21:57 --> ErrorException: Undefined variable $totalPaginas
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\administrador\aspirantes_registrados.php on line 109.
+ 1 APPPATH\Views\base\administrador\aspirantes_registrados.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalPaginas', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\administrador\\aspirantes_registrados.php', 109)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\administrador\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(376): view('base/administrador/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 14:22:20 --> ErrorException: Undefined variable $totalPaginas
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\administrador\aspirantes_registrados.php on line 109.
+ 1 APPPATH\Views\base\administrador\aspirantes_registrados.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalPaginas', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\administrador\\aspirantes_registrados.php', 109)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\administrador\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(376): view('base/administrador/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 14:22:20 --> ErrorException: Undefined variable $totalPaginas
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\administrador\aspirantes_registrados.php on line 109.
+ 1 APPPATH\Views\base\administrador\aspirantes_registrados.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalPaginas', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\administrador\\aspirantes_registrados.php', 109)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\administrador\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(376): view('base/administrador/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 14:22:22 --> ErrorException: Undefined variable $totalPaginas
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\administrador\aspirantes_registrados.php on line 109.
+ 1 APPPATH\Views\base\administrador\aspirantes_registrados.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalPaginas', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\administrador\\aspirantes_registrados.php', 109)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\administrador\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(376): view('base/administrador/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 15:45:20 --> ErrorException: Undefined array key "periodo"
+[Method: POST, Route: aspirantes/generarPrefichas]
+in APPPATH\Controllers\Encuesta.php on line 137.
+ 1 APPPATH\Controllers\Encuesta.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "periodo"', 'C:\\xampp\\htdocs\\arpirantes\\app\\Controllers\\Encuesta.php', 137)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->generarPrefichas()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+ERROR - 2025-06-16 15:46:33 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 DESC, `aspirantes`.`carrera`' at line 5 in C:\xampp\htdocs\arpirantes\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\arpirantes\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\arpirantes\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\arpirantes\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\arpirantes\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\arpirantes\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\arpirantes\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\arpirantes\app\Controllers\Encuesta.php(145): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\arpirantes\system\CodeIgniter.php(933): App\Controllers\Encuesta->generarPrefichas()
+#8 C:\xampp\htdocs\arpirantes\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+#9 C:\xampp\htdocs\arpirantes\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\arpirantes\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\arpirantes\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\arpirantes\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\arpirantes\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-06-16 15:46:33 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 DESC, `aspirantes`.`carrera`' at line 5
+[Method: POST, Route: aspirantes/generarPrefichas]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Encuesta.php(145): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->generarPrefichas()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 15:46:33 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 DESC, `aspirantes`.`carrera`' at line 5
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Encuesta.php(145): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->generarPrefichas()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 15:46:33 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 DESC, `aspirantes`.`carrera`' at line 5
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Encuesta.php(145): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->generarPrefichas()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+ERROR - 2025-06-16 15:46:57 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 DESC, `aspirantes`.`carrera`' at line 5 in C:\xampp\htdocs\arpirantes\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\arpirantes\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\arpirantes\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\arpirantes\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\arpirantes\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\arpirantes\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\arpirantes\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\arpirantes\app\Controllers\Encuesta.php(145): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\arpirantes\system\CodeIgniter.php(933): App\Controllers\Encuesta->generarPrefichas()
+#8 C:\xampp\htdocs\arpirantes\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+#9 C:\xampp\htdocs\arpirantes\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\arpirantes\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\arpirantes\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\arpirantes\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\arpirantes\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-06-16 15:46:57 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 DESC, `aspirantes`.`carrera`' at line 5
+[Method: POST, Route: aspirantes/generarPrefichas]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Encuesta.php(145): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->generarPrefichas()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 15:46:57 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 DESC, `aspirantes`.`carrera`' at line 5
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Encuesta.php(145): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->generarPrefichas()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 15:46:57 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 DESC, `aspirantes`.`carrera`' at line 5
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Encuesta.php(145): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->generarPrefichas()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+ERROR - 2025-06-16 15:47:02 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 DESC, `aspirantes`.`carrera`' at line 5 in C:\xampp\htdocs\arpirantes\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\arpirantes\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\arpirantes\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\arpirantes\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\arpirantes\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\arpirantes\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\arpirantes\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\arpirantes\app\Controllers\Encuesta.php(145): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\arpirantes\system\CodeIgniter.php(933): App\Controllers\Encuesta->generarPrefichas()
+#8 C:\xampp\htdocs\arpirantes\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+#9 C:\xampp\htdocs\arpirantes\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\arpirantes\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\arpirantes\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\arpirantes\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\arpirantes\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-06-16 15:47:02 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 DESC, `aspirantes`.`carrera`' at line 5
+[Method: POST, Route: aspirantes/generarPrefichas]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Encuesta.php(145): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->generarPrefichas()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 15:47:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 DESC, `aspirantes`.`carrera`' at line 5
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Encuesta.php(145): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->generarPrefichas()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 15:47:02 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 DESC, `aspirantes`.`carrera`' at line 5
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Encuesta.php(145): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->generarPrefichas()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+ERROR - 2025-06-16 15:47:48 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 DESC, `aspirantes`.`carrera`' at line 5 in C:\xampp\htdocs\arpirantes\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\arpirantes\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\arpirantes\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\arpirantes\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\arpirantes\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\arpirantes\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\arpirantes\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\arpirantes\app\Controllers\Encuesta.php(145): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\arpirantes\system\CodeIgniter.php(933): App\Controllers\Encuesta->generarPrefichas()
+#8 C:\xampp\htdocs\arpirantes\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+#9 C:\xampp\htdocs\arpirantes\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\arpirantes\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\arpirantes\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\arpirantes\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\arpirantes\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-06-16 15:47:48 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 DESC, `aspirantes`.`carrera`' at line 5
+[Method: POST, Route: aspirantes/generarPrefichas]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede_id`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Encuesta.php(145): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->generarPrefichas()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 15:47:48 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 DESC, `aspirantes`.`carrera`' at line 5
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede_id`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede_id`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede_id`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Encuesta.php(145): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->generarPrefichas()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 15:47:48 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 DESC, `aspirantes`.`carrera`' at line 5
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede_id`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede_id`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede_id`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`carrera_id`, `aspirantes`.`sede_id`, `carreras`.`nombre` as `carrera_nombre`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+ORDER BY `aspirantes`.`sede =` 1 DESC, `aspirantes`.`carrera`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Encuesta.php(145): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->generarPrefichas()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-16 19:03:23 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
+[Method: GET, Route: aspirantes/preficha]
+in SYSTEMPATH\Filters\Filters.php on line 590.
+ 1 SYSTEMPATH\Filters\Filters.php(590): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('auth')
+ 2 SYSTEMPATH\Filters\Filters.php(641): CodeIgniter\Filters\Filters->enableFilter('auth', 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(467): CodeIgniter\Filters\Filters->enableFilters([...], 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')

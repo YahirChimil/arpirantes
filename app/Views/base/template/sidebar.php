@@ -120,6 +120,11 @@
                                 Encuesta
                             </a>
                         </div>
+                        <div class="menu-item">
+                            <a href="<?= base_url('aspirante/documentacion'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                Documentacion
+                            </a>
+                        </div>
                         
                         
                     </div>
@@ -144,7 +149,26 @@
                                 Aspirantes
                             </a>
                         </div>
-                        
+                        <div class="menu-item">
+                            <a href="<?= base_url('convocatoria/crear'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                Convocatorias
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="<?= base_url('aulas/crear'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                Aulas
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="<?= base_url('grupos-examen'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                Grupos de Examen
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="<?= base_url('documentacion/aspirantes'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                Documentacion Aspirante
+                            </a>
+                        </div>
                        
                         
                     </div>

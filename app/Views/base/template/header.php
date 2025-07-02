@@ -102,3 +102,22 @@
     </div>
     <!-- Contenedor principal header -->
 </header>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const numericInputs = document.querySelectorAll('input[type="number"]');
+
+        numericInputs.forEach(input => {
+            input.addEventListener('input', function () {
+                if (this.value < 0) {
+                    this.value = '';
+                }
+            });
+
+            input.addEventListener('keypress', function (e) {
+                if (e.key === '-' || e.key === '+') {
+                    e.preventDefault();
+                }
+            });
+        });
+    });
+</script>

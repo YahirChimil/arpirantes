@@ -78,21 +78,28 @@ class Acceso extends BaseController
 
     public function encuesta_respondida()
 {
-    {
-        if (auth()->loggedIn()) {
+    if (auth()->loggedIn()) {
+        $user = auth()->user();
 
-            $data['titulo'] = 'Principal';
-            $data['miga'] = 'Tableros';
-            $data['url_miga'] = base_url() . 'principal';
-            $data['sub_miga'] = 'inicio';
-            $data['user_info'] = datos_usuario();
+        $aspiranteModel = new \App\Models\AspiranteModel();
+        $aspirante = $aspiranteModel->where('curp', $user->username)->first();
 
-            return view('base/publico/encuesta_contestada', $data); 
+        $estadoPreficha = $aspirante['preficha'] ?? 0;
 
-        } else {
-            return redirect()->to(site_url('Acceso/login'));
-        }
-     // Crea esa vista simple
+        $data = [
+            'titulo'         => 'Principal',
+            'miga'           => 'Tableros',
+            'url_miga'       => base_url() . 'principal',
+            'sub_miga'       => 'inicio',
+            'user_info'      => datos_usuario(),
+            'estadoPreficha' => $estadoPreficha
+        ];
+
+        return view('base/publico/encuesta_contestada', $data); 
+
+    } else {
+        return redirect()->to(site_url('Acceso/login'));
+    }
 }
-}
+
 }

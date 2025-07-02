@@ -31,7 +31,11 @@ License:
             <!-- Content -->
             <main class="grow content pt-5" id="content" role="content">
             <div class="max-w-5xl mx-auto mt-8 bg-white p-6 rounded-lg shadow-md">
-    <h2 class="text-2xl font-bold text-gray-800 mb-6">Registro de Aspirante</h2>
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">
+    Registro de Aspirante - Convocatoria: <?= esc($periodo ?? '') ?>
+</h2>
+
+
 
     <?php if (session()->getFlashdata('error')): ?>
         <div class="bg-red-100 text-red-700 p-3 rounded mb-4">
@@ -46,6 +50,7 @@ License:
     </div>
 <?php endif; ?>
 
+
 <!-- Mensaje de error -->
 
 
@@ -58,7 +63,7 @@ License:
         <span class="block text-xs font-normal text-gray-500 mt-1">
             Descárgala desde el sitio oficial: 
             <a href="https://www.gob.mx/curp" target="_blank" class="text-blue-600 hover:underline">www.gob.mx/curp</a>. 
-            Asegúrate de que sea la version digital, no deben ser fotos o capturas de pantala en formato PDF ya que tomaremos datos apartir de este.
+            Asegúrate de que sea la version digital, no deben ser fotos o capturas de pantalla en formato PDF ya que tomaremos datos apartir de este.
         </span>
     </label>
     <input type="file" name="curp" accept=".pdf" required class="w-full border rounded p-2 mt-1 text-sm">
@@ -167,6 +172,7 @@ License:
             </select>
         </div>
     </div>
+<input type="text" name="periodo" value="<?= esc($periodo ?? '') ?>">
 
     <!-- Botón centrado con mejor estilo -->
     <div class="mt-8 flex justify-center">
@@ -174,10 +180,11 @@ License:
         class="px-6 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors duration-200 shadow-sm hover:shadow-md border border-blue-700">
     Guardar Aspirante
 </button>
-    </div>
 </form>
+    </div>
+
     <?php endif; ?>
-</div>
+
 </main>
             <!-- End of Content -->
             <!-- Footer -->

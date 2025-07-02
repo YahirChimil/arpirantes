@@ -29,16 +29,41 @@ License:
 
             <!-- End of Header -->
             <!-- Content -->
-            <main class="grow content pt-5" id="content" role="content">
-            <div class="container mt-5">
-    <div class="alert alert-warning text-center" role="alert">
-        <h4 class="alert-heading">¡Encuesta ya respondida!</h4>
-        <p>Gracias por participar. Ya hemos registrado tus respuestas.</p>
-        <hr>
-        <p class="mb-0">Si necesitas hacer alguna corrección, comunícate con el administrador.</p>
+           <main class="grow content pt-5" id="content" role="content">
+    <div class="container mt-5">
+        <div class="alert alert-warning text-center" role="alert">
+            <h4 class="alert-heading">¡Encuesta ya respondida!</h4>
+            <p>Gracias por participar. Ya hemos registrado tus respuestas.</p>
+            <hr>
+            <p class="mb-0">Si necesitas hacer alguna corrección, comunícate con el administrador.</p>
+        </div>
+
+        <div class="text-center mt-4">
+    <p>Estado de preficha: 
+        <strong class="<?= $estadoPreficha ? 'text-success' : 'text-danger' ?>">
+            <?= $estadoPreficha ? 'Pagada' : 'No pagada' ?>
+        </strong>
+    </p>
+
+    <?php if ($estadoPreficha): ?>
+    <a href="<?= site_url('aspirantes/preficha') ?>" target="_blank" class="btn btn-primary mt-3">
+        Descargar ficha
+    </a>
+<?php endif; ?>
+<?php if (!$estadoPreficha): ?>
+    <div class="alert alert-warning mt-3">
+        Aún no se te ha asignado una preficha. Espera a que se genere.
     </div>
+<?php endif; ?>
+
 </div>
-            </main>
+
+
+
+       
+    </div>
+</main>
+
             <!-- End of Content -->
             <!-- Footer -->
             <?php echo view('base/template/footer'); ?>

@@ -6,7 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
- //rutas acceso principal
+//rutas acceso principal
 $routes->get('/', 'Acceso::index');
 $routes->get('Acceso/principal', 'Acceso::principal');
 $routes->post('Acceso/login', 'Acceso::login');
@@ -90,6 +90,28 @@ $routes->post('encuesta/guardar', 'Encuesta::create');
 $routes->get('Acceso/aspirante_registrados', 'Aspirante::indexAs');
 $routes->get('aspirante/editar/(:segment)', 'Aspirante::edit/$1');
 $routes->post('aspirante/actualizar/(:segment)', 'Aspirante::update/$1');
+$routes->get('getCarreras', 'Carreras::getCarreras');
+$routes->get('getCarrerasPorSede/(:num)', 'Carreras::getCarrerasPorSede/$1');
+
+//$routes->post('aspirante/asignarGrupo/(:segment)', 'Aspirante::asignarGrupo/$1');
+$routes->get('aspirante/asignarGrupoVista/(:segment)', 'Aspirante::asignarGrupoVista/$1');
+$routes->post('aspirante/asignarAGrupo', 'Aspirante::asignarAGrupo');
+
+
+$routes->post('grupos/crear', 'Grupo::crear');
+$routes->post('grupos/eliminar/(:num)', 'Grupo::eliminar/$1');
+$routes->get('grupos', 'Grupo::index');
+
+$routes->post('aspirante/asignarAGrupoFinal', 'Aspirante::asignarAGrupoFinal');
+$routes->get('grupos/verAspirantes/(:num)', 'Grupo::verAspirantes/$1');
+
+//$routes->get('calificaciones/ver/(:alphanum)', 'Calificaciones::ver/$1');
+//$routes->post('calificaciones/actualizar', 'Calificaciones::actualizar');
+
+$routes->post('grupo/guardar_aprobados', 'Grupo::guardar_aprobados');
+
+$routes->get('grupo/exportar_aprobados/(:num)', 'Grupo::exportarPDF/$1');
+
 
 
 

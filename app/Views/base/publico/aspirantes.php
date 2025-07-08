@@ -27,9 +27,9 @@ License:
             <!-- Header -->
             
 
-            <!-- End of Header -->
-            <!-- Content -->
-            <main class="grow content pt-5" id="content" role="content">
+        <!-- End of Header -->
+        <!-- Content -->
+        <main class="grow content pt-5" id="content" role="content">
             <div class="max-w-5xl mx-auto mt-8 bg-white p-6 rounded-lg shadow-md">
     <h2 class="text-2xl font-bold text-gray-800 mb-6">
     Registro de Aspirante - Convocatoria: <?= esc($periodo ?? '') ?>
@@ -190,96 +190,88 @@ License:
             <!-- Footer -->
             <?php echo view('base/template/footer'); ?>
 
-            <!-- End of Footer -->
-        </div>
-        <!-- End of Wrapper -->
+        <!-- End of Footer -->
     </div>
-    <!-- End of Main -->
+    <!-- End of Wrapper -->
+</div>
+<!-- End of Main -->
 
-    <!-- End of Page -->
-    <!-- Scripts -->
-    <script src="<?php echo base_url(); ?>assets/js/core.bundle.js">
-    </script>
-
-    <!-- End of Scripts -->
-
-
-
-    <!-- End of Scripts -->
-     <script>
-        $(document).ready(function () {
-    function cargarSedes(selectId) {
-        $.ajax({
-            url: '<?= base_url('getSedes') ?>',
-            method: 'GET',
-            dataType: 'json',
-            success: function (data) {
-                const $select = $(selectId);
-                $select.empty().append('<option value="">Selecciona una sede</option>');
-                data.forEach(function (sede) {
-                    $select.append('<option value="' + sede.id_sede + '">' + sede.nombre_sede + '</option>');
-                });
-            },
-            error: function (xhr, status, error) {
-                console.error('Error al obtener sedes:', error);
-            }
-        });
-    }
-
-    function cargarCarreras(sedeId, selectId) {
-        $.ajax({
-            url: '<?= base_url('getCarrerasPorSede') ?>/' + sedeId,
-            method: 'GET',
-            dataType: 'json',
-            success: function (data) {
-                const $select = $(selectId);
-                $select.empty().append('<option value="">Selecciona una carrera</option>');
-                data.forEach(function (carrera) {
-                    $select.append('<option value="' + carrera.id + '">' + carrera.nombre + '</option>');
-                });
-            },
-            error: function (xhr, status, error) {
-                console.error('Error al obtener carreras:', error);
-                $(selectId).empty().append('<option value="">Error al cargar carreras</option>');
-            }
-        });
-    }
-
-    // Cargar sedes para los dos select
-    cargarSedes('#sede');
-    cargarSedes('#sede_alt');
-
-    // Evento de cambio para sede principal
-    $('#sede').on('change', function () {
-        const sedeId = $(this).val();
-        if (sedeId) {
-            cargarCarreras(sedeId, '#carrera');
-        } else {
-            $('#carrera').empty().append('<option value="">Selecciona una carrera</option>');
-        }
-    });
-
-    // Evento de cambio para sede alternativa
-    $('#sede_alt').on('change', function () {
-        const sedeId = $(this).val();
-        if (sedeId) {
-            cargarCarreras(sedeId, '#carrera_alt');
-        } else {
-            $('#carrera_alt').empty().append('<option value="">Selecciona una carrera</option>');
-        }
-    });
-});
-
-     </script>
-     <script>
-    setTimeout(() => {
-        document.querySelectorAll('[role="alert"]').forEach(alert => {
-            alert.classList.add('opacity-0');
-            setTimeout(() => alert.remove(), 500);
-        });
-    }, 4000); // se oculta después de 4 segundos
+<!-- End of Page -->
+<!-- Scripts -->
+<script src="<?php echo base_url(); ?>assets/js/core.bundle.js">
 </script>
 
+    <!-- End of Scripts -->
+
+
+
+<!-- End of Scripts -->
+<script>
+    $(document).ready(function () {
+        function cargarSedes(selectId) {
+            $.ajax({
+                url: '<?= base_url('getSedes') ?>',
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    const $select = $(selectId);
+                    $select.empty().append('<option value="">Selecciona una sede</option>');
+                    data.forEach(function (sede) {
+                        $select.append('<option value="' + sede.id_sede + '">' + sede.nombre_sede + '</option>');
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error al obtener sedes:', error);
+                }
+            });
+        }
+
+        function cargarCarreras(sedeId, selectId) {
+            $.ajax({
+                url: '<?= base_url('getCarrerasPorSede') ?>/' + sedeId,
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    const $select = $(selectId);
+                    $select.empty().append('<option value="">Selecciona una carrera</option>');
+                    data.forEach(function (carrera) {
+                        $select.append('<option value="' + carrera.id + '">' + carrera.nombre + '</option>');
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error al obtener carreras:', error);
+                    $(selectId).empty().append('<option value="">Error al cargar carreras</option>');
+                }
+            });
+        }
+
+        // Cargar sedes para los dos select
+        cargarSedes('#sede');
+        cargarSedes('#sede_alt');
+
+        // Evento de cambio para sede principal
+        $('#sede').on('change', function () {
+            const sedeId = $(this).val();
+            if (sedeId) {
+                cargarCarreras(sedeId, '#carrera');
+            } else {
+                $('#carrera').empty().append('<option value="">Selecciona una carrera</option>');
+            }
+        });
+
+        // Evento de cambio para sede alternativa
+        $('#sede_alt').on('change', function () {
+            const sedeId = $(this).val();
+            if (sedeId) {
+                cargarCarreras(sedeId, '#carrera_alt');
+            } else {
+                $('#carrera_alt').empty().append('<option value="">Selecciona una carrera</option>');
+            }
+
+        });
+    });
+
+     </script>
 </body>
 
 </html>

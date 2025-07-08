@@ -6,12 +6,12 @@ use CodeIgniter\Model;
 
 class AspiranteModel extends Model
 {
-    protected $table            = 'aspirantes';
-    protected $primaryKey       = 'id';
+    protected $table = 'aspirantes';
+    protected $primaryKey = 'id';
     protected $useAutoIncrement = true;
-    protected $returnType       = 'array';
-    protected $useSoftDeletes   = false;
-    protected $protectFields    = true;
+    protected $returnType = 'array';
+    protected $useSoftDeletes = false;
+    protected $protectFields = true;
     protected $allowedFields = [
         'periodo',
         'curp',
@@ -30,7 +30,11 @@ class AspiranteModel extends Model
         'reingreso',
         'preficha',
         'periodo',
-        'examen',
+        'examen',,
+        'examen_aprobado',
+        'pago_realizado',
+        'grupo_nivelacion',
+        'nivelacion_aprobado'
     ];
 
     protected bool $allowEmptyInserts = false;
@@ -41,34 +45,42 @@ class AspiranteModel extends Model
 
     // Dates
     protected $useTimestamps = false;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
+    protected $dateFormat = 'datetime';
+    protected $createdField = 'created_at';
+    protected $updatedField = 'updated_at';
+    protected $deletedField = 'deleted_at';
 
     // Validation
-    protected $validationRules      = [];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
+    protected $validationRules = [];
+    protected $validationMessages = [];
+    protected $skipValidation = false;
     protected $cleanValidationRules = true;
 
     // Callbacks
     protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
-    protected $afterInsert    = [];
-    protected $beforeUpdate   = [];
-    protected $afterUpdate    = [];
-    protected $beforeFind     = [];
-    protected $afterFind      = [];
-    protected $beforeDelete   = [];
-    protected $afterDelete    = [];
+    protected $beforeInsert = [];
+    protected $afterInsert = [];
+    protected $beforeUpdate = [];
+    protected $afterUpdate = [];
+    protected $beforeFind = [];
+    protected $afterFind = [];
+    protected $beforeDelete = [];
+    protected $afterDelete = [];
 
     public function obtenerConRelaciones()
 {
-    return $this->select('aspirantes.curp, aspirantes.nombre, aspirantes.primer_apellido, aspirantes.segundo_apellido, sedes.nombre_sede as sede, carreras.nombre as carrera, aspirantes.preficha')
-        ->join('sedes', 'sedes.id_sede = aspirantes.sede')
-        ->join('carreras', 'carreras.id = aspirantes.carrera')
+    return $this->select('aspirantes.curp, aspirantes.nombre, aspirantes.primer_apellido, aspirantes.segundo_apellido, aspirantes.examen_aprobado, aspirantes.pago_realizado, aspirantes.grupo_nivelacion, sedes.nombre_sede as sede, carreras.nombre as carrera')
+            ->join('sedes', 'sedes.id_sede = aspirantes.sede', 'left')
+            ->join('carreras', 'carreras.id = aspirantes.carrera', 'left')
+            ->findAll();
+}
+public function obtenerAspirantesPorGrupoConSede($grupo)
+{
+    return $this->select('aspirantes.*, sedes.nombre as nombre_sede')
+        ->join('sedes', 'sedes.id = aspirantes.sede', 'left')
+        ->where('grupo_nivelacion', $grupo)
         ->findAll();
 }
+
 
 }

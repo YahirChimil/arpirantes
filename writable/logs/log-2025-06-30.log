@@ -1,0 +1,790 @@
+CRITICAL - 2025-06-30 14:20:27 --> ErrorException: Undefined array key "apellido_paterno"
+[Method: GET, Route: grupos/verAspirantes/1]
+in APPPATH\Views\base\publico\aspirantes_por_grupo.php on line 30.
+ 1 APPPATH\Views\base\publico\aspirantes_por_grupo.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "apellido_paterno"', 'C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\app\\Views\\base\\publico\\aspirantes_por_grupo.php', 30)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\app\\Views\\base\\publico\\aspirantes_por_grupo.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_por_grupo', [], true)
+ 5 APPPATH\Controllers\Grupo.php(61): view('base/publico/aspirantes_por_grupo', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+ERROR - 2025-06-30 19:20:53 --> mysqli_sql_exception: Unknown column 'apellido_paterno' in 'field list' in C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `curp`, ...', 0)
+#1 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `curp`, ...')
+#2 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `curp`, ...')
+#3 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `curp`, ...', Array, false)
+#4 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Jorge Andrey\Desktop\arpirantes\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Jorge Andrey\Desktop\arpirantes\app\Controllers\Grupo.php(61): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('3')
+#8 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+#9 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Jorge Andrey\Desktop\arpirantes\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Jorge Andrey\Desktop\arpirantes\system\rewrite.php(44): require_once('C:\\Users\\Jorge ...')
+#14 {main}
+CRITICAL - 2025-06-30 19:20:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'apellido_paterno' in 'field list'
+[Method: GET, Route: grupos/verAspirantes/3]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `curp`, `nombre`, `apellido_paterno`, `apellido_materno`, `sede`, `carrera`
+FROM `aspirantes`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Grupo.php(61): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('3')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 19:20:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'apellido_paterno' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `curp`, `nombre`, `apellido_paterno`, `apellido_materno`, `sede`, `carrera`
+FROM `aspirantes`
+WHERE `grupo_nivelacion` = \'3\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `curp`, `nombre`, `apellido_paterno`, `apellido_materno`, `sede`, `carrera`
+FROM `aspirantes`
+WHERE `grupo_nivelacion` = \'3\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `curp`, `nombre`, `apellido_paterno`, `apellido_materno`, `sede`, `carrera`
+FROM `aspirantes`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Grupo.php(61): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('3')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 19:20:53 --> [Caused by] mysqli_sql_exception: Unknown column 'apellido_paterno' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `curp`, `nombre`, `apellido_paterno`, `apellido_materno`, `sede`, `carrera`
+FROM `aspirantes`
+WHERE `grupo_nivelacion` = \'3\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `curp`, `nombre`, `apellido_paterno`, `apellido_materno`, `sede`, `carrera`
+FROM `aspirantes`
+WHERE `grupo_nivelacion` = \'3\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `curp`, `nombre`, `apellido_paterno`, `apellido_materno`, `sede`, `carrera`
+FROM `aspirantes`
+WHERE `grupo_nivelacion` = \'3\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `curp`, `nombre`, `apellido_paterno`, `apellido_materno`, `sede`, `carrera`
+FROM `aspirantes`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Grupo.php(61): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('3')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 19:33:26 --> ErrorException: Undefined array key "apellido_paterno"
+[Method: GET, Route: grupos/verAspirantes/1]
+in APPPATH\Views\base\publico\aspirantes_por_grupo.php on line 31.
+ 1 APPPATH\Views\base\publico\aspirantes_por_grupo.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "apellido_paterno"', 'C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\app\\Views\\base\\publico\\aspirantes_por_grupo.php', 31)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\app\\Views\\base\\publico\\aspirantes_por_grupo.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_por_grupo', [], true)
+ 5 APPPATH\Controllers\Grupo.php(65): view('base/publico/aspirantes_por_grupo', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+ERROR - 2025-06-30 19:41:35 --> mysqli_sql_exception: Unknown column 'sedes.nombre' in 'field list' in C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Jorge Andrey\Desktop\arpirantes\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Jorge Andrey\Desktop\arpirantes\app\Controllers\Grupo.php(62): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+#8 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+#9 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Jorge Andrey\Desktop\arpirantes\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Jorge Andrey\Desktop\arpirantes\system\rewrite.php(44): require_once('C:\\Users\\Jorge ...')
+#14 {main}
+CRITICAL - 2025-06-30 19:41:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sedes.nombre' in 'field list'
+[Method: GET, Route: grupos/verAspirantes/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Grupo.php(62): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 19:41:36 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sedes.nombre' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = \'1\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Grupo.php(62): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 19:41:36 --> [Caused by] mysqli_sql_exception: Unknown column 'sedes.nombre' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Grupo.php(62): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+ERROR - 2025-06-30 19:42:34 --> mysqli_sql_exception: Unknown column 'sedes.id' in 'on clause' in C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Jorge Andrey\Desktop\arpirantes\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Jorge Andrey\Desktop\arpirantes\app\Controllers\Grupo.php(62): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+#8 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+#9 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Jorge Andrey\Desktop\arpirantes\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Jorge Andrey\Desktop\arpirantes\system\rewrite.php(44): require_once('C:\\Users\\Jorge ...')
+#14 {main}
+CRITICAL - 2025-06-30 19:42:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sedes.id' in 'on clause'
+[Method: GET, Route: grupos/verAspirantes/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Grupo.php(62): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 19:42:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sedes.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = \'1\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Grupo.php(62): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 19:42:34 --> [Caused by] mysqli_sql_exception: Unknown column 'sedes.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Grupo.php(62): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+ERROR - 2025-06-30 19:42:46 --> mysqli_sql_exception: Unknown column 'sedes.nombre' in 'field list' in C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Jorge Andrey\Desktop\arpirantes\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Jorge Andrey\Desktop\arpirantes\app\Controllers\Grupo.php(62): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+#8 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+#9 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Jorge Andrey\Desktop\arpirantes\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Jorge Andrey\Desktop\arpirantes\system\rewrite.php(44): require_once('C:\\Users\\Jorge ...')
+#14 {main}
+CRITICAL - 2025-06-30 19:42:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sedes.nombre' in 'field list'
+[Method: GET, Route: grupos/verAspirantes/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Grupo.php(62): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 19:42:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sedes.nombre' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = \'1\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Grupo.php(62): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 19:42:46 --> [Caused by] mysqli_sql_exception: Unknown column 'sedes.nombre' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Grupo.php(62): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+ERROR - 2025-06-30 19:45:00 --> mysqli_sql_exception: Unknown column 'sedes.id' in 'on clause' in C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Jorge Andrey\Desktop\arpirantes\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Jorge Andrey\Desktop\arpirantes\app\Controllers\Grupo.php(63): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+#8 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+#9 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Jorge Andrey\Desktop\arpirantes\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Jorge Andrey\Desktop\arpirantes\system\rewrite.php(44): require_once('C:\\Users\\Jorge ...')
+#14 {main}
+CRITICAL - 2025-06-30 19:45:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sedes.id' in 'on clause'
+[Method: GET, Route: grupos/verAspirantes/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Grupo.php(63): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 19:45:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sedes.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = \'1\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Grupo.php(63): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 19:45:00 --> [Caused by] mysqli_sql_exception: Unknown column 'sedes.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+LEFT JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Grupo.php(63): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 19:50:17 --> ErrorException: Undefined array key "nombre_carrera"
+[Method: GET, Route: grupos/verAspirantes/1]
+in APPPATH\Views\base\publico\aspirantes_por_grupo.php on line 33.
+ 1 APPPATH\Views\base\publico\aspirantes_por_grupo.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre_carrera"', 'C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\app\\Views\\base\\publico\\aspirantes_por_grupo.php', 33)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\app\\Views\\base\\publico\\aspirantes_por_grupo.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_por_grupo', [], true)
+ 5 APPPATH\Controllers\Grupo.php(65): view('base/publico/aspirantes_por_grupo', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 19:50:22 --> ErrorException: Undefined array key "nombre_carrera"
+[Method: GET, Route: grupos/verAspirantes/1]
+in APPPATH\Views\base\publico\aspirantes_por_grupo.php on line 33.
+ 1 APPPATH\Views\base\publico\aspirantes_por_grupo.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre_carrera"', 'C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\app\\Views\\base\\publico\\aspirantes_por_grupo.php', 33)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\app\\Views\\base\\publico\\aspirantes_por_grupo.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_por_grupo', [], true)
+ 5 APPPATH\Controllers\Grupo.php(65): view('base/publico/aspirantes_por_grupo', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+ERROR - 2025-06-30 19:51:22 --> mysqli_sql_exception: Unknown column 'carreras.id_carrera' in 'on clause' in C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Jorge Andrey\Desktop\arpirantes\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Jorge Andrey\Desktop\arpirantes\app\Controllers\Grupo.php(64): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+#8 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+#9 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Jorge Andrey\Desktop\arpirantes\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Jorge Andrey\Desktop\arpirantes\system\rewrite.php(44): require_once('C:\\Users\\Jorge ...')
+#14 {main}
+CRITICAL - 2025-06-30 19:51:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'carreras.id_carrera' in 'on clause'
+[Method: GET, Route: grupos/verAspirantes/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Grupo.php(64): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 19:51:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'carreras.id_carrera' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = \'1\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Grupo.php(64): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 19:51:22 --> [Caused by] mysqli_sql_exception: Unknown column 'carreras.id_carrera' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Grupo.php(64): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+ERROR - 2025-06-30 19:51:34 --> mysqli_sql_exception: Unknown column 'carreras.id_carrera' in 'on clause' in C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Jorge Andrey\Desktop\arpirantes\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Jorge Andrey\Desktop\arpirantes\app\Controllers\Grupo.php(64): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+#8 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+#9 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Jorge Andrey\Desktop\arpirantes\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Jorge Andrey\Desktop\arpirantes\system\rewrite.php(44): require_once('C:\\Users\\Jorge ...')
+#14 {main}
+CRITICAL - 2025-06-30 19:51:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'carreras.id_carrera' in 'on clause'
+[Method: GET, Route: grupos/verAspirantes/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Grupo.php(64): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 19:51:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'carreras.id_carrera' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = \'1\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Grupo.php(64): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 19:51:34 --> [Caused by] mysqli_sql_exception: Unknown column 'carreras.id_carrera' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `aspirantes`.`carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Grupo.php(64): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+ERROR - 2025-06-30 19:54:21 --> mysqli_sql_exception: Unknown column 'carreras.id_carrera' in 'on clause' in C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Jorge Andrey\Desktop\arpirantes\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Jorge Andrey\Desktop\arpirantes\app\Controllers\Grupo.php(64): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+#8 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+#9 C:\Users\Jorge Andrey\Desktop\arpirantes\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Jorge Andrey\Desktop\arpirantes\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Jorge Andrey\Desktop\arpirantes\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Jorge Andrey\Desktop\arpirantes\system\rewrite.php(44): require_once('C:\\Users\\Jorge ...')
+#14 {main}
+CRITICAL - 2025-06-30 19:54:21 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'carreras.id_carrera' in 'on clause'
+[Method: GET, Route: grupos/verAspirantes/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `carreras`.`nombre` AS `nombre_carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Grupo.php(64): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 19:54:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'carreras.id_carrera' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `carreras`.`nombre` AS `nombre_carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = \'1\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `carreras`.`nombre` AS `nombre_carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `carreras`.`nombre` AS `nombre_carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Grupo.php(64): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 19:54:21 --> [Caused by] mysqli_sql_exception: Unknown column 'carreras.id_carrera' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `carreras`.`nombre` AS `nombre_carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `carreras`.`nombre` AS `nombre_carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `carreras`.`nombre` AS `nombre_carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `nombre_sede`, `carreras`.`nombre` AS `nombre_carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `aspirantes`.`sede` = `sedes`.`id_sede`
+JOIN `carreras` ON `aspirantes`.`carrera` = `carreras`.`id_carrera`
+WHERE `grupo_nivelacion` = :grupo_nivelacion:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Grupo.php(64): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->verAspirantes('1')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 23:14:30 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "publico/ver_calificaciones.php"
+[Method: GET, Route: calificaciones/ver/AUCY021231HOCQHHA0]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('publico/ver_calificaciones.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('publico/ver_calificaciones', [], true)
+ 3 APPPATH\Controllers\Calificaciones.php(27): view('publico/ver_calificaciones', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Calificaciones->ver('AUCY021231HOCQHHA0')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Calificaciones))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-30 23:18:06 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "publico/ver_calificaciones.php"
+[Method: GET, Route: calificaciones/ver/AUCY021231HOCQHHA0]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('publico/ver_calificaciones.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('publico/ver_calificaciones', [], true)
+ 3 APPPATH\Controllers\Calificaciones.php(27): view('publico/ver_calificaciones', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Calificaciones->ver('AUCY021231HOCQHHA0')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Calificaciones))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Jorge Andrey\\Desktop\\arpirantes\\public\\index.php')

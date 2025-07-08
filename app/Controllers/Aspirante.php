@@ -61,7 +61,7 @@ class Aspirante extends ResourceController
      *
      * @return ResponseInterface
      */
-    
+
 
     
 
@@ -206,32 +206,32 @@ if (! $userModel->save($user)) {
      * @return ResponseInterface
      */
     public function edit($curp = null)
-{
-    if (auth()->loggedIn()) {
-        $usuario = datos_usuario(); // Suponiendo que retorna un array con info del usuario
+    {
+        if (auth()->loggedIn()) {
+            $usuario = datos_usuario(); // Suponiendo que retorna un array con info del usuario
 
-        // Validar que solo entren developers o administradores
-        if (!in_array($usuario['nivel'], [0, 1])) {
-            return redirect()->to(site_url('aspirante'))->with('error', 'No tienes permiso para editar aspirantes.');
-        }
+            // Validar que solo entren developers o administradores
+            if (!in_array($usuario['nivel'], [0, 1])) {
+                return redirect()->to(site_url('aspirante'))->with('error', 'No tienes permiso para editar aspirantes.');
+            }
 
-        $aspiranteModel = new AspiranteModel();
+            $aspiranteModel = new AspiranteModel();
 
-        // Obtener los datos del aspirante por su CURP
-        $aspirante = $aspiranteModel->where('curp', $curp)->first();
+            // Obtener los datos del aspirante por su CURP
+            $aspirante = $aspiranteModel->where('curp', $curp)->first();
 
-        if (!$aspirante) {
-            return redirect()->to(site_url('aspirante'))->with('error', 'Aspirante no encontrado.');
-        }
+            if (!$aspirante) {
+                return redirect()->to(site_url('aspirante'))->with('error', 'Aspirante no encontrado.');
+            }
 
-        $data['aspirante'] = $aspirante;
+            $data['aspirante'] = $aspirante;
 
-        // Información general para la vista
-        $data['titulo'] = 'Editar aspirante';
-        $data['miga'] = 'Aspirantes';
-        $data['url_miga'] = base_url('aspirante');
-        $data['sub_miga'] = 'Editar';
-        $data['user_info'] = $usuario;
+            // Información general para la vista
+            $data['titulo'] = 'Editar aspirante';
+            $data['miga'] = 'Aspirantes';
+            $data['url_miga'] = base_url('aspirante');
+            $data['sub_miga'] = 'Editar';
+            $data['user_info'] = $usuario;
 
         return view('base/administrador/editar_aspirante', $data);
     } else {
@@ -251,44 +251,53 @@ if (! $userModel->save($user)) {
     {
         if (auth()->loggedIn()) {
             $aspiranteModel = new AspiranteModel();
-    
+
             // Validación rápida
-            if (!$this->validate([
-                'nombre'           => 'required',
-                'primer_apellido'  => 'required',
-                'correo'           => 'required|valid_email',
-                // Agrega otras reglas según tu necesidad
-            ])) {
+            if (
+                !$this->validate([
+                    'nombre' => 'required',
+                    'primer_apellido' => 'required',
+                    'correo' => 'required|valid_email',
+                    // Agrega otras reglas según tu necesidad
+                ])
+            ) {
                 return redirect()->back()->withInput()->with('error', 'Verifica los campos del formulario.');
             }
-    
+
             // Recoger datos
             $data = [
-                'primer_apellido'     => $this->request->getPost('primer_apellido'),
-                'segundo_apellido'    => $this->request->getPost('segundo_apellido'),
-                'nombre'              => $this->request->getPost('nombre'),
-                'correo'              => $this->request->getPost('correo'),
-                'fecha_nacimiento'    => $this->request->getPost('fecha_nacimiento'),
-                'edad'                => $this->request->getPost('edad'),
-                'genero'              => $this->request->getPost('genero'),
-                'telefono'            => $this->request->getPost('telefono'),
-                'sede'                => $this->request->getPost('sede'),
-                'carrera'             => $this->request->getPost('carrera'),
-                'sede_alternativa'    => $this->request->getPost('sede_alternativa'),
+                'primer_apellido' => $this->request->getPost('primer_apellido'),
+                'segundo_apellido' => $this->request->getPost('segundo_apellido'),
+                'nombre' => $this->request->getPost('nombre'),
+                'correo' => $this->request->getPost('correo'),
+                'fecha_nacimiento' => $this->request->getPost('fecha_nacimiento'),
+                'edad' => $this->request->getPost('edad'),
+                'genero' => $this->request->getPost('genero'),
+                'telefono' => $this->request->getPost('telefono'),
+                'sede' => $this->request->getPost('sede'),
+                'carrera' => $this->request->getPost('carrera'),
+                'sede_alternativa' => $this->request->getPost('sede_alternativa'),
                 'carrera_alternativa' => $this->request->getPost('carrera_alternativa'),
-                'reingreso'           => $this->request->getPost('reingreso'),
-                
+                'reingreso' => $this->request->getPost('reingreso'),
+                //Datos NUEVOS
+                'examen_aprobado' => $this->request->getPost('examen_aprobado'),
+                'pago_realizado' => $this->request->getPost('pago_realizado'),
             ];
-    
+
+
+
             // Actualizar
             $aspiranteModel->where('curp', $curp)->set($data)->update();
-    
+
             return redirect()->to(site_url('Acceso/aspirante_registrados'))->with('success', 'Aspirante actualizado correctamente.');
         } else {
             return redirect()->to(site_url('Acceso/login'));
         }
+
+
+
     }
-    
+
 
     /**
      * Delete the designated resource object from the model.
@@ -303,7 +312,7 @@ if (! $userModel->save($user)) {
     }
 
 
- 
+
     public function indexAS()
 {
     if (!auth()->loggedIn()) {
@@ -387,58 +396,58 @@ if (! $userModel->save($user)) {
 
 
     private function obtenerFechaNacimientoDesdeCurp($curp)
-{
-    $anio = substr($curp, 4, 2);
-    $mes = substr($curp, 6, 2);
-    $dia = substr($curp, 8, 2);
-    $siglo = (intval($anio) >= 0 && intval($anio) <= intval(date('y'))) ? '20' : '19';
-    return "$siglo$anio-$mes-$dia";
-}
+    {
+        $anio = substr($curp, 4, 2);
+        $mes = substr($curp, 6, 2);
+        $dia = substr($curp, 8, 2);
+        $siglo = (intval($anio) >= 0 && intval($anio) <= intval(date('y'))) ? '20' : '19';
+        return "$siglo$anio-$mes-$dia";
+    }
 
-private function calcularEdad($fechaNacimiento)
-{
-    $nacimiento = new \DateTime($fechaNacimiento);
-    $hoy = new \DateTime();
-    return $hoy->diff($nacimiento)->y;
-}
+    private function calcularEdad($fechaNacimiento)
+    {
+        $nacimiento = new \DateTime($fechaNacimiento);
+        $hoy = new \DateTime();
+        return $hoy->diff($nacimiento)->y;
+    }
 
-private function obtenerGeneroDesdeCurp($curp)
-{
-    $genero = substr($curp, 10, 1);
-    return $genero === 'H' ? 'Masculino' : 'Femenino';
-}
-public function analizar_curp()
-{
-    helper(['form', 'url']);
-    $file = $this->request->getFile('curp');
+    private function obtenerGeneroDesdeCurp($curp)
+    {
+        $genero = substr($curp, 10, 1);
+        return $genero === 'H' ? 'Masculino' : 'Femenino';
+    }
+    public function analizar_curp()
+    {
+        helper(['form', 'url']);
+        $file = $this->request->getFile('curp');
 
-    if ($file && $file->isValid() && !$file->hasMoved()) {
-        $newName = $file->getRandomName();
-        $file->move(WRITEPATH . 'uploads', $newName);
-        $filePath = WRITEPATH . 'uploads/' . $newName;
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            $newName = $file->getRandomName();
+            $file->move(WRITEPATH . 'uploads', $newName);
+            $filePath = WRITEPATH . 'uploads/' . $newName;
 
-        // Leer PDF
-        $parser = new \Smalot\PdfParser\Parser();
-        $pdf = $parser->parseFile($filePath);
-        $text = $pdf->getText();
-        $lineas = explode("\n", $text);
+            // Leer PDF
+            $parser = new \Smalot\PdfParser\Parser();
+            $pdf = $parser->parseFile($filePath);
+            $text = $pdf->getText();
+            $lineas = explode("\n", $text);
 
-        // Buscar CURP y nombre en líneas consecutivas
-        $curp = '';
-        $nombreCompleto = '';
-        foreach ($lineas as $i => $linea) {
-            if (preg_match('/[A-Z][AEIOUX][A-Z]{2}\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])[HM](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z]{3}[0-9A-Z]\d/', $linea, $matches)) {
-                $curp = substr($matches[0], 0, 18);
-                $nombreCompleto = isset($lineas[$i + 1]) ? trim($lineas[$i + 1]) : '';
-                break;
+            // Buscar CURP y nombre en líneas consecutivas
+            $curp = '';
+            $nombreCompleto = '';
+            foreach ($lineas as $i => $linea) {
+                if (preg_match('/[A-Z][AEIOUX][A-Z]{2}\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])[HM](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z]{3}[0-9A-Z]\d/', $linea, $matches)) {
+                    $curp = substr($matches[0], 0, 18);
+                    $nombreCompleto = isset($lineas[$i + 1]) ? trim($lineas[$i + 1]) : '';
+                    break;
+                }
             }
-        }
 
-        // Dividir nombre completo
-        $partes = explode(' ', $nombreCompleto);
-        $primer_apellido = array_pop($partes); // Último
-        $segundo_apellido = array_pop($partes); // Penúltimo
-        $nombres = implode(' ', $partes); // El resto
+            // Dividir nombre completo
+            $partes = explode(' ', $nombreCompleto);
+            $primer_apellido = array_pop($partes); // Último
+            $segundo_apellido = array_pop($partes); // Penúltimo
+            $nombres = implode(' ', $partes); // El resto
 
         $fechaNacimiento = $this->obtenerFechaNacimientoDesdeCurp($curp);
         $edad = $this->calcularEdad($fechaNacimiento);
@@ -460,8 +469,8 @@ $convocatoria = $convocatoriaModel->obtenerConvocatoriaActiva();
         ]);
     }
 
-    return redirect()->back()->with('error', 'Error al subir el archivo.');
-}   
+        return redirect()->back()->with('error', 'Error al subir el archivo.');
+    }   
 
 
 public function generarFalsosAspirantes($cantidad = 10)
@@ -591,6 +600,118 @@ public function imprimirSeleccionados()
         'titulo'     => 'Aspirantes Seleccionados'
     ]);
 }
+
+
+
+    public function actualizarEstado($id)
+    {
+        $model = new \App\Models\AspiranteModel();
+        $data = [
+            'examen_aprobado' => $this->request->getPost('examen_aprobado') ? 1 : 0,
+            'pago_realizado' => $this->request->getPost('pago_realizado') ? 1 : 0
+        ];
+        $model->update($id, $data);
+        return redirect()->to(base_url('aspirantes'));
+    }
+
+    //METODO AGREGADO
+    public function asignarGrupo($curp)
+    {
+        $aspiranteModel = new \App\Models\AspiranteModel();
+        $aspirante = $aspiranteModel->where('curp', $curp)->first();
+
+        if ($aspirante) {
+            $aspiranteModel->where('curp', $curp)->set(['grupo_nivelacion' => 'Grupo A'])->update();
+            return redirect()->to(base_url('Acceso/aspirante_registrados'))->with('mensaje', 'Grupo asignado.');
+        } else {
+            return redirect()->back()->with('mensaje', 'Aspirante no encontrado.');
+        }
+    }
+
+
+    //METODO NUEVO NUEVO 
+    public function asignarGrupoVista($curp)
+    {
+        $grupoModel = new \App\Models\GrupoModel();
+        $aspiranteModel = new \App\Models\AspiranteModel();
+
+        $grupos = $grupoModel->findAll();
+
+        foreach ($grupos as &$grupo) {
+            $grupo['asignados'] = $aspiranteModel->where('grupo_nivelacion', $grupo['id'])->countAllResults();
+        }
+
+        return view('base/publico/asignar_grupo', [
+            'grupos' => $grupos,
+            'curp' => $curp //
+        ]);
+    }
+
+
+    public function asignarAGrupo()
+    {
+        $curp = $this->request->getPost('curp');
+        $grupo_id = $this->request->getPost('grupo_id');
+
+        $aspiranteModel = new \App\Models\AspiranteModel();
+        $grupoModel = new \App\Models\GrupoModel();
+
+        // Verificar capacidad
+        $grupo = $grupoModel->find($grupo_id);
+        $asignados = $aspiranteModel->where('grupo_nivelacion', $grupo_id)->countAllResults();
+
+        if ($asignados >= $grupo['capacidad']) {
+            return redirect()->back()->with('error', 'Este grupo ya está lleno.');
+        }
+
+        // Asignar grupo
+        $aspiranteModel->where('curp', $curp)->set(['grupo_nivelacion' => $grupo_id])->update();
+
+        return redirect()->to('aspirante_registrados')->with('success', 'Aspirante asignado correctamente.');
+    }
+
+    /*
+        public function asignarAGrupoFinal()
+        {
+            $curp = $this->request->getPost('curp');
+            $grupoNombre = $this->request->getPost('grupo_nombre');
+
+            if (!$curp || !$grupoNombre) {
+                return redirect()->back()->with('error', 'Faltan datos para la asignación.');
+            }
+
+            $aspiranteModel = new \App\Models\AspiranteModel();
+
+            // Actualiza el campo grupo_nivelacion con el nombre del grupo
+            $aspiranteModel
+                ->where('curp', $curp)
+                ->set('grupo_nivelacion', $grupoNombre)
+                ->update();
+
+            return redirect()->to(base_url('aspirante/asignarGrupoVista/' . $curp))
+                ->with('mensaje', 'Aspirante asignado correctamente.');
+        }
+    */
+
+    public function asignarAGrupoFinal()
+    {
+        $curp = $this->request->getPost('curp');
+        $grupoId = $this->request->getPost('grupo_id'); // <- ahora usamos el ID
+
+        if (!$curp || !$grupoId) {
+            return redirect()->back()->with('error', 'Faltan datos para la asignación.');
+        }
+
+        $aspiranteModel = new \App\Models\AspiranteModel();
+
+        $aspiranteModel
+            ->where('curp', $curp)
+            ->set('grupo_nivelacion', $grupoId)
+            ->update();
+
+        return redirect()->to(base_url('aspirante/asignarGrupoVista/' . $curp))
+            ->with('mensaje', 'Aspirante asignado correctamente.');
+    }
 
 
 

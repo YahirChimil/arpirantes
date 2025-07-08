@@ -1,10 +1,10 @@
 <?php return array(
     'root' => array(
-        'name' => 'poderjudicial/arpirantes',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => '4f5c81e9779d4058262519a820c60e084d92c7bc',
-        'type' => 'library',
+        'name' => 'codeigniter4/framework',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => null,
+        'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
@@ -15,6 +15,15 @@
             'provided' => array(
                 0 => '1.0',
             ),
+        ),
+        'codeigniter4/framework' => array(
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => null,
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'codeigniter4/settings' => array(
             'pretty_version' => 'v2.2.0',

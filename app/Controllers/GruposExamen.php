@@ -26,15 +26,17 @@ class GruposExamen extends ResourceController
     $db = \Config\Database::connect();
 
     $aspirantesSinGrupo = $db->table('aspirantes')
-        ->select('aspirantes.sede AS sede_id, aspirantes.carrera AS carrera_id, sedes.nombre_sede, carreras.nombre AS nombre_carrera, COUNT(*) AS total')
-        ->join('sedes', 'sedes.id_sede = aspirantes.sede')
-        ->join('carreras', 'carreras.id = aspirantes.carrera')
-        ->join('aspirante_grupo_examen', 'aspirante_grupo_examen.curp = aspirantes.curp', 'left')
-        ->where('aspirante_grupo_examen.grupo_id IS NULL') // Solo los que no tienen grupo asignado
-        ->where('aspirantes.periodo', $convocatoriaSeleccionada)
-        ->groupBy('aspirantes.sede, aspirantes.carrera')
-        ->get()
-        ->getResultArray();
+    ->select('aspirantes.sede AS sede_id, aspirantes.carrera AS carrera_id, sedes.nombre_sede, carreras.nombre AS nombre_carrera, COUNT(*) AS total')
+    ->join('sedes', 'sedes.id_sede = aspirantes.sede')
+    ->join('carreras', 'carreras.id = aspirantes.carrera')
+    ->join('aspirante_grupo_examen', 'aspirante_grupo_examen.curp = aspirantes.curp', 'left')
+    ->where('aspirante_grupo_examen.grupo_id IS NULL') // Solo los que no tienen grupo asignado
+    ->where('aspirantes.periodo', $convocatoriaSeleccionada)
+    ->where('aspirantes.preficha', 1) // Filtrar solo con preficha = 1
+    ->groupBy('aspirantes.sede, aspirantes.carrera')
+    ->get()
+    ->getResultArray();
+
 }
 
 $grupoModel = new \App\Models\GruposExamenModel();

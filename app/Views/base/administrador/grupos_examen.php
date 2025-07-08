@@ -238,58 +238,64 @@ License:
     });
 </script>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-    const convocatoriaSelect = document.querySelector('select[name="convocatoria"]');
-    const fechaInputs = document.querySelectorAll('input[name="fecha"]');
+document.addEventListener('DOMContentLoaded', function () {
+  const convocatoriaSelect = document.querySelector('select[name="convocatoria"]');
+  const fechaInputs = document.querySelectorAll('input[name="fecha"]');
 
-    convocatoriaSelect.addEventListener('change', function () {
-        const codigo = this.value;
+  function formatFecha(fecha) {
+    return new Date(fecha).toISOString().split('T')[0];
+  }
 
-        if (!codigo) {
-            fechaInputs.forEach(fechaInput => {
-                fechaInput.value = '';
-                fechaInput.disabled = true;
-                fechaInput.removeAttribute('min');
-                fechaInput.removeAttribute('max');
-            });
-            return;
+  convocatoriaSelect.addEventListener('change', function () {
+    const codigo = this.value;
+
+    if (!codigo) {
+      fechaInputs.forEach(input => {
+        input.value = '';
+        input.disabled = true;
+        input.removeAttribute('min');
+        input.removeAttribute('max');
+      });
+      return;
+    }
+
+    fetch(`<?= base_url('getFechasConvocatoria') ?>/${codigo}`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.examen_inicio && data.examen_fin) {
+          const min = formatFecha(data.examen_inicio);
+          const max = formatFecha(data.examen_fin);
+
+          fechaInputs.forEach(input => {
+            input.min = min;
+            input.max = max;
+            input.disabled = false;
+          });
+        } else {
+          fechaInputs.forEach(input => {
+            input.disabled = true;
+            input.removeAttribute('min');
+            input.removeAttribute('max');
+          });
         }
+      })
+      .catch(error => {
+        console.error('Error al obtener fechas:', error);
+        fechaInputs.forEach(input => {
+          input.disabled = true;
+          input.removeAttribute('min');
+          input.removeAttribute('max');
+        });
+      });
+  });
 
-        fetch(`<?= base_url('getFechasConvocatoria') ?>/${codigo}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.examen_inicio) {
-                    const minFecha = new Date(data.examen_inicio);
-                    const maxFecha = new Date(minFecha);
-                    maxFecha.setDate(minFecha.getDate() + 14);
-
-                    const format = (date) => date.toISOString().split('T')[0];
-
-                    fechaInputs.forEach(fechaInput => {
-                        fechaInput.min = format(minFecha);
-                        fechaInput.max = format(maxFecha);
-                        fechaInput.disabled = false;
-                    });
-                } else {
-                    fechaInputs.forEach(fechaInput => {
-                        fechaInput.disabled = true;
-                        fechaInput.removeAttribute('min');
-                        fechaInput.removeAttribute('max');
-                    });
-                }
-            })
-            .catch(error => {
-                console.error('Error al obtener fechas de convocatoria:', error);
-                fechaInputs.forEach(fechaInput => {
-                    fechaInput.disabled = true;
-                    fechaInput.removeAttribute('min');
-                    fechaInput.removeAttribute('max');
-                });
-            });
-    });
+  // Si ya hay una convocatoria seleccionada al cargar, forzar cambio
+  if (convocatoriaSelect.value) {
+    convocatoriaSelect.dispatchEvent(new Event('change'));
+  }
 });
-
 </script>
+
 
 
 

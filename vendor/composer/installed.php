@@ -3,7 +3,7 @@
         'name' => 'poderjudicial/arpirantes',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'd43ec54e7dcf7b6e280d2067647a6e7380704d18',
+        'reference' => '4f5c81e9779d4058262519a820c60e084d92c7bc',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -82,7 +82,7 @@
         'poderjudicial/arpirantes' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'd43ec54e7dcf7b6e280d2067647a6e7380704d18',
+            'reference' => '4f5c81e9779d4058262519a820c60e084d92c7bc',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

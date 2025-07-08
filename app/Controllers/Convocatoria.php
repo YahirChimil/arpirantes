@@ -93,10 +93,10 @@ class Convocatoria extends BaseController
 }
 
 
-public function getFechasConvocatoria($id)
+public function getFechasConvocatoria($codigo)
 {
     $convModel = new \App\Models\ConvocatoriaModel();
-    $conv = $convModel->where('codigo', $id)->first();
+    $conv = $convModel->where('codigo', $codigo)->first();
 
     if ($conv) {
         $inicio = $conv['examen_inicio'];

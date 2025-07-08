@@ -1,0 +1,38 @@
+CRITICAL - 2025-06-25 11:54:28 --> ErrorException: Undefined variable $miga
+[Method: GET, Route: grupos-examen/aspirantes/1]
+in APPPATH\Views\base\template\head.php on line 6.
+ 1 APPPATH\Views\base\template\head.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $miga', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\head.php', 6)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\head.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/head', [], true)
+ 5 APPPATH\Views\base\administrador\ver_aspirantes_grupo.php(12): view('base/template/head')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\administrador\\ver_aspirantes_grupo.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_grupo', [], true)
+ 9 APPPATH\Controllers\GruposExamen.php(275): view('base/administrador/ver_aspirantes_grupo', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('1')
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')
+CRITICAL - 2025-06-25 11:54:42 --> ErrorException: Undefined variable $miga
+[Method: GET, Route: grupos-examen/aspirantes/1]
+in APPPATH\Views\base\template\head.php on line 6.
+ 1 APPPATH\Views\base\template\head.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $miga', 'C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\head.php', 6)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\template\\head.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/head', [], true)
+ 5 APPPATH\Views\base\administrador\ver_aspirantes_grupo.php(12): view('base/template/head')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\arpirantes\\app\\Views\\base\\administrador\\ver_aspirantes_grupo.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_grupo', [], true)
+ 9 APPPATH\Controllers\GruposExamen.php(275): view('base/administrador/ver_aspirantes_grupo', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('1')
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\arpirantes\\public\\index.php')

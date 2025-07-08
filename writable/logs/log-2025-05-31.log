@@ -1,0 +1,28 @@
+CRITICAL - 2025-05-31 22:37:24 --> ErrorException: Undefined variable $aspirante
+[Method: GET, Route: Acceso/encuesta]
+in APPPATH\Views\base\publico\encuesta.php on line 38.
+ 1 APPPATH\Views\base\publico\encuesta.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $aspirante', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\encuesta.php', 38)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\encuesta.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/encuesta', [], true)
+ 5 APPPATH\Controllers\Encuesta.php(42): view('base/publico/encuesta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-05-31 22:50:07 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "base/publico/gracias.php"
+[Method: GET, Route: Acceso/respondida]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('base/publico/gracias.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/gracias', [], true)
+ 3 APPPATH\Controllers\Acceso.php(90): view('base/publico/gracias', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Acceso->encuesta_respondida()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceso))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')

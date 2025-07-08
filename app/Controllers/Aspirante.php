@@ -7,6 +7,9 @@ use CodeIgniter\RESTful\ResourceController;
 use Smalot\PdfParser\Parser;
 use App\Models\AspiranteModel;
 use CodeIgniter\Shield\Entities\User;
+use CodeIgniter\Shield\Models\UserIdentityModel;
+use CodeIgniter\Shield\Models\UserModel;
+
 class Aspirante extends ResourceController
 {
     /**
@@ -15,12 +18,21 @@ class Aspirante extends ResourceController
      * @return ResponseInterface
      */
     public function index()
-    {
+{
+    $convocatoriaModel = new \App\Models\ConvocatoriaModel();
+    $convocatoria = $convocatoriaModel->obtenerConvocatoriaActiva();
 
-        return view('base/publico/aspirantes');
-
-
+    // Si no hay convocatoria activa, redirigir a otra vista
+    if (!$convocatoria) {
+        return view('base/publico/sin_convocatoria');
     }
+
+    return view('base/publico/aspirantes', ['convocatoria' => $convocatoria,
+                                            'periodo'          => $convocatoria['codigo'] ?? null,
+]);
+}
+
+
 
     /**
      * Return the properties of a resource object.
@@ -51,92 +63,139 @@ class Aspirante extends ResourceController
      */
 
 
-    public function create()
-    {
-        helper(['form', 'text']);
+    
 
-        $rules = [
-            'primer_apellido' => 'required',
-            'segundo_apellido' => 'required',
-            'nombre' => 'required',
-            'correo' => 'required|valid_email',
-            'fecha_nacimiento' => 'required|valid_date',
-            'edad' => 'required|numeric',
-            'genero' => 'required',
-            'telefono' => 'required',
-            'sede' => 'required',
-            'carrera' => 'required',
-            'reingreso' => 'required'
-        ];
-
-        if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('error', 'Por favor, completa todos los campos requeridos correctamente.');
-        }
-
-        // Datos del formulario
-        $curp = $this->request->getPost('curp');
-        $correo = $this->request->getPost('correo');
-
-        $data = [
-            'curp' => $curp,
-            'primer_apellido' => $this->request->getPost('primer_apellido'),
-            'segundo_apellido' => $this->request->getPost('segundo_apellido'),
-            'nombre' => $this->request->getPost('nombre'),
-            'correo' => $correo,
-            'fecha_nacimiento' => $this->request->getPost('fecha_nacimiento'),
-            'edad' => $this->request->getPost('edad'),
-            'genero' => $this->request->getPost('genero'),
-            'telefono' => $this->request->getPost('telefono'),
-            'sede' => $this->request->getPost('sede'),
-            'carrera' => $this->request->getPost('carrera'),
-            'sede_alternativa' => $this->request->getPost('sede_alternativa'),
-            'carrera_alternativa' => $this->request->getPost('carrera_alternativa'),
-            'reingreso' => $this->request->getPost('reingreso'),
-        ];
-
-        // Guardar aspirante
-        $aspiranteModel = new \App\Models\AspiranteModel();
-        $aspiranteModel->save($data);
-
-        // Generar contraseña aleatoria
-        $password = bin2hex(random_bytes(4)); // 8 caracteres
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        // Crear usuario solo con username y password
-        $users = auth()->getProvider();
-
-        $user = new User([
-            'username' => $curp,
-            'email' => $correo,
-            'password' => $password, // sin hashear manualmente
-            'nivel' => 4
-        ]);
-
-        $users->save($user);
-
-        //CARRERA NUEVO
-        $carrera = $this->request->getPost('carrera');
-        if ($carrera === 'undefined' || !is_numeric($carrera)) {
-            return redirect()->back()->withInput()->with('error', 'Selecciona una carrera válida.');
-        }
+public function create()
+{
+    helper(['form', 'text']);
+    
 
 
-        // Enviar la contraseña al correo registrado
-        $email = \Config\Services::email();
-        $email->setTo($correo);
-        $email->setSubject('Tu cuenta como aspirante');
-        $email->setMessage(
-            "Hola,\n\n" .
-            "Gracias por registrarte como aspirante.\n\n" .
-            "Tu nombre de usuario: $curp\n" .
-            "Tu contraseña: $password\n\n" .
-            "Por favor, guarda esta información de forma segura."
-        );
-        $email->send();
+    $rules = [
+        'primer_apellido' => 'required',
+        'segundo_apellido' => 'required',
+        'nombre'           => 'required',
+        'correo'           => 'required|valid_email',
+        'fecha_nacimiento' => 'required|valid_date',
+        'edad'             => 'required|numeric',
+        'genero'           => 'required',
+        'telefono'         => 'required',
+        'sede'             => 'required',
+        'carrera'          => 'required',
+        'reingreso'        => 'required',
+         'periodo'        => 'required',
+    ];
 
-        return redirect()->to(base_url('Acceso/aspirante'))->with('success', 'Registro guardado. El usuario y contraseña han sido enviados al correo proporcionado.');
-
+    if (!$this->validate($rules)) {
+        return redirect()->to(base_url('Acceso/aspirante'))
+            ->withInput()
+            ->with('error', 'Por favor, completa todos los campos requeridos correctamente.');
     }
 
+    $curp = $this->request->getPost('curp');
+    $correo = $this->request->getPost('correo');
+
+    $aspiranteModel = new AspiranteModel();
+
+    // Verificar si el CURP ya está registrado
+    if ($aspiranteModel->where('curp', $curp)->first()) {
+        return redirect()->to(base_url('Acceso/aspirante'))
+        ->withInput()
+        ->with('error', 'El CURP ya está registrado.')
+        ->with('curp_analizado', $curp);
+    
+    }
+
+    // Verificar si el correo ya está registrado en auth_identities
+    $userIdentityModel = new UserIdentityModel();
+
+    $correoExiste = $userIdentityModel
+        ->where('type', 'email_password')
+        ->where('secret', $correo)
+        ->first();
+
+    if ($correoExiste) {
+        return redirect()->to(base_url('Acceso/aspirante'))
+            ->withInput()
+            ->with('error', 'El correo ya está registrado en el sistema. No se pudo crear el usuario.');
+    }
+    
+
+    // Guardar aspirante primero
+    $data = [
+        'curp'                => $curp,
+        'primer_apellido'     => $this->request->getPost('primer_apellido'),
+        'segundo_apellido'    => $this->request->getPost('segundo_apellido'),
+        'nombre'              => $this->request->getPost('nombre'),
+        'correo'              => $correo,
+        'fecha_nacimiento'    => $this->request->getPost('fecha_nacimiento'),
+        'edad'                => $this->request->getPost('edad'),
+        'genero'              => $this->request->getPost('genero'),
+        'telefono'            => $this->request->getPost('telefono'),
+        'sede'                => $this->request->getPost('sede'),
+        'carrera'             => $this->request->getPost('carrera'),
+        'sede_alternativa'    => $this->request->getPost('sede_alternativa'),
+        'carrera_alternativa' => $this->request->getPost('carrera_alternativa'),
+        'reingreso'           => $this->request->getPost('reingreso'),
+         'periodo'           => $this->request->getPost('periodo'),
+      
+
+    ];
+
+    try {
+        $aspiranteModel->save($data);
+    } catch (\Exception $e) {
+        return redirect()->to(base_url('Acceso/aspirante'))
+            ->withInput()
+            ->with('error', 'Ocurrió un error al guardar el aspirante.');
+    }
+
+    // Crear usuario Shield correctamente con el service de auth
+    $password = bin2hex(random_bytes(4)); // contraseña aleatoria 8 caracteres
+
+    
+$userModel = new UserModel();
+
+$user = new User([
+    'username' => $curp,
+    'email'    => $correo,
+    'password' => $password, // Shield la encripta automáticamente
+]);
+
+if (! $userModel->save($user)) {
+    return redirect()->to(base_url('Acceso/aspirante'))
+        ->with('error', 'No se pudo crear el usuario.');
+}
+
+
+
+
+
+    // Enviar correo con credenciales
+    $emailService = \Config\Services::email();
+    $emailService->setTo($correo);
+    $emailService->setSubject('Tu cuenta como aspirante');
+    $emailService->setMessage(
+        "Hola,\n\n" .
+        "Gracias por registrarte como aspirante.\n\n" .
+        "Tu nombre de usuario: $curp\n" .
+        "Tu contraseña: $password\n\n" .
+        "Por favor, guarda esta información de forma segura."
+    );
+
+    if (! $emailService->send()) {
+        return redirect()->to(base_url('Acceso/aspirante'))
+            ->with('error', 'No se pudo enviar el correo electrónico.');
+    }
+
+    return redirect()->to(base_url('Acceso/aspirante'))
+        ->with('success', 'Registro guardado. El usuario y contraseña han sido enviados al correo proporcionado.');
+        
+
+}
+
+    
+     
 
 
     /**
@@ -174,11 +233,11 @@ class Aspirante extends ResourceController
             $data['sub_miga'] = 'Editar';
             $data['user_info'] = $usuario;
 
-            return view('base/publico/editar_aspirante', $data);
-        } else {
-            return redirect()->to(site_url('Acceso/login'));
-        }
+        return view('base/administrador/editar_aspirante', $data);
+    } else {
+        return redirect()->to(site_url('Acceso/login'));
     }
+}
 
 
     /**
@@ -255,32 +314,82 @@ class Aspirante extends ResourceController
 
 
     public function indexAS()
-    {
-        if (auth()->loggedIn()) {
-            $user = auth()->user(); // Obtener datos del usuario
-
-            // Verificar si el nivel del usuario es 0 (admin) o 1 (developer)
-            if (!in_array($user->nivel, [0, 1])) {
-                return redirect()->to(site_url('Acceso/login'))->with('error', 'No tienes permiso para acceder a esta sección.');
-            }
-
-            $aspiranteModel = new AspiranteModel();
-
-            // Usar la función que ya devuelve los nombres de sede y carrera
-            $data['aspirantes'] = $aspiranteModel->obtenerConRelaciones();
-
-            // Datos para la vista
-            $data['titulo'] = 'Principal';
-            $data['miga'] = 'Tableros';
-            $data['url_miga'] = base_url() . 'principal';
-            $data['sub_miga'] = 'inicio';
-            $data['user_info'] = datos_usuario();
-
-            return view('base/publico/aspirantes_registrados', $data);
-        } else {
-            return redirect()->to(site_url('Acceso/login'));
-        }
+{
+    if (!auth()->loggedIn()) {
+        return redirect()->to(site_url('Acceso/login'));
     }
+
+    $user = auth()->user();
+    if (!in_array($user->nivel, [0, 1])) {
+        return redirect()->to(site_url('Acceso/login'))->with('error', 'No tienes permiso para acceder a esta sección.');
+    }
+
+    $sede = $this->request->getGet('sede');
+    $carrera = $this->request->getGet('carrera');
+    $preficha = $this->request->getGet('preficha');
+    $buscar = $this->request->getGet('buscar');
+
+    $porPagina = 10; // registros por página
+    $paginaActual = (int) ($this->request->getGet('page') ?? 1);
+    if ($paginaActual < 1) $paginaActual = 1;
+    $offset = ($paginaActual - 1) * $porPagina;
+
+    $aspiranteModel = new AspiranteModel();
+
+    // Consulta base
+    $query = $aspiranteModel->select('aspirantes.*, sedes.nombre_sede as sede, carreras.nombre as carrera')
+        ->join('sedes', 'sedes.id_sede = aspirantes.sede')
+        ->join('carreras', 'carreras.id = aspirantes.carrera');
+
+    // Filtros
+    if (!empty($sede)) {
+        $query->where('sedes.id_sede', $sede);
+    }
+
+    if (!empty($carrera)) {
+        $query->where('carreras.id', $carrera);
+    }
+
+    if ($preficha === '1' || $preficha === '0') {
+        $query->where('aspirantes.preficha', $preficha);
+    }
+
+    if (!empty($buscar)) {
+        $query->groupStart()
+              ->like('aspirantes.curp', $buscar)
+              ->orLike('aspirantes.nombre', $buscar)
+              ->orLike('aspirantes.primer_apellido', $buscar)
+              ->orLike('aspirantes.segundo_apellido', $buscar)
+              ->groupEnd();
+    }
+
+    // Obtener total para paginación
+    $totalRegistros = $query->countAllResults(false); // false para no resetear el builder
+
+    // Obtener datos de la página actual con límite y offset
+    $aspirantes = $query->limit($porPagina, $offset)->find();
+
+    $totalPaginas = ceil($totalRegistros / $porPagina);
+
+    $data = [
+        'aspirantes' => $aspirantes,
+        'filtro_sede' => $sede,
+        'filtro_carrera' => $carrera,
+        'filtro_preficha' => $preficha,
+        'buscar' => $buscar,
+        'paginaActual' => $paginaActual,
+        'totalPaginas' => $totalPaginas,
+        'titulo' => 'Principal',
+        'miga' => 'Tableros',
+        'url_miga' => base_url() . 'principal',
+        'sub_miga' => 'inicio',
+        'user_info' => datos_usuario(),
+    ];
+
+    return view('base/administrador/aspirantes_registrados', $data);
+}
+
+
 
 
 
@@ -340,23 +449,159 @@ class Aspirante extends ResourceController
             $segundo_apellido = array_pop($partes); // Penúltimo
             $nombres = implode(' ', $partes); // El resto
 
-            $fechaNacimiento = $this->obtenerFechaNacimientoDesdeCurp($curp);
-            $edad = $this->calcularEdad($fechaNacimiento);
-            $genero = $this->obtenerGeneroDesdeCurp($curp);
+        $fechaNacimiento = $this->obtenerFechaNacimientoDesdeCurp($curp);
+        $edad = $this->calcularEdad($fechaNacimiento);
+        $genero = $this->obtenerGeneroDesdeCurp($curp);
 
-            return view('base/publico/aspirantes', [
-                'curp' => $curp,
-                'fecha_nacimiento' => $fechaNacimiento,
-                'edad' => $edad,
-                'genero' => $genero,
-                'nombre' => $nombres,
-                'primer_apellido' => $segundo_apellido,
-                'segundo_apellido' => $primer_apellido
-            ]);
-        }
+        $convocatoriaModel = new \App\Models\ConvocatoriaModel();
+$convocatoria = $convocatoriaModel->obtenerConvocatoriaActiva();
+
+        return view('base/publico/aspirantes', [
+            'curp'             => $curp,
+            'fecha_nacimiento' => $fechaNacimiento,
+            'edad'             => $edad,
+            'genero'           => $genero,
+            'nombre'           => $nombres,
+            'primer_apellido'  => $segundo_apellido,
+            'segundo_apellido' => $primer_apellido,
+              'periodo'          => $convocatoria['codigo'] ?? null,
+
+        ]);
+    }
 
         return redirect()->back()->with('error', 'Error al subir el archivo.');
+    }   
+
+
+public function generarFalsosAspirantes($cantidad = 10)
+{
+    helper('text');
+    $aspiranteModel = new AspiranteModel();
+    $userModel = new UserModel();
+    $faker = \Faker\Factory::create('es_MX');
+
+    $sedes = [1, 2];
+    $carreras = [22, 35, 36, 37, 38, 39, 40, 41, 42, 43];
+    $reingresos = ['Sí', 'No'];
+    $generos = ['M', 'F'];
+    $periodo='AGO25-DIC25';
+
+    for ($i = 0; $i < $cantidad; $i++) {
+        $curp = strtoupper(random_string('alnum', 18));
+        $correo = "aspirante{$i}_" . time() . "@example.com";
+        $password = bin2hex(random_bytes(4)); // 8 caracteres
+
+        $aspiranteModel->save([
+            'periodo'             => $periodo,
+            'curp'                => $curp,
+            'primer_apellido'     => $faker->lastName,
+            'segundo_apellido'    => $faker->lastName,
+            'nombre'              => $faker->firstName,
+            'correo'              => $correo,
+            'fecha_nacimiento'    => $faker->date('Y-m-d', '2005-01-01'),
+            'edad'                => $faker->numberBetween(17, 25),
+            'genero'              => $faker->randomElement($generos),
+            'telefono'            => $faker->numerify('951#######'),
+            'sede'                => $faker->randomElement($sedes),
+            'carrera'             => $faker->randomElement($carreras),
+            'sede_alternativa'    => null,
+            'carrera_alternativa' => null,
+            'reingreso'           => $faker->randomElement($reingresos),
+            'preficha'            => $faker->randomElement([0, 1]),
+        ]);
+
+        $user = new \CodeIgniter\Shield\Entities\User([
+            'username' => $curp,
+            'email'    => $correo,
+            'password' => $password,
+        ]);
+        $userModel->save($user);
+
+        $user = $userModel->findById($userModel->getInsertID());
+       
+        $userModel->save($user);
     }
+
+    return $this->response->setJSON(['status' => 'success', 'message' => "Se generaron $cantidad aspirantes aleatorios correctamente."]);
+}
+
+public function toggleExamen()
+{
+    $json = $this->request->getJSON();
+
+    if (!$json || !isset($json->curp) || !isset($json->examen)) {
+        return $this->response->setJSON(['success' => false, 'error' => 'Datos inválidos']);
+    }
+
+    $aspiranteModel = new \App\Models\AspiranteModel();
+    $actualizado = $aspiranteModel
+        ->where('curp', $json->curp)
+        ->set('examen', (int)$json->examen)
+        ->update();
+
+    return $this->response->setJSON(['success' => $actualizado]);
+}
+public function cargarCSV()
+{
+    if (!auth()->loggedIn() || !in_array(auth()->user()->nivel, [0, 1])) {
+        return redirect()->to(site_url('Acceso/login'))->with('error', 'No autorizado.');
+    }
+
+    $file = $this->request->getFile('csv_file');
+
+    if (!$file->isValid() || $file->getClientExtension() !== 'csv') {
+        return redirect()->back()->with('error', 'Archivo inválido. Asegúrate de subir un archivo .csv.');
+    }
+
+    $handle = fopen($file->getTempName(), 'r');
+    if (!$handle) {
+        return redirect()->back()->with('error', 'No se pudo leer el archivo CSV.');
+    }
+
+    $db = \Config\Database::connect();
+    $aspiranteModel = new \App\Models\AspiranteModel();
+    $actualizados = 0;
+
+    while (($row = fgetcsv($handle, 1000, ',')) !== false) {
+        $curp = trim($row[0] ?? '');
+
+        if ($curp !== '') {
+            $updated = $aspiranteModel->where('curp', $curp)->set(['examen' => 1])->update();
+            if ($updated) {
+                $actualizados++;
+            }
+        }
+    }
+
+    fclose($handle);
+
+    return redirect()->back()->with('mensaje', "Se actualizaron $actualizados aspirantes desde el CSV.");
+}
+
+
+public function imprimirSeleccionados()
+{
+    if (!auth()->loggedIn() || !in_array(auth()->user()->nivel, [0, 1])) {
+        return redirect()->to(site_url('Acceso/login'))->with('error', 'No autorizado.');
+    }
+
+    $aspiranteModel = new \App\Models\AspiranteModel();
+
+    $aspirantes = $aspiranteModel
+        ->select('aspirantes.curp, sedes.nombre_sede, carreras.nombre AS nombre_carrera')
+        ->join('sedes', 'sedes.id_sede = aspirantes.sede')
+        ->join('carreras', 'carreras.id = aspirantes.carrera')
+        ->where('aspirantes.examen', 1)
+        ->findAll();
+
+    return view('base/administrador/imprimir_seleccionados', [
+        'aspirantes' => $aspirantes,
+        'user_info'  => datos_usuario(),
+        'titulo'     => 'Aspirantes Seleccionados'
+    ]);
+}
+
+
 
     public function actualizarEstado($id)
     {

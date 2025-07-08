@@ -12,7 +12,7 @@ class PreguntasModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['seccion', 'texto', 'tipo_respuesta', 'opciones'];
+    protected $allowedFields    = ['seccion', 'texto', 'tipo_respuesta', 'opciones','pregunta_padre'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

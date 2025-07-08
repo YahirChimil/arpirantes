@@ -1,0 +1,1305 @@
+CRITICAL - 2025-06-01 11:58:43 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "base/templete/plantilla_final.php"
+[Method: GET, Route: Acceso/respondida]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('base/templete/plantilla_final.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('base/templete/plantilla_final', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/encuesta_contestada', [], true)
+ 4 APPPATH\Controllers\Acceso.php(90): view('base/publico/encuesta_contestada', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Acceso->encuesta_respondida()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceso))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 12:08:16 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\template\plantilla_final.php(14): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\template\\plantilla_final.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('base/template/plantilla_final', [], true)
+ 9 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+10 APPPATH\Controllers\Aspirante.php(22): view('base/publico/aspirantes')
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+12 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+13 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 12:09:33 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "encuesta/_bloque_preguntas.php"
+[Method: GET, Route: Acceso/encuesta]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('encuesta/_bloque_preguntas.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('encuesta/_bloque_preguntas', [], true)
+ 3 APPPATH\Views\base\publico\encuesta.php(42): view('encuesta/_bloque_preguntas', [...])
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\encuesta.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/encuesta', [], true)
+ 7 APPPATH\Controllers\Encuesta.php(55): view('base/publico/encuesta', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 12:10:11 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "encuesta/_bloque_preguntas.php"
+[Method: GET, Route: Acceso/encuesta]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('encuesta/_bloque_preguntas.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('encuesta/_bloque_preguntas', [], true)
+ 3 APPPATH\Views\base\publico\encuesta.php(42): view('encuesta/_bloque_preguntas', [...])
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\encuesta.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/encuesta', [], true)
+ 7 APPPATH\Controllers\Encuesta.php(55): view('base/publico/encuesta', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 12:13:07 --> CodeIgniter\Exceptions\RuntimeException: View themes, no current section.
+[Method: GET, Route: Acceso/aspirante]
+in SYSTEMPATH\View\View.php on line 430.
+ 1 APPPATH\Views\base\publico\aspirantes.php(237): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(22): view('base/publico/aspirantes')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 12:13:34 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\template\plantilla_final.php(12): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\template\\plantilla_final.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('base/template/plantilla_final', [], true)
+ 9 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+10 APPPATH\Controllers\Aspirante.php(22): view('base/publico/aspirantes')
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+12 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+13 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 12:15:20 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "encuesta/_bloque_preguntas.php"
+[Method: GET, Route: Acceso/encuesta]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('encuesta/_bloque_preguntas.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('encuesta/_bloque_preguntas', [], true)
+ 3 APPPATH\Views\base\publico\encuesta.php(42): view('encuesta/_bloque_preguntas', [...])
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\encuesta.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/encuesta', [], true)
+ 7 APPPATH\Controllers\Encuesta.php(55): view('base/publico/encuesta', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 12:25:29 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\template\plantilla_final.php(12): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\template\\plantilla_final.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('base/template/plantilla_final', [], true)
+ 9 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+10 APPPATH\Controllers\Aspirante.php(22): view('base/publico/aspirantes')
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+12 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+13 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 12:31:02 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\template\plantilla_final.php(12): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\template\\plantilla_final.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('base/template/plantilla_final', [], true)
+ 9 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+10 APPPATH\Controllers\Aspirante.php(22): view('base/publico/aspirantes')
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+12 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+13 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 13:51:09 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\aspirantes.php(25): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(22): view('base/publico/aspirantes')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 13:55:18 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: Acceso/aspirante]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\publico\aspirantes.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(22): view('base/publico/aspirantes')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 16:15:27 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method CodeIgniter\Shield\Models\UserModel::register
+[Method: POST, Route: guardar-aspirante]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\Aspirante.php(139): CodeIgniter\Model->__call('register', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->create()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 16:20:19 --> Error: Call to a member function isOK() on null
+[Method: POST, Route: guardar-aspirante]
+in APPPATH\Controllers\Aspirante.php on line 145.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->create()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 16:24:06 --> CodeIgniter\Shield\Authorization\AuthorizationException: aspirante is not a valid group.
+[Method: POST, Route: guardar-aspirante]
+in VENDORPATH\codeigniter4\shield\src\Authorization\AuthorizationException.php on line 24.
+ 1 VENDORPATH\codeigniter4\shield\src\Authorization\Traits\Authorizable.php(50): CodeIgniter\Shield\Authorization\AuthorizationException::forUnknownGroup('aspirante')
+ 2 APPPATH\Controllers\Aspirante.php(158): CodeIgniter\Shield\Entities\User->addGroup('aspirante')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->create()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+ERROR - 2025-06-01 16:25:41 --> mysqli_sql_exception: Duplicate entry 'RAZE520329MOCMRL02' for key 'users.username' in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\rockstar\rockstar\vendor\codeigniter4\shield\src\Models\UserModel.php(271): CodeIgniter\Model->insert(Object(CodeIgniter\Shield\Entities\User), false)
+#8 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(750): CodeIgniter\Shield\Models\UserModel->insert(Object(CodeIgniter\Shield\Entities\User), false)
+#9 C:\xampp\htdocs\rockstar\rockstar\vendor\codeigniter4\shield\src\Models\UserModel.php(333): CodeIgniter\BaseModel->save(Object(CodeIgniter\Shield\Entities\User))
+#10 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\Aspirante.php(149): CodeIgniter\Shield\Models\UserModel->save(Object(CodeIgniter\Shield\Entities\User))
+#11 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\Aspirante->create()
+#12 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+#13 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#14 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#15 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#16 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#17 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#18 {main}
+CRITICAL - 2025-06-01 16:25:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry 'RAZE520329MOCMRL02' for key 'users.username'
+[Method: POST, Route: guardar-aspirante]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`username`, `created_at`, `updated_at`) VALUES (:username:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], false)
+ 5 VENDORPATH\codeigniter4\shield\src\Models\UserModel.php(271): CodeIgniter\Model->insert(Object(CodeIgniter\Shield\Entities\User), false)
+ 6 SYSTEMPATH\BaseModel.php(750): CodeIgniter\Shield\Models\UserModel->insert(Object(CodeIgniter\Shield\Entities\User), false)
+ 7 VENDORPATH\codeigniter4\shield\src\Models\UserModel.php(333): CodeIgniter\BaseModel->save(Object(CodeIgniter\Shield\Entities\User))
+ 8 APPPATH\Controllers\Aspirante.php(149): CodeIgniter\Shield\Models\UserModel->save(Object(CodeIgniter\Shield\Entities\User))
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->create()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 16:25:41 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry 'RAZE520329MOCMRL02' for key 'users.username'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`username`, `created_at`, `updated_at`) VALUES (\'RAZE520329MOCMRL02\', \'2025-06-01 16:25:41\', \'2025-06-01 16:25:41\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`username`, `created_at`, `updated_at`) VALUES (\'RAZE520329MOCMRL02\', \'2025-06-01 16:25:41\', \'2025-06-01 16:25:41\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`username`, `created_at`, `updated_at`) VALUES (:username:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], false)
+ 7 VENDORPATH\codeigniter4\shield\src\Models\UserModel.php(271): CodeIgniter\Model->insert(Object(CodeIgniter\Shield\Entities\User), false)
+ 8 SYSTEMPATH\BaseModel.php(750): CodeIgniter\Shield\Models\UserModel->insert(Object(CodeIgniter\Shield\Entities\User), false)
+ 9 VENDORPATH\codeigniter4\shield\src\Models\UserModel.php(333): CodeIgniter\BaseModel->save(Object(CodeIgniter\Shield\Entities\User))
+10 APPPATH\Controllers\Aspirante.php(149): CodeIgniter\Shield\Models\UserModel->save(Object(CodeIgniter\Shield\Entities\User))
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->create()
+12 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+13 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 16:25:41 --> [Caused by] mysqli_sql_exception: Duplicate entry 'RAZE520329MOCMRL02' for key 'users.username'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `users` (`username`, `created_at`, `updated_at`) VALUES (\'RAZE520329MOCMRL02\', \'2025-06-01 16:25:41\', \'2025-06-01 16:25:41\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`username`, `created_at`, `updated_at`) VALUES (\'RAZE520329MOCMRL02\', \'2025-06-01 16:25:41\', \'2025-06-01 16:25:41\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`username`, `created_at`, `updated_at`) VALUES (\'RAZE520329MOCMRL02\', \'2025-06-01 16:25:41\', \'2025-06-01 16:25:41\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`username`, `created_at`, `updated_at`) VALUES (:username:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], false)
+ 8 VENDORPATH\codeigniter4\shield\src\Models\UserModel.php(271): CodeIgniter\Model->insert(Object(CodeIgniter\Shield\Entities\User), false)
+ 9 SYSTEMPATH\BaseModel.php(750): CodeIgniter\Shield\Models\UserModel->insert(Object(CodeIgniter\Shield\Entities\User), false)
+10 VENDORPATH\codeigniter4\shield\src\Models\UserModel.php(333): CodeIgniter\BaseModel->save(Object(CodeIgniter\Shield\Entities\User))
+11 APPPATH\Controllers\Aspirante.php(149): CodeIgniter\Shield\Models\UserModel->save(Object(CodeIgniter\Shield\Entities\User))
+12 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->create()
+13 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+14 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+17 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+18 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 16:26:55 --> CodeIgniter\Shield\Authorization\AuthorizationException: aspirante is not a valid group.
+[Method: POST, Route: guardar-aspirante]
+in VENDORPATH\codeigniter4\shield\src\Authorization\AuthorizationException.php on line 24.
+ 1 VENDORPATH\codeigniter4\shield\src\Authorization\Traits\Authorizable.php(50): CodeIgniter\Shield\Authorization\AuthorizationException::forUnknownGroup('aspirante')
+ 2 APPPATH\Controllers\Aspirante.php(158): CodeIgniter\Shield\Entities\User->addGroup('aspirante')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->create()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 16:54:13 --> CodeIgniter\Shield\Authorization\AuthorizationException: aspirante is not a valid group.
+[Method: GET, Route: Acceso/generarFalsosAspirantes]
+in VENDORPATH\codeigniter4\shield\src\Authorization\AuthorizationException.php on line 24.
+ 1 VENDORPATH\codeigniter4\shield\src\Authorization\Traits\Authorizable.php(50): CodeIgniter\Shield\Authorization\AuthorizationException::forUnknownGroup('aspirante')
+ 2 APPPATH\Controllers\Aspirante.php(433): CodeIgniter\Shield\Entities\User->addGroup('aspirante')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->generarFalsosAspirantes()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 17:00:18 --> CodeIgniter\Shield\Authorization\AuthorizationException: aspirante is not a valid group.
+[Method: GET, Route: Acceso/generarFalsosAspirantes]
+in VENDORPATH\codeigniter4\shield\src\Authorization\AuthorizationException.php on line 24.
+ 1 VENDORPATH\codeigniter4\shield\src\Authorization\Traits\Authorizable.php(50): CodeIgniter\Shield\Authorization\AuthorizationException::forUnknownGroup('aspirante')
+ 2 APPPATH\Controllers\Aspirante.php(440): CodeIgniter\Shield\Entities\User->addGroup('aspirante')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->generarFalsosAspirantes()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 17:01:13 --> CodeIgniter\Shield\Authorization\AuthorizationException: aspirante is not a valid group.
+[Method: GET, Route: Acceso/generarFalsosAspirantes]
+in VENDORPATH\codeigniter4\shield\src\Authorization\AuthorizationException.php on line 24.
+ 1 VENDORPATH\codeigniter4\shield\src\Authorization\Traits\Authorizable.php(50): CodeIgniter\Shield\Authorization\AuthorizationException::forUnknownGroup('aspirante')
+ 2 APPPATH\Controllers\Aspirante.php(440): CodeIgniter\Shield\Entities\User->addGroup('aspirante')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->generarFalsosAspirantes()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 21:37:11 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 85.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 85)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(312): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 21:40:56 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 85.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 85)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(312): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 21:42:13 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 85.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 85)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(312): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 21:44:51 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 85.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 85)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(312): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 21:44:54 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 85.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 85)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(312): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 21:46:14 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 84.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 84)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(312): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 21:49:46 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 84.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 84)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(313): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 21:51:29 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 84.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 84)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(313): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 21:51:32 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 84.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 84)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(313): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 21:56:16 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 84.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 84)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(313): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 21:56:21 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 84.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 84)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(313): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 21:58:48 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 84.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 84)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(313): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:01:09 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 84.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 84)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(313): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:01:17 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 84.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 84)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(313): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:03:39 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 84.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 84)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(313): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:03:42 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 84.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 84)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(313): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:03:50 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 84.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 84)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(313): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:04:51 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 84.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 84)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(313): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:04:53 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 84.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 84)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(313): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:04:54 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 84.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 84)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(313): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:06:47 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 84.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 84)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(313): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:06:48 --> ErrorException: Undefined array key "preficha"
+[Method: GET, Route: Acceso/aspirante_registrados]
+in APPPATH\Views\base\publico\aspirantes_registrados.php on line 84.
+ 1 APPPATH\Views\base\publico\aspirantes_registrados.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "preficha"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php', 84)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirantes_registrados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirantes_registrados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(313): view('base/publico/aspirantes_registrados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+ERROR - 2025-06-01 22:15:03 --> mysqli_sql_exception: Unknown column 'aspirante.preficha' in 'field list' in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\rockstar\rockstar\app\Models\AspiranteModel.php(68): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\Aspirante.php(304): App\Models\AspiranteModel->obtenerConRelaciones()
+#8 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+#9 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+#10 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-06-01 22:15:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'aspirante.preficha' in 'field list'
+[Method: GET, Route: Acceso/aspirante_registrados]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`, `aspirante`.`preficha`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\AspiranteModel.php(68): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Aspirante.php(304): App\Models\AspiranteModel->obtenerConRelaciones()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:15:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'aspirante.preficha' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`, `aspirante`.`preficha`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`, `aspirante`.`preficha`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`, `aspirante`.`preficha`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\AspiranteModel.php(68): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Aspirante.php(304): App\Models\AspiranteModel->obtenerConRelaciones()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:15:03 --> [Caused by] mysqli_sql_exception: Unknown column 'aspirante.preficha' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`, `aspirante`.`preficha`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`, `aspirante`.`preficha`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`, `aspirante`.`preficha`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.`curp`, `aspirantes`.`nombre`, `aspirantes`.`primer_apellido`, `aspirantes`.`segundo_apellido`, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`, `aspirante`.`preficha`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\AspiranteModel.php(68): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Aspirante.php(304): App\Models\AspiranteModel->obtenerConRelaciones()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+ERROR - 2025-06-01 22:15:43 --> mysqli_sql_exception: Unknown column 'sedes.nombre' in 'field list' in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\rockstar\rockstar\app\Models\AspiranteModel.php(68): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\Aspirante.php(304): App\Models\AspiranteModel->obtenerConRelaciones()
+#8 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+#9 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+#10 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-06-01 22:15:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sedes.nombre' in 'field list'
+[Method: GET, Route: Acceso/aspirante_registrados]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\AspiranteModel.php(68): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Aspirante.php(304): App\Models\AspiranteModel->obtenerConRelaciones()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:15:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sedes.nombre' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\AspiranteModel.php(68): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Aspirante.php(304): App\Models\AspiranteModel->obtenerConRelaciones()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:15:43 --> [Caused by] mysqli_sql_exception: Unknown column 'sedes.nombre' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\AspiranteModel.php(68): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Aspirante.php(304): App\Models\AspiranteModel->obtenerConRelaciones()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+ERROR - 2025-06-01 22:22:20 --> mysqli_sql_exception: Unknown column 'sedes.nombre' in 'field list' in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\Aspirante.php(323): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+#8 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+#9 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-06-01 22:22:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sedes.nombre' in 'field list'
+[Method: GET, Route: Acceso/aspirante_registrados]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Aspirante.php(323): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:22:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sedes.nombre' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Aspirante.php(323): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:22:20 --> [Caused by] mysqli_sql_exception: Unknown column 'sedes.nombre' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Aspirante.php(323): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+ERROR - 2025-06-01 22:24:02 --> mysqli_sql_exception: Unknown column 'sedes.nombre' in 'field list' in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\Aspirante.php(323): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+#8 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+#9 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-06-01 22:24:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sedes.nombre' in 'field list'
+[Method: GET, Route: Acceso/aspirante_registrados]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Aspirante.php(323): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:24:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sedes.nombre' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Aspirante.php(323): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:24:02 --> [Caused by] mysqli_sql_exception: Unknown column 'sedes.nombre' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Aspirante.php(323): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+ERROR - 2025-06-01 22:24:15 --> mysqli_sql_exception: Unknown column 'aspirantes.carrera_id' in 'on clause' in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\Aspirante.php(323): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+#8 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+#9 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-06-01 22:24:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'aspirantes.carrera_id' in 'on clause'
+[Method: GET, Route: Acceso/aspirante_registrados]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Aspirante.php(323): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:24:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'aspirantes.carrera_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Aspirante.php(323): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:24:15 --> [Caused by] mysqli_sql_exception: Unknown column 'aspirantes.carrera_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede_id`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Aspirante.php(323): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+ERROR - 2025-06-01 22:24:55 --> mysqli_sql_exception: Unknown column 'sedes.id' in 'on clause' in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\Aspirante.php(323): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+#8 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+#9 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-06-01 22:24:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sedes.id' in 'on clause'
+[Method: GET, Route: Acceso/aspirante_registrados]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Aspirante.php(323): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:24:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sedes.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Aspirante.php(323): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:24:55 --> [Caused by] mysqli_sql_exception: Unknown column 'sedes.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Aspirante.php(323): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+ERROR - 2025-06-01 22:25:23 --> mysqli_sql_exception: Unknown column 'sedes.id' in 'where clause' in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\Aspirante.php(323): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+#8 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+#9 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-06-01 22:25:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sedes.id' in 'where clause'
+[Method: GET, Route: Acceso/aspirante_registrados]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+WHERE `sedes`.`id` = :sedes.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Aspirante.php(323): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:25:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sedes.id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+WHERE `sedes`.`id` = \'1\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+WHERE `sedes`.`id` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+WHERE `sedes`.`id` = :sedes.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Aspirante.php(323): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-06-01 22:25:23 --> [Caused by] mysqli_sql_exception: Unknown column 'sedes.id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+WHERE `sedes`.`id` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+WHERE `sedes`.`id` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+WHERE `sedes`.`id` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+WHERE `sedes`.`id` = :sedes.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Aspirante.php(323): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexAS()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')

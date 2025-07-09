@@ -30,7 +30,7 @@ class AspiranteModel extends Model
         'reingreso',
         'preficha',
         'periodo',
-        'examen',,
+        'examen',
         'examen_aprobado',
         'pago_realizado',
         'grupo_nivelacion',

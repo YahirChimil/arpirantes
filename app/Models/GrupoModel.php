@@ -8,7 +8,7 @@ class GrupoModel extends Model
 {
     protected $table = 'grupos';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['nombre', 'capacidad'];
+    protected $allowedFields = ['nombre', 'capacidad', 'hora_inicio', 'hora_fin', 'asignados', 'tipo', 'catedratico', 'aula', 'sede','carrera'];
 
     /*
     public function getGruposConAsignados()

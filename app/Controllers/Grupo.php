@@ -14,6 +14,70 @@ use Dompdf\Dompdf;
 
 class Grupo extends Controller
 {
+    public function index()
+    {
+        $grupoModel = new \App\Models\GrupoModel();
+       
+        $convocatoriaSeleccionada = $this->request->getGet('convocatoria') ?? 'AGO25-DIC25'; // o la que uses
+
+       
+        $aspirantesSinGrupo = $this->obtenerAspirantesSinGrupoNivelacion($convocatoriaSeleccionada);
+
+        $sedeModel = new \App\Models\SedesModel(); // Ajusta el nombre si tu modelo tiene otro
+        $sedes = $sedeModel->findAll();
+
+        $grupos = $grupoModel->findAll();
+
+        foreach ($grupos as &$grupo) {
+            $aspiranteModelTemp = new \App\Models\AspiranteModel();
+            $grupo['asignados'] = $aspiranteModelTemp
+                ->where('grupo_nivelacion', $grupo['nombre'])
+                ->countAllResults();
+        }
+
+            $data=[
+        'titulo'     => 'Documentación',
+            'miga'       => 'Aspirante',
+            'url_miga'   => base_url('aspirante/documentacion'),
+            'sub_miga'   => 'documentacion',
+            'user_info'  => datos_usuario(),
+            'grupos' => $grupos,
+            'sedes'  => $sedes,
+            'aulas' => (new \App\Models\AulasModel())->findAll(),
+            'aspirantesSinGrupoCurso' => $aspirantesSinGrupo,
+        'convocatoriaSeleccionada' => $convocatoriaSeleccionada,
+            
+            ];
+
+        return view('base/administrador/grupos_curso', $data);
+    }
+
+
+    public function obtenerAspirantesSinGrupoNivelacion($convocatoriaSeleccionada)
+{
+    $aspiranteModel = new \App\Models\AspiranteModel();
+   
+
+    $builder = $aspiranteModel->builder();
+
+    $aspirantesSinGrupo = $builder
+    ->select('aspirantes.sede AS sede_id, aspirantes.carrera AS carrera_id, sedes.nombre_sede, carreras.nombre AS nombre_carrera, COUNT(*) AS total')
+    ->join('sedes', 'sedes.id_sede = aspirantes.sede')
+    ->join('carreras', 'carreras.id = aspirantes.carrera')
+    ->join('aspirante_grupo_examen', 'aspirante_grupo_examen.curp = aspirantes.curp', 'left')
+    ->where('aspirantes.grupo_nivelacion IS NULL', null, false) // condición IS NULL sin escapar
+    ->where('aspirantes.periodo', $convocatoriaSeleccionada)
+    ->where('aspirantes.preficha', 1)
+    ->where('aspirantes.examen', 1)
+    ->groupBy('aspirantes.sede, aspirantes.carrera')
+    ->get()
+    ->getResultArray();
+
+return $aspirantesSinGrupo;
+
+}
+
+    
     public function crear()
     {
         $grupoModel = new GrupoModel();
@@ -31,21 +95,7 @@ class Grupo extends Controller
         return redirect()->back()->with('mensaje', 'Grupo eliminado.');
     }
 
-    public function index()
-    {
-        $grupoModel = new \App\Models\GrupoModel();
-        $aspiranteModel = new \App\Models\AspiranteModel();
-
-        $grupos = $grupoModel->findAll();
-
-        foreach ($grupos as &$grupo) {
-            $aspiranteModelTemp = new \App\Models\AspiranteModel();
-            $grupo['asignados'] = $aspiranteModelTemp
-                ->where('grupo_nivelacion', $grupo['nombre'])
-                ->countAllResults();
-        }
-        return view('base/publico/asignar_grupo', ['grupos' => $grupos]);
-    }
+    
 
     public function verAspirantes($grupoId)
     {
@@ -58,7 +108,7 @@ class Grupo extends Controller
         }
 
         $aspirantes = $aspiranteModel
-            ->select('aspirantes.curp, aspirantes.nombre, aspirantes.primer_apellido, aspirantes.segundo_apellido, aspirantes.examen_aprobado, sedes.nombre_sede as nombre_sede, carreras.nombre AS nombre_carrera, nivelacion_aprobado')
+            ->select('aspirantes.curp, aspirantes.nombre, aspirantes.primer_apellido, aspirantes.segundo_apellido, aspirantes.examen, sedes.nombre_sede as nombre_sede, carreras.nombre AS nombre_carrera, nivelacion_aprobado')
             ->join('sedes', 'aspirantes.sede = sedes.id_sede')
             ->join('carreras', 'aspirantes.carrera = carreras.id')
             ->where('grupo_nivelacion', $grupo['id'])

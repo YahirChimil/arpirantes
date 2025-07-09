@@ -121,21 +121,7 @@ License:
                         </div>
                     </div>
 
-                    <!-- NUEVO ANDREY -->
-                    <!-- Examen Aprobado -->
-                    <input type="hidden" name="examen_aprobado" value="0">
-                    <label>
-                        <input type="checkbox" name="examen_aprobado" value="1" <?= $aspirante['examen_aprobado'] ? 'checked' : '' ?>>
-                        Examen Aprobado
-                    </label><br>
-
-                    <!-- Pago Realizado -->
-                    <input type="hidden" name="pago_realizado" value="0">
-                    <label>
-                        <input type="checkbox" name="pago_realizado" value="1" <?= $aspirante['pago_realizado'] ? 'checked' : '' ?>>
-                        Pago Realizado
-                    </label><br>
-
+                   
 
                     <!-- Campos de sede y carrera en ancho completo -->
                     <div class="space-y-4">

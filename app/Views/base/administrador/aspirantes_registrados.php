@@ -142,6 +142,17 @@ License:
                                class="text-blue-600 hover:underline text-sm">
                                Editar
                             </a>
+                            
+                            <?php if ((int) $aspirante['examen'] === 1 && (int) $aspirante['preficha'] === 1): ?>
+                                    <a href="<?= base_url('aspirante/asignarGrupoVista/' . $aspirante['curp']) ?>"
+                                        class="btn btn-sm btn-success">
+                                        Asignar a Grupo
+                                    </a>
+                                <?php else: ?>
+                                    <span class="text-muted">Pendiente</span>
+                               <?php endif;?>
+
+
                         </td>
                     </tr>
                 <?php endforeach; ?>

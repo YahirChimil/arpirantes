@@ -112,6 +112,12 @@ $routes->post('grupo/guardar_aprobados', 'Grupo::guardar_aprobados');
 
 $routes->get('grupo/exportar_aprobados/(:num)', 'Grupo::exportarPDF/$1');
 
+$routes->get('grupos/curso', 'Grupo::index');
+
+
+
+
+
 $routes->get('Acceso/respondida', 'Acceso::encuesta_respondida');
 $routes->get('aspirante/generarFalsosAspirantes/(:num)', 'Aspirante::generarFalsosAspirantes/$1');
 $routes->post('aspirante/toggle-examen', 'Aspirante::toggleExamen');

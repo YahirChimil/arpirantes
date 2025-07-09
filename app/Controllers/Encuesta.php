@@ -35,6 +35,7 @@ class Encuesta extends ResourceController
         $respuesta = $builder->get()->getRow();
 
         if ($respuesta) {
+            
             return redirect()->to(site_url('Acceso/respondida'))->with('warning', 'Ya has respondido esta encuesta.');
         }
         

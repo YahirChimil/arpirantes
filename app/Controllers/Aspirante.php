@@ -280,8 +280,7 @@ if (! $userModel->save($user)) {
                 'carrera_alternativa' => $this->request->getPost('carrera_alternativa'),
                 'reingreso' => $this->request->getPost('reingreso'),
                 //Datos NUEVOS
-                'examen_aprobado' => $this->request->getPost('examen_aprobado'),
-                'pago_realizado' => $this->request->getPost('pago_realizado'),
+                
             ];
 
 

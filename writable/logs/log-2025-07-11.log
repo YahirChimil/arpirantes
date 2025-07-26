@@ -1,0 +1,139 @@
+ERROR - 2025-07-11 13:33:16 --> mysqli_sql_exception: Table 'discere_dev2.aspirante_grupo_curso' doesn't exist in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `curp`\nF...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `curp`\nF...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `curp`\nF...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `curp`\nF...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\Grupo.php(166): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('2')
+#6 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+#7 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-07-11 13:33:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'discere_dev2.aspirante_grupo_curso' doesn't exist
+[Method: GET, Route: grupos/verAspirantes/2]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `curp`
+FROM `aspirante_grupo_curso`
+WHERE `grupo_id` = :grupo_id:', [...], false)
+ 2 APPPATH\Controllers\Grupo.php(166): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('2')
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-11 13:33:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'discere_dev2.aspirante_grupo_curso' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `curp`
+FROM `aspirante_grupo_curso`
+WHERE `grupo_id` = \'2\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `curp`
+FROM `aspirante_grupo_curso`
+WHERE `grupo_id` = \'2\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `curp`
+FROM `aspirante_grupo_curso`
+WHERE `grupo_id` = :grupo_id:', [...], false)
+ 4 APPPATH\Controllers\Grupo.php(166): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('2')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-11 13:33:16 --> [Caused by] mysqli_sql_exception: Table 'discere_dev2.aspirante_grupo_curso' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `curp`
+FROM `aspirante_grupo_curso`
+WHERE `grupo_id` = \'2\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `curp`
+FROM `aspirante_grupo_curso`
+WHERE `grupo_id` = \'2\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `curp`
+FROM `aspirante_grupo_curso`
+WHERE `grupo_id` = \'2\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `curp`
+FROM `aspirante_grupo_curso`
+WHERE `grupo_id` = :grupo_id:', [...], false)
+ 5 APPPATH\Controllers\Grupo.php(166): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('2')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-11 13:36:58 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "base/administrador/ver_aspirantes_grupo_curso.php"
+[Method: GET, Route: grupos/verAspirantes/2]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('base/administrador/ver_aspirantes_grupo_curso.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_grupo_curso', [], true)
+ 3 APPPATH\Controllers\Grupo.php(185): view('base/administrador/ver_aspirantes_grupo_curso', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('2')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-11 14:24:31 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "base/administrador/ver_aspirantes_curso.php"
+[Method: GET, Route: grupos/verAspirantes/2]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('base/administrador/ver_aspirantes_curso.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_curso', [], true)
+ 3 APPPATH\Controllers\Grupo.php(166): view('base/administrador/ver_aspirantes_curso', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('2')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-11 17:39:38 --> ErrorException: Attempt to read property "id" on null
+[Method: GET, Route: grupos/curso]
+in APPPATH\Helpers\usuarios_helper.php on line 16.
+ 1 APPPATH\Helpers\usuarios_helper.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Helpers\\usuarios_helper.php', 16)
+ 2 APPPATH\Controllers\Grupo.php(47): datos_usuario()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-11 17:39:54 --> ErrorException: Attempt to read property "id" on null
+[Method: GET, Route: grupos/curso]
+in APPPATH\Helpers\usuarios_helper.php on line 16.
+ 1 APPPATH\Helpers\usuarios_helper.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Helpers\\usuarios_helper.php', 16)
+ 2 APPPATH\Controllers\Grupo.php(47): datos_usuario()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+ERROR - 2025-07-11 17:54:17 --> mysqli_sql_exception: Duplicate entry '1CA' for key 'grupos_examen.nombre' in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `gr...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `gr...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `gr...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `gr...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(750): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\GruposExamen.php(112): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\GruposExamen->guardar()
+#10 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+#11 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}

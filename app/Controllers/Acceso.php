@@ -1,19 +1,19 @@
 <?php
 
 namespace App\Controllers;
+
 use CodeIgniter\Shield\Entities\User;
 
 
 class Acceso extends BaseController
-{   
+{
     public function index()
     {
-        if (auth()->loggedIn()) {  
+        if (auth()->loggedIn()) {
             return redirect()->to(site_url('Acceso/principal'));
-        } else { 
-            return view('acceso/login'); 
+        } else {
+            return view('acceso/login');
         }
-        
     }
     public function principal()
     {
@@ -26,7 +26,6 @@ class Acceso extends BaseController
             $data['user_info'] = datos_usuario();
 
             return view('base/vista_base', $data);
-
         } else {
             return redirect()->to(site_url('Acceso/login'));
         }
@@ -38,9 +37,9 @@ class Acceso extends BaseController
             'password' => $this->request->getPost('contrasena')
         ];
         $loginAttempt = auth()->attempt($credentials);
-        
+
         if (! $loginAttempt->isOK()) {
-            $data['error'] =  $loginAttempt->reason(); 
+            $data['error'] =  $loginAttempt->reason();
             print_r($data);
         } else {
             return redirect()->to(site_url('/'));
@@ -73,33 +72,37 @@ class Acceso extends BaseController
         ]);
         $users->save($user);
         // To get the complete user object with ID, we need to get from the database
-        print_r($users->findById($users->getInsertID())) ;
+        print_r($users->findById($users->getInsertID()));
     }
 
     public function encuesta_respondida()
-{
-    if (auth()->loggedIn()) {
-        $user = auth()->user();
+    {
+        if (auth()->loggedIn()) {
+            $user = auth()->user();
 
-        $aspiranteModel = new \App\Models\AspiranteModel();
-        $aspirante = $aspiranteModel->where('curp', $user->username)->first();
+            $aspiranteModel = new \App\Models\AspiranteModel();
+            $aspirante = $aspiranteModel->where('curp', $user->username)->first();
 
-        $estadoPreficha = $aspirante['preficha'] ?? 0;
+            $estadoPreficha = $aspirante['preficha'] ?? 0;
 
-        $data = [
-            'titulo'         => 'Principal',
-            'miga'           => 'Tableros',
-            'url_miga'       => base_url() . 'principal',
-            'sub_miga'       => 'inicio',
-            'user_info'      => datos_usuario(),
-            'estadoPreficha' => $estadoPreficha
-        ];
+            // Verificar si existe una fecha de preficha
 
-        return view('base/publico/encuesta_contestada', $data); 
+            $prefichaModel = new \App\Models\PrefichasModel();
+            $fechaPreficha = $prefichaModel->where('curp', $user->username)->first();
 
-    } else {
-        return redirect()->to(site_url('Acceso/login'));
+            $data = [
+                'titulo'         => 'Principal',
+                'miga'           => 'Tableros',
+                'url_miga'       => base_url() . 'principal',
+                'sub_miga'       => 'inicio',
+                'user_info'      => datos_usuario(),
+                'estadoPreficha' => $estadoPreficha,
+                'fechaPreficha'  => $fechaPreficha, // Pasar la fecha de preficha a la vista
+            ];
+
+            return view('base/publico/encuesta_contestada', $data);
+        } else {
+            return redirect()->to(site_url('Acceso/login'));
+        }
     }
-}
-
 }

@@ -1,0 +1,143 @@
+CRITICAL - 2025-07-10 14:59:05 --> ErrorException: Attempt to read property "id" on null
+[Method: GET, Route: grupos/curso]
+in APPPATH\Helpers\usuarios_helper.php on line 16.
+ 1 APPPATH\Helpers\usuarios_helper.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Helpers\\usuarios_helper.php', 16)
+ 2 APPPATH\Controllers\Grupo.php(43): datos_usuario()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-10 15:03:32 --> ErrorException: Undefined array key "nombre_sede"
+[Method: GET, Route: grupos/curso]
+in APPPATH\Views\base\administrador\grupos_curso.php on line 59.
+ 1 APPPATH\Views\base\administrador\grupos_curso.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre_sede"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\grupos_curso.php', 59)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\grupos_curso.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/grupos_curso', [], true)
+ 5 APPPATH\Controllers\Grupo.php(52): view('base/administrador/grupos_curso', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-10 15:03:51 --> ErrorException: Undefined array key "sede_nombre"
+[Method: GET, Route: grupos/curso]
+in APPPATH\Views\base\administrador\grupos_curso.php on line 59.
+ 1 APPPATH\Views\base\administrador\grupos_curso.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sede_nombre"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\grupos_curso.php', 59)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\grupos_curso.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/grupos_curso', [], true)
+ 5 APPPATH\Controllers\Grupo.php(52): view('base/administrador/grupos_curso', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-10 15:04:10 --> ErrorException: Undefined array key "nombre_carrera"
+[Method: GET, Route: grupos/curso]
+in APPPATH\Views\base\administrador\grupos_curso.php on line 60.
+ 1 APPPATH\Views\base\administrador\grupos_curso.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre_carrera"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\grupos_curso.php', 60)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\grupos_curso.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/grupos_curso', [], true)
+ 5 APPPATH\Controllers\Grupo.php(52): view('base/administrador/grupos_curso', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+ERROR - 2025-07-10 15:14:33 --> mysqli_sql_exception: Table 'discere_dev2.sede' doesn't exist in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `grupos`...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `grupos`...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `grupos`...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `grupos`...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\Grupo.php(41): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\Grupo->index()
+#6 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+#7 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-07-10 15:14:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'discere_dev2.sede' doesn't exist
+[Method: GET, Route: grupos/curso]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `grupos`.*, `sedes`.`nombre_sede` AS `nombre_sede`, `carreras`.`nombre` AS `nombre_carrera`, `aulas`.`nombre` AS `nombre_aula`
+FROM `grupos`
+JOIN `sede` ON `sedes`.`id_sede` = `grupos`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `grupos`.`carrera`
+JOIN `aulas` ON `aulas`.`id` = `grupos`.`aula`', [], false)
+ 2 APPPATH\Controllers\Grupo.php(41): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-10 15:14:33 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'discere_dev2.sede' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `grupos`.*, `sedes`.`nombre_sede` AS `nombre_sede`, `carreras`.`nombre` AS `nombre_carrera`, `aulas`.`nombre` AS `nombre_aula`
+FROM `grupos`
+JOIN `sede` ON `sedes`.`id_sede` = `grupos`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `grupos`.`carrera`
+JOIN `aulas` ON `aulas`.`id` = `grupos`.`aula`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `grupos`.*, `sedes`.`nombre_sede` AS `nombre_sede`, `carreras`.`nombre` AS `nombre_carrera`, `aulas`.`nombre` AS `nombre_aula`
+FROM `grupos`
+JOIN `sede` ON `sedes`.`id_sede` = `grupos`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `grupos`.`carrera`
+JOIN `aulas` ON `aulas`.`id` = `grupos`.`aula`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `grupos`.*, `sedes`.`nombre_sede` AS `nombre_sede`, `carreras`.`nombre` AS `nombre_carrera`, `aulas`.`nombre` AS `nombre_aula`
+FROM `grupos`
+JOIN `sede` ON `sedes`.`id_sede` = `grupos`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `grupos`.`carrera`
+JOIN `aulas` ON `aulas`.`id` = `grupos`.`aula`', [], false)
+ 4 APPPATH\Controllers\Grupo.php(41): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-10 15:14:33 --> [Caused by] mysqli_sql_exception: Table 'discere_dev2.sede' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `grupos`.*, `sedes`.`nombre_sede` AS `nombre_sede`, `carreras`.`nombre` AS `nombre_carrera`, `aulas`.`nombre` AS `nombre_aula`
+FROM `grupos`
+JOIN `sede` ON `sedes`.`id_sede` = `grupos`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `grupos`.`carrera`
+JOIN `aulas` ON `aulas`.`id` = `grupos`.`aula`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `grupos`.*, `sedes`.`nombre_sede` AS `nombre_sede`, `carreras`.`nombre` AS `nombre_carrera`, `aulas`.`nombre` AS `nombre_aula`
+FROM `grupos`
+JOIN `sede` ON `sedes`.`id_sede` = `grupos`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `grupos`.`carrera`
+JOIN `aulas` ON `aulas`.`id` = `grupos`.`aula`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `grupos`.*, `sedes`.`nombre_sede` AS `nombre_sede`, `carreras`.`nombre` AS `nombre_carrera`, `aulas`.`nombre` AS `nombre_aula`
+FROM `grupos`
+JOIN `sede` ON `sedes`.`id_sede` = `grupos`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `grupos`.`carrera`
+JOIN `aulas` ON `aulas`.`id` = `grupos`.`aula`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `grupos`.*, `sedes`.`nombre_sede` AS `nombre_sede`, `carreras`.`nombre` AS `nombre_carrera`, `aulas`.`nombre` AS `nombre_aula`
+FROM `grupos`
+JOIN `sede` ON `sedes`.`id_sede` = `grupos`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `grupos`.`carrera`
+JOIN `aulas` ON `aulas`.`id` = `grupos`.`aula`', [], false)
+ 5 APPPATH\Controllers\Grupo.php(41): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')

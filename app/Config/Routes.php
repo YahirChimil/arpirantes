@@ -94,16 +94,22 @@ $routes->get('getCarreras', 'Carreras::getCarreras');
 $routes->get('getCarrerasPorSede/(:num)', 'Carreras::getCarrerasPorSede/$1');
 
 //$routes->post('aspirante/asignarGrupo/(:segment)', 'Aspirante::asignarGrupo/$1');
-$routes->get('aspirante/asignarGrupoVista/(:segment)', 'Aspirante::asignarGrupoVista/$1');
-$routes->post('aspirante/asignarAGrupo', 'Aspirante::asignarAGrupo');
+
+$routes->get('grupos/curso', 'Grupo::index');
+$routes->post('grupos-curso/guardar', 'Grupo::crear');
+$routes->get('grupos/verAspirantes/(:num)', 'Grupo::aspirantes/$1');
+$routes->post('grupos-curso/asignar/(:num)', 'Grupo::asignarCurso/$1');
+$routes->get('grupos-curso/eliminarAspirante/(:num)/(:segment)', 'Grupo::eliminarAspiranteCurso/$1/$2');
+$routes->post('grupos-curso/eliminar/(:num)', 'Grupo::eliminar/$1');
+$routes->post('grupo/toggle-curso', 'Grupo::toggleCurso');
+$routes->get('grupos-curso/aspirantes-sin-grupo/(:num)/(:num)', 'Grupo::aspirantesSinGrupoPorCarrera/$1/$2');
+$routes->post('grupos-curso/agregarManual/(:num)', 'Grupo::agregarManual/$1');
+$routes->post('getAspirantesSinGrupo', 'Grupo::getAspirantesSinGrupo');
 
 
-$routes->post('grupos/crear', 'Grupo::crear');
-$routes->post('grupos/eliminar/(:num)', 'Grupo::eliminar/$1');
-$routes->get('grupos', 'Grupo::index');
 
-$routes->post('aspirante/asignarAGrupoFinal', 'Aspirante::asignarAGrupoFinal');
-$routes->get('grupos/verAspirantes/(:num)', 'Grupo::verAspirantes/$1');
+
+
 
 //$routes->get('calificaciones/ver/(:alphanum)', 'Calificaciones::ver/$1');
 //$routes->post('calificaciones/actualizar', 'Calificaciones::actualizar');
@@ -112,7 +118,7 @@ $routes->post('grupo/guardar_aprobados', 'Grupo::guardar_aprobados');
 
 $routes->get('grupo/exportar_aprobados/(:num)', 'Grupo::exportarPDF/$1');
 
-$routes->get('grupos/curso', 'Grupo::index');
+
 
 
 
@@ -161,12 +167,17 @@ $routes->get('grupos-examen', 'GruposExamen::index');
 $routes->post('grupos-examen/guardar', 'GruposExamen::guardar');
 $routes->get('grupos-examen/editar/(:num)', 'GruposExamen::editar/$1');
 $routes->post('grupos-examen/actualizar/(:num)', 'GruposExamen::actualizar/$1');
+$routes->post('grupos-examen/eliminar/(:num)', 'GruposExamen::eliminar/$1');
+
+
 
 $routes->get('Asignacion', 'Asignacion::index');
 $routes->get('grupos-examen/aspirantes/(:num)', 'GruposExamen::aspirantes/$1');
 $routes->post('grupos-examen/asignar/(:num)', 'GruposExamen::asignar/$1');
 $routes->get('grupos-examen/eliminarAspirante/(:num)/(:segment)', 'GruposExamen::eliminarAspirante/$1/$2');
 $routes->get('grupos-examen/imprimir-lista/(:num)', 'GruposExamen::imprimirLista/$1');
+$routes->post('getAspirantesSinGrupoExamen', 'GruposExamen::getAspirantesSinGrupoExamen');
+$routes->post('grupos-examen/agregarManual/(:num)', 'GruposExamen::agregarManual/$1');
 
 
 

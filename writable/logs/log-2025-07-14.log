@@ -1,0 +1,395 @@
+CRITICAL - 2025-07-14 16:56:53 --> ErrorException: Undefined array key "sede_id"
+[Method: GET, Route: grupos/verAspirantes/10]
+in APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php on line 70.
+ 1 APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sede_id"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php', 70)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_grupo_niv', [], true)
+ 5 APPPATH\Controllers\Grupo.php(207): view('base/administrador/ver_aspirantes_grupo_niv', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('10')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-14 16:57:30 --> ErrorException: Undefined array key "id_sede"
+[Method: GET, Route: grupos/verAspirantes/10]
+in APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php on line 70.
+ 1 APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_sede"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php', 70)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_grupo_niv', [], true)
+ 5 APPPATH\Controllers\Grupo.php(207): view('base/administrador/ver_aspirantes_grupo_niv', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('10')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-14 16:57:47 --> ErrorException: Undefined variable $carreras
+[Method: GET, Route: grupos/verAspirantes/10]
+in APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php on line 76.
+ 1 APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $carreras', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php', 76)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_grupo_niv', [], true)
+ 5 APPPATH\Controllers\Grupo.php(207): view('base/administrador/ver_aspirantes_grupo_niv', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('10')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-14 16:59:37 --> ErrorException: Undefined variable $carreras
+[Method: GET, Route: grupos/verAspirantes/10]
+in APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php on line 76.
+ 1 APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $carreras', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php', 76)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_grupo_niv', [], true)
+ 5 APPPATH\Controllers\Grupo.php(207): view('base/administrador/ver_aspirantes_grupo_niv', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('10')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-14 17:00:45 --> ErrorException: Undefined variable $carreras
+[Method: GET, Route: grupos/verAspirantes/10]
+in APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php on line 76.
+ 1 APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $carreras', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php', 76)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_grupo_niv', [], true)
+ 5 APPPATH\Controllers\Grupo.php(207): view('base/administrador/ver_aspirantes_grupo_niv', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('10')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-14 17:06:43 --> ErrorException: Undefined variable $carreras
+[Method: GET, Route: grupos/verAspirantes/10]
+in APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php on line 76.
+ 1 APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $carreras', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php', 76)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_grupo_niv', [], true)
+ 5 APPPATH\Controllers\Grupo.php(213): view('base/administrador/ver_aspirantes_grupo_niv', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('10')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-14 17:06:47 --> ErrorException: Undefined variable $carreras
+[Method: GET, Route: grupos/verAspirantes/10]
+in APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php on line 76.
+ 1 APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $carreras', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php', 76)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_grupo_niv', [], true)
+ 5 APPPATH\Controllers\Grupo.php(213): view('base/administrador/ver_aspirantes_grupo_niv', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('10')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-14 17:07:10 --> ErrorException: Undefined variable $carreras
+[Method: GET, Route: grupos/verAspirantes/10]
+in APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php on line 76.
+ 1 APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $carreras', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php', 76)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_grupo_niv', [], true)
+ 5 APPPATH\Controllers\Grupo.php(213): view('base/administrador/ver_aspirantes_grupo_niv', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('10')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-14 17:07:11 --> ErrorException: Undefined variable $carreras
+[Method: GET, Route: grupos/verAspirantes/10]
+in APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php on line 76.
+ 1 APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $carreras', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php', 76)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_grupo_niv', [], true)
+ 5 APPPATH\Controllers\Grupo.php(213): view('base/administrador/ver_aspirantes_grupo_niv', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('10')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-14 17:08:38 --> ErrorException: Undefined variable $carreras
+[Method: GET, Route: grupos/verAspirantes/10]
+in APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php on line 76.
+ 1 APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $carreras', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php', 76)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_grupo_niv', [], true)
+ 5 APPPATH\Controllers\Grupo.php(207): view('base/administrador/ver_aspirantes_grupo_niv', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('10')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-14 17:11:54 --> ErrorException: Undefined array key "nombre_sede"
+[Method: GET, Route: grupos/verAspirantes/10]
+in APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php on line 75.
+ 1 APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php(75): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre_sede"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php', 75)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_grupo_niv', [], true)
+ 5 APPPATH\Controllers\Grupo.php(207): view('base/administrador/ver_aspirantes_grupo_niv', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('10')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+ERROR - 2025-07-14 17:24:02 --> mysqli_sql_exception: Table 'discere_dev2.aspirante_grupo_curso' doesn't exist in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `a`.`cur...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`cur...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`cur...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`cur...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\Grupo.php(397): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\Grupo->getAspirantesSinGrupo()
+#6 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+#7 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-07-14 17:24:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'discere_dev2.aspirante_grupo_curso' doesn't exist
+[Method: POST, Route: getAspirantesSinGrupo]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`curp`, `a`.`nombre`, `a`.`primer_apellido`, `a`.`segundo_apellido`
+FROM `aspirantes` `a`
+WHERE `a`.`sede` = :a.sede:
+AND `a`.`carrera` = :a.carrera:
+AND `a`.`preficha` = :a.preficha:
+AND `a`.`examen` = :a.examen:
+AND `a`.`curp` NOT IN :a.curp:', [...], false)
+ 2 APPPATH\Controllers\Grupo.php(397): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->getAspirantesSinGrupo()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-14 17:24:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'discere_dev2.aspirante_grupo_curso' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`curp`, `a`.`nombre`, `a`.`primer_apellido`, `a`.`segundo_apellido`
+FROM `aspirantes` `a`
+WHERE `a`.`sede` = \'2\'
+AND `a`.`carrera` = \'41\'
+AND `a`.`preficha` = 1
+AND `a`.`examen` = 1
+AND `a`.`curp` NOT IN (SELECT `curp` FROM `aspirante_grupo_curso`)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`curp`, `a`.`nombre`, `a`.`primer_apellido`, `a`.`segundo_apellido`
+FROM `aspirantes` `a`
+WHERE `a`.`sede` = \'2\'
+AND `a`.`carrera` = \'41\'
+AND `a`.`preficha` = 1
+AND `a`.`examen` = 1
+AND `a`.`curp` NOT IN (SELECT `curp` FROM `aspirante_grupo_curso`)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`curp`, `a`.`nombre`, `a`.`primer_apellido`, `a`.`segundo_apellido`
+FROM `aspirantes` `a`
+WHERE `a`.`sede` = :a.sede:
+AND `a`.`carrera` = :a.carrera:
+AND `a`.`preficha` = :a.preficha:
+AND `a`.`examen` = :a.examen:
+AND `a`.`curp` NOT IN :a.curp:', [...], false)
+ 4 APPPATH\Controllers\Grupo.php(397): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->getAspirantesSinGrupo()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-14 17:24:02 --> [Caused by] mysqli_sql_exception: Table 'discere_dev2.aspirante_grupo_curso' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `a`.`curp`, `a`.`nombre`, `a`.`primer_apellido`, `a`.`segundo_apellido`
+FROM `aspirantes` `a`
+WHERE `a`.`sede` = \'2\'
+AND `a`.`carrera` = \'41\'
+AND `a`.`preficha` = 1
+AND `a`.`examen` = 1
+AND `a`.`curp` NOT IN (SELECT `curp` FROM `aspirante_grupo_curso`)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`curp`, `a`.`nombre`, `a`.`primer_apellido`, `a`.`segundo_apellido`
+FROM `aspirantes` `a`
+WHERE `a`.`sede` = \'2\'
+AND `a`.`carrera` = \'41\'
+AND `a`.`preficha` = 1
+AND `a`.`examen` = 1
+AND `a`.`curp` NOT IN (SELECT `curp` FROM `aspirante_grupo_curso`)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`curp`, `a`.`nombre`, `a`.`primer_apellido`, `a`.`segundo_apellido`
+FROM `aspirantes` `a`
+WHERE `a`.`sede` = \'2\'
+AND `a`.`carrera` = \'41\'
+AND `a`.`preficha` = 1
+AND `a`.`examen` = 1
+AND `a`.`curp` NOT IN (SELECT `curp` FROM `aspirante_grupo_curso`)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`curp`, `a`.`nombre`, `a`.`primer_apellido`, `a`.`segundo_apellido`
+FROM `aspirantes` `a`
+WHERE `a`.`sede` = :a.sede:
+AND `a`.`carrera` = :a.carrera:
+AND `a`.`preficha` = :a.preficha:
+AND `a`.`examen` = :a.examen:
+AND `a`.`curp` NOT IN :a.curp:', [...], false)
+ 5 APPPATH\Controllers\Grupo.php(397): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->getAspirantesSinGrupo()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+ERROR - 2025-07-14 17:24:02 --> mysqli_sql_exception: Table 'discere_dev2.aspirante_grupo_curso' doesn't exist in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `a`.`cur...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`cur...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`cur...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`cur...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\Grupo.php(397): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\Grupo->getAspirantesSinGrupo()
+#6 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+#7 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-07-14 17:24:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'discere_dev2.aspirante_grupo_curso' doesn't exist
+[Method: POST, Route: getAspirantesSinGrupo]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`curp`, `a`.`nombre`, `a`.`primer_apellido`, `a`.`segundo_apellido`
+FROM `aspirantes` `a`
+WHERE `a`.`sede` = :a.sede:
+AND `a`.`carrera` = :a.carrera:
+AND `a`.`preficha` = :a.preficha:
+AND `a`.`examen` = :a.examen:
+AND `a`.`curp` NOT IN :a.curp:', [...], false)
+ 2 APPPATH\Controllers\Grupo.php(397): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->getAspirantesSinGrupo()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-14 17:24:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'discere_dev2.aspirante_grupo_curso' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`curp`, `a`.`nombre`, `a`.`primer_apellido`, `a`.`segundo_apellido`
+FROM `aspirantes` `a`
+WHERE `a`.`sede` = \'2\'
+AND `a`.`carrera` = \'41\'
+AND `a`.`preficha` = 1
+AND `a`.`examen` = 1
+AND `a`.`curp` NOT IN (SELECT `curp` FROM `aspirante_grupo_curso`)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`curp`, `a`.`nombre`, `a`.`primer_apellido`, `a`.`segundo_apellido`
+FROM `aspirantes` `a`
+WHERE `a`.`sede` = \'2\'
+AND `a`.`carrera` = \'41\'
+AND `a`.`preficha` = 1
+AND `a`.`examen` = 1
+AND `a`.`curp` NOT IN (SELECT `curp` FROM `aspirante_grupo_curso`)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`curp`, `a`.`nombre`, `a`.`primer_apellido`, `a`.`segundo_apellido`
+FROM `aspirantes` `a`
+WHERE `a`.`sede` = :a.sede:
+AND `a`.`carrera` = :a.carrera:
+AND `a`.`preficha` = :a.preficha:
+AND `a`.`examen` = :a.examen:
+AND `a`.`curp` NOT IN :a.curp:', [...], false)
+ 4 APPPATH\Controllers\Grupo.php(397): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->getAspirantesSinGrupo()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-14 17:24:02 --> [Caused by] mysqli_sql_exception: Table 'discere_dev2.aspirante_grupo_curso' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `a`.`curp`, `a`.`nombre`, `a`.`primer_apellido`, `a`.`segundo_apellido`
+FROM `aspirantes` `a`
+WHERE `a`.`sede` = \'2\'
+AND `a`.`carrera` = \'41\'
+AND `a`.`preficha` = 1
+AND `a`.`examen` = 1
+AND `a`.`curp` NOT IN (SELECT `curp` FROM `aspirante_grupo_curso`)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`curp`, `a`.`nombre`, `a`.`primer_apellido`, `a`.`segundo_apellido`
+FROM `aspirantes` `a`
+WHERE `a`.`sede` = \'2\'
+AND `a`.`carrera` = \'41\'
+AND `a`.`preficha` = 1
+AND `a`.`examen` = 1
+AND `a`.`curp` NOT IN (SELECT `curp` FROM `aspirante_grupo_curso`)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`curp`, `a`.`nombre`, `a`.`primer_apellido`, `a`.`segundo_apellido`
+FROM `aspirantes` `a`
+WHERE `a`.`sede` = \'2\'
+AND `a`.`carrera` = \'41\'
+AND `a`.`preficha` = 1
+AND `a`.`examen` = 1
+AND `a`.`curp` NOT IN (SELECT `curp` FROM `aspirante_grupo_curso`)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`curp`, `a`.`nombre`, `a`.`primer_apellido`, `a`.`segundo_apellido`
+FROM `aspirantes` `a`
+WHERE `a`.`sede` = :a.sede:
+AND `a`.`carrera` = :a.carrera:
+AND `a`.`preficha` = :a.preficha:
+AND `a`.`examen` = :a.examen:
+AND `a`.`curp` NOT IN :a.curp:', [...], false)
+ 5 APPPATH\Controllers\Grupo.php(397): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->getAspirantesSinGrupo()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-14 17:46:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Updates are not allowed unless they contain a "where" or "like" clause.
+[Method: POST, Route: grupos-curso/agregarManual/11]
+in SYSTEMPATH\Model.php on line 456.
+ 1 SYSTEMPATH\BaseModel.php(1027): CodeIgniter\Model->doUpdate(null, [...])
+ 2 SYSTEMPATH\Model.php(863): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH\Controllers\Grupo.php(373): CodeIgniter\Model->update(null, [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->agregarManual('11')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-14 17:50:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Updates are not allowed unless they contain a "where" or "like" clause.
+[Method: POST, Route: grupos-curso/agregarManual/11]
+in SYSTEMPATH\Model.php on line 456.
+ 1 SYSTEMPATH\BaseModel.php(1027): CodeIgniter\Model->doUpdate(null, [...])
+ 2 SYSTEMPATH\Model.php(863): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH\Controllers\Grupo.php(373): CodeIgniter\Model->update(null, [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->agregarManual('11')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')

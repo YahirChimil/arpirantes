@@ -1,0 +1,1332 @@
+ERROR - 2025-07-13 16:04:08 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 2' at line 9 in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\GruposExamen.php(298): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+#8 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+#9 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-07-13 16:04:08 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 2' at line 9
+[Method: GET, Route: grupos-examen/aspirantes/12]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 2', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\GruposExamen.php(298): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 16:04:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 2' at line 9
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 2')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 2')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 2', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\GruposExamen.php(298): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 16:04:08 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 2' at line 9
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 2', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 2')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 2')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 2', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\GruposExamen.php(298): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+ERROR - 2025-07-13 16:06:50 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 2' at line 9 in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\GruposExamen.php(298): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+#8 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+#9 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-07-13 16:06:50 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 2' at line 9
+[Method: GET, Route: grupos-examen/aspirantes/12]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 2', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\GruposExamen.php(298): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 16:06:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 2' at line 9
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 2')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 2')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 2', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\GruposExamen.php(298): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 16:06:50 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 2' at line 9
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 2', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 2')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 2')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 2', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\GruposExamen.php(298): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+ERROR - 2025-07-13 16:06:52 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 2' at line 9 in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\GruposExamen.php(298): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+#8 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+#9 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-07-13 16:06:52 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 2' at line 9
+[Method: GET, Route: grupos-examen/aspirantes/12]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 2', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\GruposExamen.php(298): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 16:06:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 2' at line 9
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 2')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 2')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 2', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\GruposExamen.php(298): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 16:06:52 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 2' at line 9
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 2', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 2')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 2')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 2', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\GruposExamen.php(298): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 16:18:55 --> ErrorException: Undefined variable $curpsAsignados
+[Method: GET, Route: grupos/verAspirantes/9]
+in APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php on line 96.
+ 1 APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php(96): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $curpsAsignados', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php', 96)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_grupo_niv', [], true)
+ 5 APPPATH\Controllers\Grupo.php(198): view('base/administrador/ver_aspirantes_grupo_niv', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('9')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+ERROR - 2025-07-13 17:02:42 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9 in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\GruposExamen->mostrarAspirantesdelGrupo('12')
+#8 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+#9 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-07-13 17:02:42 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9
+[Method: GET, Route: grupos-examen/aspirantes/12]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 3', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->mostrarAspirantesdelGrupo('12')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 17:02:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 3', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->mostrarAspirantesdelGrupo('12')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 17:02:42 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 3', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->mostrarAspirantesdelGrupo('12')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+ERROR - 2025-07-13 17:08:18 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9 in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+#8 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+#9 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-07-13 17:08:18 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9
+[Method: GET, Route: grupos-examen/aspirantes/12]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 3', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 17:08:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 3', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 17:08:18 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 3', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+ERROR - 2025-07-13 17:10:21 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9 in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+#8 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+#9 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-07-13 17:10:21 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9
+[Method: GET, Route: grupos-examen/aspirantes/12]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 3', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 17:10:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 3', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 17:10:21 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 3', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+ERROR - 2025-07-13 17:10:23 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9 in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+#8 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+#9 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-07-13 17:10:23 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9
+[Method: GET, Route: grupos-examen/aspirantes/12]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 3', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 17:10:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 3', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 17:10:23 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 3', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+ERROR - 2025-07-13 17:10:30 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9 in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+#8 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+#9 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-07-13 17:10:30 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9
+[Method: GET, Route: grupos-examen/aspirantes/12]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 3', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 17:10:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 3', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 17:10:30 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 3', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+ERROR - 2025-07-13 17:18:57 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9 in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+#8 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+#9 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-07-13 17:18:57 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9
+[Method: GET, Route: grupos-examen/aspirantes/12]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 3', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 17:18:57 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 3', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 17:18:57 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ LIMIT 3' at line 9
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = \'42\'
+AND `aspirantes`.`sede` = \'1\'
+AND `aspirantes`.`preficha` = 1
+AND `aspirantes`.`examen` = 1
+AND `aspirantes`.`curp` NOT IN ()
+ LIMIT 3')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `carreras`.`nombre` AS `nombre_carrera`, `sedes`.`nombre_sede`
+FROM `aspirantes`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+WHERE `aspirantes`.`carrera` = :aspirantes.carrera:
+AND `aspirantes`.`sede` = :aspirantes.sede:
+AND `aspirantes`.`preficha` = :aspirantes.preficha:
+AND `aspirantes`.`examen` = :aspirantes.examen:
+AND `aspirantes`.`curp` NOT IN :aspirantes.curp:
+ LIMIT 3', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\GruposExamen.php(313): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GruposExamen->aspirantes('12')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GruposExamen))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 18:33:42 --> ErrorException: Undefined variable $aspirante
+[Method: GET, Route: grupos/verAspirantes/10]
+in APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php on line 118.
+ 1 APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php(118): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $aspirante', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php', 118)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_grupo_niv', [], true)
+ 5 APPPATH\Controllers\Grupo.php(207): view('base/administrador/ver_aspirantes_grupo_niv', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('10')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 18:36:20 --> ErrorException: Undefined variable $aspirante
+[Method: GET, Route: grupos/verAspirantes/10]
+in APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php on line 118.
+ 1 APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php(118): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $aspirante', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php', 118)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_grupo_niv', [], true)
+ 5 APPPATH\Controllers\Grupo.php(207): view('base/administrador/ver_aspirantes_grupo_niv', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('10')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 18:36:21 --> ErrorException: Undefined variable $aspirante
+[Method: GET, Route: grupos/verAspirantes/10]
+in APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php on line 118.
+ 1 APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php(118): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $aspirante', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php', 118)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_grupo_niv', [], true)
+ 5 APPPATH\Controllers\Grupo.php(207): view('base/administrador/ver_aspirantes_grupo_niv', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('10')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 18:38:13 --> ErrorException: Undefined array key "curso_terminado"
+[Method: GET, Route: grupos/verAspirantes/10]
+in APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php on line 119.
+ 1 APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php(119): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "curso_terminado"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php', 119)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_grupo_niv', [], true)
+ 5 APPPATH\Controllers\Grupo.php(207): view('base/administrador/ver_aspirantes_grupo_niv', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('10')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-07-13 18:38:46 --> ErrorException: Undefined array key "curso_terminado"
+[Method: GET, Route: grupos/verAspirantes/10]
+in APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php on line 120.
+ 1 APPPATH\Views\base\administrador\ver_aspirantes_grupo_niv.php(120): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "curso_terminado"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php', 120)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\ver_aspirantes_grupo_niv.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/ver_aspirantes_grupo_niv', [], true)
+ 5 APPPATH\Controllers\Grupo.php(207): view('base/administrador/ver_aspirantes_grupo_niv', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Grupo->aspirantes('10')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')

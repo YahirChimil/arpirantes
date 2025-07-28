@@ -169,6 +169,12 @@
                                 Documentacion Aspirante
                             </a>
                         </div>
+
+                        <div class="menu-item">
+                            <a href="<?= base_url('grupos/curso'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                Grupos de curso de Nivelacion
+                            </a>
+                        </div>
                        
                         
                     </div>

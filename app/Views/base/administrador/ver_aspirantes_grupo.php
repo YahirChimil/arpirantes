@@ -38,7 +38,7 @@ License:
         </div>
     <?php endif; ?>
     <?php if (session()->getFlashdata('error')): ?>
-        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
             <?= session()->getFlashdata('error') ?>
         </div>
     <?php endif; ?>
@@ -63,6 +63,46 @@ License:
                 <span class="font-semibold">Sede:</span> <?= esc($aspirantes[0]['nombre_sede'] ?? 'No disponible') ?>
             </div>
         </div>
+
+        <div class="mb-6 flex flex-col md:flex-row items-end gap-4 bg-white p-4 rounded shadow">
+    <form id="formAgregarAspirante" method="post" action="<?= base_url('grupos-examen/agregarManual/' . $grupo['id']) ?>" class="flex flex-wrap gap-4 items-end">
+        <?= csrf_field() ?>
+
+        <!-- Sede -->
+        <div>
+            <label for="sede" class="block text-sm font-medium text-gray-700">Sede</label>
+            <select id="sede" class="form-select w-48 bg-gray-100" disabled>
+                <option value="<?= esc($grupo['sede_id']) ?>"><?= esc($grupo['nombre_sede'] ?? $grupo['sede_id']) ?></option>
+            </select>
+        </div>
+
+        <!-- Campo oculto para enviar sede_id -->
+        <input type="hidden" name="sede_id" value="<?= esc($grupo['sede_id']) ?>">
+
+        <!-- Carrera -->
+        <div>
+            <label for="carrera" class="block text-sm font-medium text-gray-700">Carrera</label>
+            <select id="carrera" name="carrera_id" class="form-select w-48">
+                <option value="">Carrera</option>
+            </select>
+        </div>
+
+        <!-- Aspirante -->
+        <div>
+            <label for="aspirante" class="block text-sm font-medium text-gray-700">Aspirante</label>
+            <select id="aspirante" name="curp" class="form-select w-64">
+                <option value="">Aspirante</option>
+            </select>
+        </div>
+
+        <!-- Botón Agregar -->
+        <div>
+            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                Agregar
+            </button>
+        </div>
+    </form>
+</div>
 
         <form action="<?= base_url('grupos-examen/asignar/' . $grupo['id']) ?>" method="post">
     <?= csrf_field() ?>
@@ -95,7 +135,7 @@ License:
                 <th class="px-6 py-3 text-left uppercase tracking-wider">Nombre Completo</th>
                 <th class="px-6 py-3 text-left uppercase tracking-wider">Carrera</th>
                 <th class="px-6 py-3 text-left uppercase tracking-wider">Sede</th>
-                <th class="px-6 py-3 text-left uppercase tracking-wider">Correo</th>
+                <th class="px-6 py-3 text-left uppercase tracking-wider max-w-[200px]">Correo</th>
                 <th class="px-6 py-3 text-left uppercase tracking-wider text-center">Acciones</th>
             </tr>
         </thead>
@@ -120,7 +160,9 @@ License:
     <td class="px-6 py-4"><?= esc($asp['nombre'] . ' ' . $asp['primer_apellido'] . ' ' . $asp['segundo_apellido']) ?></td>
     <td class="px-6 py-4"><?= esc($asp['nombre_carrera']) ?></td>
     <td class="px-6 py-4"><?= esc($asp['nombre_sede']) ?></td>
-    <td class="px-6 py-4 text-blue-600 underline"><?= esc($asp['correo']) ?></td>
+    <td class="px-6 py-4 max-w-[200px] truncate" title="<?= esc($asp['correo']) ?>">
+    <span class="select-all block"><?= esc($asp['correo']) ?></span>
+</td>
     <td class="px-6 py-4 text-center">
         <?php if ($yaAsignado): ?>
            <a href="<?= base_url('grupos-examen/eliminarAspirante/' . $grupo['id'] . '/' . $asp['curp']) ?>"
@@ -222,6 +264,96 @@ function confirmarEliminacion() {
                     $('#aula').html('<option value="">Error al cargar</option>');
                 }
             });
+        });
+    });
+</script>
+<script>
+$(document).ready(function () {
+    const sedeId = $('#sede').val();
+
+    // Cargar carreras automáticamente al cargar la página
+    if (sedeId) {
+        $.ajax({
+            url: '<?= base_url('getCarrerasPorSede') ?>/' + sedeId,
+            method: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                const $carrera = $('#carrera');
+                $carrera.empty().append('<option value="">Selecciona una carrera</option>');
+                data.forEach(c => {
+                    $carrera.append('<option value="' + c.id + '">' + c.nombre + '</option>');
+                });
+            },
+            error: function () {
+                $('#carrera').html('<option value="">Error al cargar carreras</option>');
+            }
+        });
+    }
+
+    // Cuando cambias la carrera, carga aspirantes
+    $('#carrera').on('change', function () {
+        const carreraId = $(this).val();
+
+        $('#aspirante').html('<option>Cargando...</option>');
+
+        if (carreraId && sedeId) {
+            $.ajax({
+                url: '<?= base_url('getAspirantesSinGrupoExamen') ?>',
+                method: 'POST',
+                data: {
+                    sede_id: sedeId,
+                    carrera_id: carreraId,
+                    '<?= csrf_token() ?>': '<?= csrf_hash() ?>'
+                },
+                dataType: 'json',
+                success: function (data) {
+                    const $aspirante = $('#aspirante');
+                    $aspirante.empty().append('<option value="">Selecciona un aspirante</option>');
+                    data.forEach(function (a) {
+                        const nombreCompleto = `${a.nombre} ${a.primer_apellido} ${a.segundo_apellido}`;
+                        $aspirante.append(`<option value="${a.curp}">${nombreCompleto} (${a.curp})</option>`);
+                    });
+                },
+                error: function () {
+                    $('#aspirante').html('<option>Error al cargar aspirantes</option>');
+                }
+            });
+        }
+    });
+});
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('#carrera').on('change', function () {
+            const carreraId = $(this).val();
+            const sedeId = $('#sede').val(); // viene deshabilitado, pero aún se puede leer
+
+            $('#aspirante').html('<option>Cargando...</option>');
+
+            if (carreraId && sedeId) {
+                $.ajax({
+                    url: '<?= base_url('getAspirantesSinGrupoExamen') ?>',
+                    method: 'POST',
+                    data: {
+                        sede_id: sedeId,
+                        carrera_id: carreraId,
+                        '<?= csrf_token() ?>': '<?= csrf_hash() ?>'
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        const $aspirante = $('#aspirante');
+                        $aspirante.empty().append('<option value="">Selecciona un aspirante</option>');
+                        data.forEach(function (a) {
+                            const nombreCompleto = `${a.nombre} ${a.primer_apellido} ${a.segundo_apellido}`;
+                            $aspirante.append(`<option value="${a.curp}">${nombreCompleto} (${a.curp})</option>`);
+                        });
+                    },
+                    error: function () {
+                        $('#aspirante').html('<option>Error al cargar aspirantes</option>');
+                    }
+                });
+            }
         });
     });
 </script>

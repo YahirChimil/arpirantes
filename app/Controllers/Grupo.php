@@ -282,7 +282,94 @@ class Grupo extends Controller
 
         return redirect()->back()->with('mensaje', 'Aprobados actualizados correctamente.');
     }
+    public function editar($id)
+    {
+        if (!auth()->loggedIn() || !in_array(auth()->user()->nivel, [0, 1])) {
+            return redirect()->to(site_url('Acceso/login'))->with('error', 'No autorizado.');
+        }
 
+        $grupoModel = new \App\Models\GrupoModel();
+        $sedeModel = new \App\Models\SedesModel();
+        $aulaModel = new \App\Models\AulasModel();
+        $carreraModel = new \App\Models\CarrerasModel();
+
+        $grupo = $grupoModel->find($id);
+        if (!$grupo) {
+            return redirect()->back()->with('error', 'Grupo no encontrado.');
+        }
+
+        $data = [
+            'titulo' => 'Editar Grupo de Curso',
+            'miga' => 'Administración',
+            'url_miga' => base_url('grupos-curso'),
+            'sub_miga' => 'editar_grupo',
+            'user_info' => datos_usuario(),
+            'grupo' => $grupo,
+            'sedes' => $sedeModel->findAll(),
+            'aulas' => $aulaModel->findAll(),
+            'carreras' => $carreraModel->findAll(),
+        ];
+
+        return view('base/administrador/editar_grupo_curso', $data);
+    }
+    public function actualizar($id)
+    {
+        if (!auth()->loggedIn() || !in_array(auth()->user()->nivel, [0, 1])) {
+            return redirect()->to(site_url('Acceso/login'))->with('error', 'No autorizado.');
+        }
+
+        $grupoModel = new \App\Models\GrupoModel();
+
+        $validationRules = [
+            'nombre'        => 'required|min_length[3]',
+            'capacidad'     => 'required|integer|min_length[1]',
+            'hora_inicio'   => 'required',
+            'hora_fin'      => 'required',
+            'tipo'          => 'required',
+            'sede_id'       => 'required|is_natural_no_zero',
+            'aula_id'       => 'required|is_natural_no_zero',
+            'carrera_id'    => 'required|is_natural_no_zero',
+        ];
+
+        if (!$this->validate($validationRules)) {
+            $errores = $this->validator->getErrors();
+            $mensaje = "Datos inválidos: " . implode(' ', $errores);
+
+            return redirect()->back()
+                ->withInput()
+                ->with('mensaje', $mensaje);
+        }
+
+        // Validar si la misma aula está ocupada en el mismo lapso de tiempo (excepto el grupo actual)
+        $aulaId = $this->request->getPost('aula_id');
+        $horaInicio = $this->request->getPost('hora_inicio');
+        $horaFin = $this->request->getPost('hora_fin');
+
+
+        $grupoExistente = $grupoModel
+            ->where('aula', $aulaId)
+            ->where('hora_inicio <=', $horaFin)
+            ->where('hora_fin >=', $horaInicio)
+            ->where('id !=', (int)$id)
+            ->first();
+        if ($grupoExistente) {
+            return redirect()->back()->with('error', 'La aula seleccionada ya está ocupada en el lapso de tiempo indicado.');
+        }
+
+        $grupoModel->update($id, [
+            'nombre'        => $this->request->getPost('nombre'),
+            'capacidad'     => $this->request->getPost('capacidad'),
+            'hora_inicio'   => $this->request->getPost('hora_inicio'),
+            'hora_fin'      => $this->request->getPost('hora_fin'),
+            'tipo'          => $this->request->getPost('tipo'),
+            'catedratico'   => $this->request->getPost('catedratico'),
+            'sede'          => $this->request->getPost('sede_id'),
+            'aula'          => $this->request->getPost('aula_id'),
+            'carrera'       => $this->request->getPost('carrera_id'),
+        ]);
+
+        return redirect()->to(base_url('grupos/curso'))->with('mensaje', 'Grupo actualizado correctamente.');
+    }
     public function eliminar($grupo_id)
     {
         if (!auth()->loggedIn() || !in_array(auth()->user()->nivel, [0, 1])) {

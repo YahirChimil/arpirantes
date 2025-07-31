@@ -61,6 +61,9 @@ License:
                         <a href="<?= site_url('aspirantes/preficha') ?>" target="_blank" class="btn btn-primary mt-3">
                             Descargar ficha
                         </a>
+                        <a href="<?= site_url('aspirantes/referencia-bancaria') ?>" target="_blank" class="btn btn-outline-second mt-3 ml-2">
+                            Descargar referencia bancaria
+                        </a>
                     <?php else: ?>
                         <button class="btn btn-secondary mt-3" disabled>
                             Todavía no tengo fecha de entrega

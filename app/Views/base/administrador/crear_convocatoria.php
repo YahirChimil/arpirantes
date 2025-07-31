@@ -6,44 +6,44 @@ License:
 -->
 <!DOCTYPE html>
 
-<html class="h-full" data-theme="true"  dir="ltr" lang="es-mx">
+<html class="h-full" data-theme="true" dir="ltr" lang="es-mx">
 
 <head>
     <?php echo view('base/template/head'); ?>
 
 </head>
 
-<body class="antialiased flex h-full text-base text-gray-700 [--tw-page-bg:#fefefe] demo1 sidebar-fixed header-fixed bg-[--tw-page-bg]"></body>    <!-- Theme Mode -->
-    
-    <!-- End of Theme Mode -->
-    <!-- Page -->
-    <!-- Main -->
-    <div class="flex grow">
-        <!-- Sidebar -->
-        <?php echo view('base/template/sidebar'); ?>
-        <!-- End of Sidebar -->
-        <!-- Wrapper -->
-        <div class="wrapper flex grow flex-col">
-            <!-- Header -->
-             <?php echo view('base/template/header'); ?>
+<body class="antialiased flex h-full text-base text-gray-700 [--tw-page-bg:#fefefe] demo1 sidebar-fixed header-fixed bg-[--tw-page-bg]"></body> <!-- Theme Mode -->
 
-            <!-- End of Header -->
-            <!-- Content -->
-            <main class="grow content pt-5" id="content" role="content">
+<!-- End of Theme Mode -->
+<!-- Page -->
+<!-- Main -->
+<div class="flex grow">
+    <!-- Sidebar -->
+    <?php echo view('base/template/sidebar'); ?>
+    <!-- End of Sidebar -->
+    <!-- Wrapper -->
+    <div class="wrapper flex grow flex-col">
+        <!-- Header -->
+        <?php echo view('base/template/header'); ?>
+
+        <!-- End of Header -->
+        <!-- Content -->
+        <main class="grow content pt-5" id="content" role="content">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <h2 class="text-2xl font-semibold text-gray-800 mb-6">Registrar Nueva Convocatoria</h2>
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Registrar Nueva Convocatoria</h2>
 
-               <?php if (session()->getFlashdata('success')): ?>
-    <div class="bg-green-100 text-green-800 p-3 rounded mb-4">
-        <?= session()->getFlashdata('success') ?>
-    </div>
-<?php endif; ?>
+                <?php if (session()->getFlashdata('success')): ?>
+                    <div class="bg-green-100 text-green-800 p-3 rounded mb-4">
+                        <?= session()->getFlashdata('success') ?>
+                    </div>
+                <?php endif; ?>
 
-<?php if (session()->getFlashdata('error')): ?>
-    <div class="bg-red-100 text-red-800 p-3 rounded mb-4">
-        <?= session()->getFlashdata('error') ?>
-    </div>
-<?php endif; ?>
+                <?php if (session()->getFlashdata('error')): ?>
+                    <div class="bg-red-100 text-red-800 p-3 rounded mb-4">
+                        <?= session()->getFlashdata('error') ?>
+                    </div>
+                <?php endif; ?>
 
 
                 <form method="post" action="<?= site_url('convocatoria/guardar') ?>" class="bg-white shadow rounded-lg p-6 mb-8">
@@ -92,96 +92,102 @@ License:
                 <h3 class="text-xl font-semibold text-gray-800 mb-4">Convocatorias Registradas</h3>
 
                 <div class="overflow-x-auto">
-                    <table class="min-w-full divide-y divide-gray-200 shadow rounded-lg overflow-hidden">
+                    <table class="min-w-max w-full max-w-2xl mx-auto divide-y divide-gray-200 shadow rounded-lg overflow-hidden text-sm">
                         <thead class="bg-gray-50">
                             <tr>
-                                <th class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">Código</th>
-                                <th class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">Registro</th>
-                                <th class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">Preficha</th>
-                                <th class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">Documentos</th>
-                                <th class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">Examen de admision</th>
+                                <th class="px-2 py-2 text-left font-medium text-gray-500 uppercase">Código</th>
+                                <th class="px-2 py-2 text-left font-medium text-gray-500 uppercase">Registro</th>
+                                <th class="px-2 py-2 text-left font-medium text-gray-500 uppercase">Preficha</th>
+                                <th class="px-2 py-2 text-left font-medium text-gray-500 uppercase">Documentos</th>
+                                <th class="px-2 py-2 text-left font-medium text-gray-500 uppercase">Examen</th>
+                                <th class="px-2 py-2 text-center font-medium text-gray-500 uppercase">Acciones</th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
                             <?php foreach ($convocatorias as $conv): ?>
                                 <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap"><?= esc($conv['codigo']) ?></td>
-                                    <td class="px-6 py-4 whitespace-nowrap"><?= esc($conv['registro_inicio']) ?> a <?= esc($conv['registro_fin']) ?></td>
-                                    <td class="px-6 py-4 whitespace-nowrap"><?= esc($conv['preficha_inicio']) ?> a <?= esc($conv['preficha_fin']) ?></td>
-                                    <td class="px-6 py-4 whitespace-nowrap"><?= esc($conv['documentos_inicio']) ?> a <?= esc($conv['documentos_fin']) ?></td>
-                                    <td class="px-6 py-4 whitespace-nowrap"><?= esc($conv['examen_inicio']) ?> </td>
+                                    <td class="px-2 py-2"><?= esc($conv['codigo']) ?></td>
+                                    <td class="px-2 py-2"><?= esc($conv['registro_inicio']) ?> a <?= esc($conv['registro_fin']) ?></td>
+                                    <td class="px-2 py-2"><?= esc($conv['preficha_inicio']) ?> a <?= esc($conv['preficha_fin']) ?></td>
+                                    <td class="px-2 py-2"><?= esc($conv['documentos_inicio']) ?> a <?= esc($conv['documentos_fin']) ?></td>
+                                    <td class="px-2 py-2"><?= esc($conv['examen_inicio']) ?></td>
+                                    <td class="px-2 py-2 text-center">
+                                        <a href="<?= site_url('convocatoria/editar/' . $conv['id']) ?>" class="inline-block bg-yellow-500 text-white px-2 py-1 rounded hover:bg-yellow-600 text-xs">
+                                            ✏️
+                                        </a>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                             <?php if (empty($convocatorias)): ?>
                                 <tr>
-                                    <td colspan="4" class="px-6 py-4 text-center text-gray-500">No hay convocatorias registradas.</td>
+                                    <td colspan="6" class="px-2 py-2 text-center text-gray-500">No hay convocatorias registradas.</td>
                                 </tr>
                             <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
             </div>
-            </main>
-            <!-- End of Content -->
-            <!-- Footer -->
-            <?php echo view('base/template/footer'); ?>
+        </main>
+        <!-- End of Content -->
+        <!-- Footer -->
+        <?php echo view('base/template/footer'); ?>
 
-            <!-- End of Footer -->
-        </div>
-        <!-- End of Wrapper -->
+        <!-- End of Footer -->
     </div>
-    <!-- End of Main -->
+    <!-- End of Wrapper -->
+</div>
+<!-- End of Main -->
 
-    <!-- End of Page -->
-    <!-- Scripts -->
-    <script src="<?php echo base_url(); ?>assets/js/core.bundle.js">
-    </script>
+<!-- End of Page -->
+<!-- Scripts -->
+<script src="<?php echo base_url(); ?>assets/js/core.bundle.js">
+</script>
 
-    <!-- End of Scripts -->
-                                
-    <script>
-document.addEventListener('DOMContentLoaded', function () {
-    // --- 1. Forzar mayúsculas en campos específicos ---
-    document.querySelectorAll('.mayusculas').forEach(function (input) {
-        input.addEventListener('input', function () {
-            this.value = this.value.toUpperCase();
+<!-- End of Scripts -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- 1. Forzar mayúsculas en campos específicos ---
+        document.querySelectorAll('.mayusculas').forEach(function(input) {
+            input.addEventListener('input', function() {
+                this.value = this.value.toUpperCase();
+            });
         });
-    });
 
-    // --- 2. No permitir fechas anteriores a hoy ---
-    const today = new Date().toISOString().split('T')[0];
-    const dateInputs = document.querySelectorAll('input[type="date"]');
-    dateInputs.forEach(input => input.setAttribute('min', today));
+        // --- 2. No permitir fechas anteriores a hoy ---
+        const today = new Date().toISOString().split('T')[0];
+        const dateInputs = document.querySelectorAll('input[type="date"]');
+        dateInputs.forEach(input => input.setAttribute('min', today));
 
-    // --- 3. Encadenar fechas para que no se pueda seleccionar anterior a la anterior ---
-    const fechaCadena = [
-        ['registro_inicio', 'registro_fin'],
-        ['registro_fin', 'preficha_inicio'],
-        ['preficha_inicio', 'preficha_fin'],
-        ['preficha_fin', 'documentos_inicio'],
-        ['documentos_inicio', 'documentos_fin']
-    ];
+        // --- 3. Encadenar fechas para que no se pueda seleccionar anterior a la anterior ---
+        const fechaCadena = [
+            ['registro_inicio', 'registro_fin'],
+            ['registro_fin', 'preficha_inicio'],
+            ['preficha_inicio', 'preficha_fin'],
+            ['preficha_fin', 'documentos_inicio'],
+            ['documentos_inicio', 'documentos_fin']
+        ];
 
-    fechaCadena.forEach(([anterior, siguiente]) => {
-        const campoAnterior = document.querySelector(`[name="${anterior}"]`);
-        const campoSiguiente = document.querySelector(`[name="${siguiente}"]`);
+        fechaCadena.forEach(([anterior, siguiente]) => {
+            const campoAnterior = document.querySelector(`[name="${anterior}"]`);
+            const campoSiguiente = document.querySelector(`[name="${siguiente}"]`);
 
-        campoAnterior.addEventListener('change', () => {
-            if (campoAnterior.value) {
-                campoSiguiente.min = campoAnterior.value;
-                if (campoSiguiente.value < campoAnterior.value) {
-                    campoSiguiente.value = '';
+            campoAnterior.addEventListener('change', () => {
+                if (campoAnterior.value) {
+                    campoSiguiente.min = campoAnterior.value;
+                    if (campoSiguiente.value < campoAnterior.value) {
+                        campoSiguiente.value = '';
+                    }
                 }
-            }
+            });
         });
     });
-});
 </script>
 
 
 
-    <!-- End of Scripts -->
-     
+<!-- End of Scripts -->
+
 
 </body>
 

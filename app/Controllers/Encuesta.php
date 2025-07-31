@@ -258,6 +258,58 @@ class Encuesta extends ResourceController
     }
 
 
+    public function referenciaBancaria()
+    {
+        if (!auth()->loggedIn()) {
+            return redirect()->to(site_url('Acceso/login'));
+        }
+
+        $user = auth()->user();
+        $curp = $user->username;
+
+        // Datos de ejemplo
+        $aspiranteModel = new \App\Models\AspiranteModel();
+        $aspirante = $aspiranteModel->where('curp', $curp)->first();
+
+        if (!$aspirante) {
+            return redirect()->back()->with('error', 'Aspirante no encontrado.');
+        }
+
+        // Generar referencia bancaria aleatoria (ejemplo)
+        $referencia = '4400' . str_pad(rand(0, 999999999), 9, '0', STR_PAD_LEFT);
+
+        // Fecha de validez (ejemplo: +15 días)
+        $valida_hasta = (new \DateTime())->modify('+15 days')->format('d/m/Y');
+
+        // Puedes ajustar el logo y otros datos aquí
+        $logoPath = FCPATH . 'images/logos/logo_discere_svg_negro.svg';
+        $logoBase64 = '';
+        if (file_exists($logoPath)) {
+            $imageData = file_get_contents($logoPath);
+            $logoBase64 = 'data:image/svg+xml;base64,' . base64_encode($imageData);
+        }
+
+        // Renderizar vista HTML
+        $html = view('pdf/referencia_bancaria', [
+            'aspirante'    => $aspirante,
+            'curp'         => $curp,
+            'referencia'   => $referencia,
+            'valida_hasta' => $valida_hasta,
+            'logoBase64'   => $logoBase64,
+        ]);
+
+        // Configurar Dompdf
+        $options = new \Dompdf\Options();
+        $options->set('defaultFont', 'Helvetica');
+        $dompdf = new \Dompdf\Dompdf($options);
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->render();
+
+        // Descargar PDF
+        $dompdf->stream('referencia_bancaria_' . $curp . '.pdf', ['Attachment' => true]);
+    }
+
     /**
      * Return the editable properties of a resource object.
      *

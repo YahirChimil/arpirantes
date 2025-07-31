@@ -105,7 +105,8 @@ $routes->post('grupo/toggle-curso', 'Grupo::toggleCurso');
 $routes->get('grupos-curso/aspirantes-sin-grupo/(:num)/(:num)', 'Grupo::aspirantesSinGrupoPorCarrera/$1/$2');
 $routes->post('grupos-curso/agregarManual/(:num)', 'Grupo::agregarManual/$1');
 $routes->post('getAspirantesSinGrupo', 'Grupo::getAspirantesSinGrupo');
-
+$routes->get('grupos/editar/(:num)', 'Grupo::editar/$1');
+$routes->post('grupos/actualizar/(:num)', 'Grupo::actualizar/$1');
 
 
 
@@ -129,7 +130,7 @@ $routes->get('aspirante/generarFalsosAspirantes/(:num)', 'Aspirante::generarFals
 $routes->post('aspirante/toggle-examen', 'Aspirante::toggleExamen');
 $routes->post('aspirantes/cargarCSV', 'Aspirante::cargarCSV');
 $routes->get('aspirantes/imprimirSeleccionados', 'Aspirante::imprimirSeleccionados');
-
+$routes->get('aspirantes/referencia-bancaria', 'Encuesta::referenciaBancaria');
 
 $routes->get('aspirante/documentacion', 'Documentacion::index');
 $routes->get('ver_documento/(:segment)/(:segment)', 'Documentacion::verDocumento/$1/$2');
@@ -148,7 +149,8 @@ $routes->post('admin/documentos/actualizar', 'Documentacion::actualizar');
 $routes->get('convocatoria/crear', 'Convocatoria::index');
 $routes->post('convocatoria/guardar', 'Convocatoria::guardar');
 $routes->get('getFechasConvocatoria/(:segment)', 'Convocatoria::getFechasConvocatoria/$1');
-
+$routes->get('convocatoria/editar/(:num)', 'Convocatoria::editar/$1');
+$routes->post('convocatoria/actualizar/(:num)', 'Convocatoria::actualizar/$1');
 
 
 $routes->post('aspirantes/generarPrefichas', 'Encuesta::generarPrefichas');
@@ -186,6 +188,3 @@ $routes->post('grupos-examen/agregarManual/(:num)', 'GruposExamen::agregarManual
 
 
 $routes->get('Servicios/entrega', 'Preficha::vistaEntregaDocumentacion');
-
-
-

@@ -416,7 +416,6 @@ class GruposExamen extends ResourceController
         }
 
         $grupoModel = new \App\Models\GruposExamenModel();
-        $aspiranteModel = new \App\Models\AspiranteModel();
         $db = \Config\Database::connect();
 
         $grupo = $grupoModel
@@ -434,10 +433,31 @@ class GruposExamen extends ResourceController
             ->get()
             ->getResultArray();
 
-        return view('base/administrador/imprimir_lista', [
+        // Logo TecNM en base64
+        $logoPath = FCPATH . 'images/logos/logo_discere_svg_negro.svg';
+        $logoBase64 = '';
+        if (file_exists($logoPath)) {
+            $imageData = file_get_contents($logoPath);
+            $logoBase64 = 'data:image/png;base64,' . base64_encode($imageData);
+        }
+
+        // Renderizar vista PDF
+        $html = view('pdf/lista_grupo_examen', [
             'grupo' => $grupo,
             'aspirantes' => $aspirantes,
+            'logoBase64' => $logoBase64,
         ]);
+
+        // Generar PDF con Dompdf
+        $options = new \Dompdf\Options();
+        $options->set('defaultFont', 'Helvetica');
+        $dompdf = new \Dompdf\Dompdf($options);
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        // Descargar PDF
+        $dompdf->stream('lista_grupo_examen_' . $grupo_id . '.pdf', ['Attachment' => true]);
     }
 
 

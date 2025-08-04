@@ -1,3 +1,4 @@
+<?php $user = auth()->user(); ?>
 <div class="sidebar bg-white border-e border-e-gray-200 fixed top-0 bottom-0 z-20 hidden lg:flex flex-col items-stretch shrink-0" data-drawer="true" data-drawer-class="drawer drawer-start top-0 bottom-0" data-drawer-enable="true|lg:false" id="sidebar">
     <div class="sidebar-header hidden lg:flex items-center relative justify-between px-3 lg:px-6 shrink-0" id="sidebar_header">
         <a href="#">
@@ -12,173 +13,207 @@
         <div class="scrollable-y-hover grow shrink-0 flex ps-2 lg:ps-5 pe-1 lg:pe-3" data-scrollable="true" data-scrollable-dependencies="#sidebar_header" data-scrollable-height="auto" data-scrollable-offset="0px" data-scrollable-wrappers="#sidebar_content" id="sidebar_scrollable">
             <!-- Sidebar Menu -->
             <div class="menu flex flex-col grow gap-0.5" data-menu="true" data-menu-accordion-expand-all="false" id="sidebar_menu">
-                <div class="menu-item" data-menu-item-toggle="accordion" data-menu-item-trigger="click">
-                    <div class="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] ps-[10px] pe-[10px] py-[6px]" tabindex="0">
-                        <span class="menu-icon items-start text-gray-500 w-[20px]">
-                            <i class="ki-filled ki-element-11 text-lg"></i>
-                        </span>
-                        <span class="menu-title text-sm font-medium text-gray-800 menu-item-active:text-primary menu-link-hover:!text-primary">
-                            Tableros
-                        </span>
-                        <span class="menu-arrow text-gray-400 w-[20px] shrink-0 justify-end ms-1 me-[-10px]">
-                            <i class="ki-filled ki-plus text-2xs menu-item-show:hidden"></i>
-                            <i class="ki-filled ki-minus text-2xs hidden menu-item-show:inline-flex"></i>
-                        </span>
-                    </div>
-                    <div class="menu-accordion gap-0.5 ps-[10px] relative before:absolute before:start-[20px] before:top-0 before:bottom-0 before:border-s before:border-gray-200">
-                        <div class="menu-item">
-                            <a class="menu-link border border-transparent items-center grow menu-item-active:bg-gray-100 menu-item-active:rounded-lg hover:bg-gray-100 hover:rounded-lg gap-[14px] ps-[10px] pe-[10px] py-[8px]" href="html/demo1.html" tabindex="0">
-                                <span class="menu-bullet flex w-[6px] -start-[3px] rtl:start-0 relative before:absolute before:top-0 before:size-[6px] before:rounded-full rtl:before:translate-x-1/2 before:-translate-y-1/2 menu-item-active:before:bg-primary menu-item-hover:before:bg-primary"></span>
-                                <span class="menu-title text-2sm font-normal text-gray-800 menu-item-active:text-primary menu-item-active:font-semibold menu-link-hover:!text-primary">
-                                    Light Sidebar
-                                </span>
-                            </a>
+                <?php if (isset($user) && $user->nivel == 4): ?>
+                    <!-- Solo mostrar menú Aspirante para usuarios nivel 4 -->
+                    <div class="menu-item" data-menu-item-toggle="accordion" data-menu-item-trigger="click">
+                        <div class="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] ps-[10px] pe-[10px] py-[6px]" tabindex="0">
+                            <span class="menu-icon items-start text-gray-500 w-[20px]">
+                                <i class="ki-solid ki-add-folder"></i>
+                            </span>
+                            <span class="menu-title text-sm font-medium text-gray-800">
+                                Aspirante
+                            </span>
+                            <span class="menu-arrow text-gray-400 w-[20px] shrink-0 justify-end ms-1 me-[-10px]">
+                                <i class="ki-filled ki-plus text-2xs menu-item-show:hidden"></i>
+                                <i class="ki-filled ki-minus text-2xs hidden menu-item-show:inline-flex"></i>
+                            </span>
                         </div>
-                    </div>
-                </div>
-                <div class="menu-item pt-2.25 pb-px">
-                    <span class="menu-heading uppercase text-2sm font-medium text-gray-500 ps-[10px] pe-[10px]">
-                        Menu principal
-                    </span>
-                </div>
-                <div class="menu-item" data-menu-item-toggle="accordion" data-menu-item-trigger="click">
-                    <div class="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] ps-[10px] pe-[10px] py-[6px]" tabindex="0">
-                        <span class="menu-icon items-start text-gray-500 w-[20px]">
-                            <i class="ki-solid ki-add-folder"></i>
-                        </span>
-                        <span class="menu-title text-sm font-medium text-gray-800 menu-item-active:text-primary menu-link-hover:!text-primary">
-                            Repositorio
-                        </span>
-                        <span class="menu-arrow text-gray-400 w-[20px] shrink-0 justify-end ms-1 me-[-10px]">
-                            <i class="ki-filled ki-plus text-2xs menu-item-show:hidden"></i>
-                            <i class="ki-filled ki-minus text-2xs hidden menu-item-show:inline-flex"></i>
-                        </span>
-                    </div>
-                    <div class="menu-accordion gap-0.5 ps-[10px] relative before:absolute before:start-[20px] before:top-0 before:bottom-0 before:border-s before:border-gray-200">
-                        <div class="menu-item">
-                            <a class="menu-link border border-transparent items-center grow menu-item-active:bg-gray-100 menu-item-active:rounded-lg hover:bg-gray-100 hover:rounded-lg gap-[14px] ps-[10px] pe-[10px] py-[8px]" href="<?php echo base_url(); ?>Repositorio/nuevo" tabindex="0">
-                                <span class="menu-bullet flex w-[6px] -start-[3px] rtl:start-0 relative before:absolute before:top-0 before:size-[6px] before:rounded-full rtl:before:translate-x-1/2 before:-translate-y-1/2 menu-item-active:before:bg-primary menu-item-hover:before:bg-primary"></span>
-                                <span class="menu-title text-2sm font-normal text-gray-800 menu-item-active:text-primary menu-item-active:font-semibold menu-link-hover:!text-primary">
-                                    Crear nuevo
-                                </span>
-                            </a>
-                        </div>
-                        <div class="menu-item" data-menu-item-toggle="accordion" data-menu-item-trigger="click">
-                            <div class="menu-link border border-transparent grow cursor-pointer gap-[14px] ps-[10px] pe-[10px] py-[8px]" tabindex="0">
-                                <span class="menu-bullet flex w-[6px] -start-[3px] rtl:start-0 relative before:absolute before:top-0 before:size-[6px] before:rounded-full rtl:before:translate-x-1/2 before:-translate-y-1/2 menu-item-active:before:bg-primary menu-item-hover:before:bg-primary"></span>
-                                <span class="menu-title text-2sm font-normal me-1 text-gray-800 menu-item-active:text-primary menu-item-active:font-medium menu-link-hover:!text-primary">
-                                    Buscar
-                                </span>
-                                <span class="menu-arrow text-gray-400 w-[20px] shrink-0 justify-end ms-1 me-[-10px]">
-                                    <i class="ki-filled ki-plus text-2xs menu-item-show:hidden"></i>
-                                    <i class="ki-filled ki-minus text-2xs hidden menu-item-show:inline-flex"></i>
-                                </span>
+                        <div class="menu-accordion gap-0.5 relative before:absolute before:start-[32px] ps-[22px] before:top-0 before:bottom-0 before:border-s before:border-gray-200">
+                            <div class="menu-item">
+
                             </div>
-                            <div class="menu-accordion gap-0.5 relative before:absolute before:start-[32px] ps-[22px] before:top-0 before:bottom-0 before:border-s before:border-gray-200">
-                                <div class="menu-item">
-                                    <a class="menu-link border border-transparent items-center grow menu-item-active:bg-gray-100 menu-item-active:rounded-lg hover:bg-gray-100 hover:rounded-lg gap-[5px] ps-[10px] pe-[10px] py-[8px]" href="<?php echo base_url(); ?>Repositorio/busqueda_general" tabindex="0">
-                                        <span class="menu-bullet flex w-[6px] -start-[3px] rtl:start-0 relative before:absolute before:top-0 before:size-[6px] before:rounded-full rtl:before:translate-x-1/2 before:-translate-y-1/2 menu-item-active:before:bg-primary menu-item-hover:before:bg-primary"></span>
-                                        <span class="menu-title text-2sm font-normal text-gray-800 menu-item-active:text-primary menu-item-active:font-semibold menu-link-hover:!text-primary">
-                                            General
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="menu-item">
-                                    <a class="menu-link border border-transparent items-center grow menu-item-active:bg-gray-100 menu-item-active:rounded-lg hover:bg-gray-100 hover:rounded-lg gap-[5px] ps-[10px] pe-[10px] py-[8px]" href="<?php echo base_url(); ?>Repositorio/busqueda_especifica" tabindex="0">
-                                        <span class="menu-bullet flex w-[6px] -start-[3px] rtl:start-0 relative before:absolute before:top-0 before:size-[6px] before:rounded-full rtl:before:translate-x-1/2 before:-translate-y-1/2 menu-item-active:before:bg-primary menu-item-hover:before:bg-primary"></span>
-                                        <span class="menu-title text-2sm font-normal text-gray-800 menu-item-active:text-primary menu-item-active:font-semibold menu-link-hover:!text-primary">
-                                            Especifica
-                                        </span>
-                                    </a>
-                                </div>
+                            <div class="menu-item">
+                                <a href="<?= base_url('Acceso/encuesta'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                    Encuesta
+                                </a>
+                            </div>
+                            <div class="menu-item">
+                                <a href="<?= base_url('aspirante/documentacion'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                    Documentacion
+                                </a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Item principal: Aspirante -->
-                <div class="menu-item" data-menu-item-toggle="accordion" data-menu-item-trigger="click">
-                    <div class="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] ps-[10px] pe-[10px] py-[6px]" tabindex="0">
-                        <span class="menu-icon items-start text-gray-500 w-[20px]">
-                            <i class="ki-solid ki-add-folder"></i>
-                        </span>
-                        <span class="menu-title text-sm font-medium text-gray-800">
-                            Aspirante
-                        </span>
-                        <span class="menu-arrow text-gray-400 w-[20px] shrink-0 justify-end ms-1 me-[-10px]">
-                            <i class="ki-filled ki-plus text-2xs menu-item-show:hidden"></i>
-                            <i class="ki-filled ki-minus text-2xs hidden menu-item-show:inline-flex"></i>
+                <?php else: ?>
+                    <div class="menu-item" data-menu-item-toggle="accordion" data-menu-item-trigger="click">
+                        <div class="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] ps-[10px] pe-[10px] py-[6px]" tabindex="0">
+                            <span class="menu-icon items-start text-gray-500 w-[20px]">
+                                <i class="ki-filled ki-element-11 text-lg"></i>
+                            </span>
+                            <span class="menu-title text-sm font-medium text-gray-800 menu-item-active:text-primary menu-link-hover:!text-primary">
+                                Tableros
+                            </span>
+                            <span class="menu-arrow text-gray-400 w-[20px] shrink-0 justify-end ms-1 me-[-10px]">
+                                <i class="ki-filled ki-plus text-2xs menu-item-show:hidden"></i>
+                                <i class="ki-filled ki-minus text-2xs hidden menu-item-show:inline-flex"></i>
+                            </span>
+                        </div>
+                        <div class="menu-accordion gap-0.5 ps-[10px] relative before:absolute before:start-[20px] before:top-0 before:bottom-0 before:border-s before:border-gray-200">
+                            <div class="menu-item">
+                                <a class="menu-link border border-transparent items-center grow menu-item-active:bg-gray-100 menu-item-active:rounded-lg hover:bg-gray-100 hover:rounded-lg gap-[14px] ps-[10px] pe-[10px] py-[8px]" href="html/demo1.html" tabindex="0">
+                                    <span class="menu-bullet flex w-[6px] -start-[3px] rtl:start-0 relative before:absolute before:top-0 before:size-[6px] before:rounded-full rtl:before:translate-x-1/2 before:-translate-y-1/2 menu-item-active:before:bg-primary menu-item-hover:before:bg-primary"></span>
+                                    <span class="menu-title text-2sm font-normal text-gray-800 menu-item-active:text-primary menu-item-active:font-semibold menu-link-hover:!text-primary">
+                                        Light Sidebar
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item pt-2.25 pb-px">
+                        <span class="menu-heading uppercase text-2sm font-medium text-gray-500 ps-[10px] pe-[10px]">
+                            Menu principal
                         </span>
                     </div>
-                    <div class="menu-accordion gap-0.5 relative before:absolute before:start-[32px] ps-[22px] before:top-0 before:bottom-0 before:border-s before:border-gray-200">
-                        <div class="menu-item">
-                            <a href="<?= base_url('Acceso/aspirante'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
-                                Registro
-                            </a>
+                    <div class="menu-item" data-menu-item-toggle="accordion" data-menu-item-trigger="click">
+                        <div class="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] ps-[10px] pe-[10px] py-[6px]" tabindex="0">
+                            <span class="menu-icon items-start text-gray-500 w-[20px]">
+                                <i class="ki-solid ki-add-folder"></i>
+                            </span>
+                            <span class="menu-title text-sm font-medium text-gray-800 menu-item-active:text-primary menu-link-hover:!text-primary">
+                                Repositorio
+                            </span>
+                            <span class="menu-arrow text-gray-400 w-[20px] shrink-0 justify-end ms-1 me-[-10px]">
+                                <i class="ki-filled ki-plus text-2xs menu-item-show:hidden"></i>
+                                <i class="ki-filled ki-minus text-2xs hidden menu-item-show:inline-flex"></i>
+                            </span>
                         </div>
-                        <div class="menu-item">
-                            <a href="<?= base_url('Acceso/encuesta'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
-                                Encuesta
-                            </a>
+                        <div class="menu-accordion gap-0.5 ps-[10px] relative before:absolute before:start-[20px] before:top-0 before:bottom-0 before:border-s before:border-gray-200">
+                            <div class="menu-item">
+                                <a class="menu-link border border-transparent items-center grow menu-item-active:bg-gray-100 menu-item-active:rounded-lg hover:bg-gray-100 hover:rounded-lg gap-[14px] ps-[10px] pe-[10px] py-[8px]" href="<?php echo base_url(); ?>Repositorio/nuevo" tabindex="0">
+                                    <span class="menu-bullet flex w-[6px] -start-[3px] rtl:start-0 relative before:absolute before:top-0 before:size-[6px] before:rounded-full rtl:before:translate-x-1/2 before:-translate-y-1/2 menu-item-active:before:bg-primary menu-item-hover:before:bg-primary"></span>
+                                    <span class="menu-title text-2sm font-normal text-gray-800 menu-item-active:text-primary menu-item-active:font-semibold menu-link-hover:!text-primary">
+                                        Crear nuevo
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="menu-item" data-menu-item-toggle="accordion" data-menu-item-trigger="click">
+                                <div class="menu-link border border-transparent grow cursor-pointer gap-[14px] ps-[10px] pe-[10px] py-[8px]" tabindex="0">
+                                    <span class="menu-bullet flex w-[6px] -start-[3px] rtl:start-0 relative before:absolute before:top-0 before:size-[6px] before:rounded-full rtl:before:translate-x-1/2 before:-translate-y-1/2 menu-item-active:before:bg-primary menu-item-hover:before:bg-primary"></span>
+                                    <span class="menu-title text-2sm font-normal me-1 text-gray-800 menu-item-active:text-primary menu-item-active:font-medium menu-link-hover:!text-primary">
+                                        Buscar
+                                    </span>
+                                    <span class="menu-arrow text-gray-400 w-[20px] shrink-0 justify-end ms-1 me-[-10px]">
+                                        <i class="ki-filled ki-plus text-2xs menu-item-show:hidden"></i>
+                                        <i class="ki-filled ki-minus text-2xs hidden menu-item-show:inline-flex"></i>
+                                    </span>
+                                </div>
+                                <div class="menu-accordion gap-0.5 relative before:absolute before:start-[32px] ps-[22px] before:top-0 before:bottom-0 before:border-s before:border-gray-200">
+                                    <div class="menu-item">
+                                        <a class="menu-link border border-transparent items-center grow menu-item-active:bg-gray-100 menu-item-active:rounded-lg hover:bg-gray-100 hover:rounded-lg gap-[5px] ps-[10px] pe-[10px] py-[8px]" href="<?php echo base_url(); ?>Repositorio/busqueda_general" tabindex="0">
+                                            <span class="menu-bullet flex w-[6px] -start-[3px] rtl:start-0 relative before:absolute before:top-0 before:size-[6px] before:rounded-full rtl:before:translate-x-1/2 before:-translate-y-1/2 menu-item-active:before:bg-primary menu-item-hover:before:bg-primary"></span>
+                                            <span class="menu-title text-2sm font-normal text-gray-800 menu-item-active:text-primary menu-item-active:font-semibold menu-link-hover:!text-primary">
+                                                General
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a class="menu-link border border-transparent items-center grow menu-item-active:bg-gray-100 menu-item-active:rounded-lg hover:bg-gray-100 hover:rounded-lg gap-[5px] ps-[10px] pe-[10px] py-[8px]" href="<?php echo base_url(); ?>Repositorio/busqueda_especifica" tabindex="0">
+                                            <span class="menu-bullet flex w-[6px] -start-[3px] rtl:start-0 relative before:absolute before:top-0 before:size-[6px] before:rounded-full rtl:before:translate-x-1/2 before:-translate-y-1/2 menu-item-active:before:bg-primary menu-item-hover:before:bg-primary"></span>
+                                            <span class="menu-title text-2sm font-normal text-gray-800 menu-item-active:text-primary menu-item-active:font-semibold menu-link-hover:!text-primary">
+                                                Especifica
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="menu-item">
-                            <a href="<?= base_url('aspirante/documentacion'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
-                                Documentacion
-                            </a>
-                        </div>
-                        
-                        
                     </div>
-                </div>
+                    <!-- Item principal: Aspirante -->
+                    <div class="menu-item" data-menu-item-toggle="accordion" data-menu-item-trigger="click">
+                        <div class="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] ps-[10px] pe-[10px] py-[6px]" tabindex="0">
+                            <span class="menu-icon items-start text-gray-500 w-[20px]">
+                                <i class="ki-solid ki-add-folder"></i>
+                            </span>
+                            <span class="menu-title text-sm font-medium text-gray-800">
+                                Aspirante
+                            </span>
+                            <span class="menu-arrow text-gray-400 w-[20px] shrink-0 justify-end ms-1 me-[-10px]">
+                                <i class="ki-filled ki-plus text-2xs menu-item-show:hidden"></i>
+                                <i class="ki-filled ki-minus text-2xs hidden menu-item-show:inline-flex"></i>
+                            </span>
+                        </div>
+                        <div class="menu-accordion gap-0.5 relative before:absolute before:start-[32px] ps-[22px] before:top-0 before:bottom-0 before:border-s before:border-gray-200">
+                            <div class="menu-item">
+                                <a href="<?= base_url('Acceso/aspirante'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                    Registro
+                                </a>
+                            </div>
+                            <div class="menu-item">
+                                <a href="<?= base_url('Acceso/encuesta'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                    Encuesta
+                                </a>
+                            </div>
+                            <div class="menu-item">
+                                <a href="<?= base_url('aspirante/documentacion'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                    Documentacion
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="menu-item" data-menu-item-toggle="accordion" data-menu-item-trigger="click">
-                    <div class="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] ps-[10px] pe-[10px] py-[6px]" tabindex="0">
-                        <span class="menu-icon items-start text-gray-500 w-[20px]">
-                            <i class="ki-solid ki-add-folder"></i>
-                        </span>
-                        <span class="menu-title text-sm font-medium text-gray-800">
-                            Administracion
-                        </span>
-                        <span class="menu-arrow text-gray-400 w-[20px] shrink-0 justify-end ms-1 me-[-10px]">
-                            <i class="ki-filled ki-plus text-2xs menu-item-show:hidden"></i>
-                            <i class="ki-filled ki-minus text-2xs hidden menu-item-show:inline-flex"></i>
-                        </span>
-                    </div>
-                    <div class="menu-accordion gap-0.5 relative before:absolute before:start-[32px] ps-[22px] before:top-0 before:bottom-0 before:border-s before:border-gray-200">
-                        <div class="menu-item">
-                            <a href="<?= base_url('Acceso/aspirante_registrados'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
-                                Aspirantes
-                            </a>
+                    <div class="menu-item" data-menu-item-toggle="accordion" data-menu-item-trigger="click">
+                        <div class="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] ps-[10px] pe-[10px] py-[6px]" tabindex="0">
+                            <span class="menu-icon items-start text-gray-500 w-[20px]">
+                                <i class="ki-solid ki-add-folder"></i>
+                            </span>
+                            <span class="menu-title text-sm font-medium text-gray-800">
+                                Administracion
+                            </span>
+                            <span class="menu-arrow text-gray-400 w-[20px] shrink-0 justify-end ms-1 me-[-10px]">
+                                <i class="ki-filled ki-plus text-2xs menu-item-show:hidden"></i>
+                                <i class="ki-filled ki-minus text-2xs hidden menu-item-show:inline-flex"></i>
+                            </span>
                         </div>
-                        <div class="menu-item">
-                            <a href="<?= base_url('convocatoria/crear'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
-                                Convocatorias
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a href="<?= base_url('aulas/crear'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
-                                Aulas
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a href="<?= base_url('grupos-examen'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
-                                Grupos de Examen
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a href="<?= base_url('documentacion/aspirantes'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
-                                Documentacion Aspirante
-                            </a>
-                        </div>
+                        <div class="menu-accordion gap-0.5 relative before:absolute before:start-[32px] ps-[22px] before:top-0 before:bottom-0 before:border-s before:border-gray-200">
+                            <div class="menu-item">
+                                <a href="<?= base_url('Acceso/aspirante_registrados'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                    Aspirantes
+                                </a>
+                            </div>
+                            <div class="menu-item">
+                                <a href="<?= base_url('convocatoria/crear'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                    Convocatorias
+                                </a>
+                            </div>
+                            <div class="menu-item">
+                                <a href="<?= base_url('aulas/crear'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                    Aulas
+                                </a>
+                            </div>
+                            <div class="menu-item">
+                                <a href="<?= base_url('grupos-examen'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                    Grupos de Examen
+                                </a>
+                            </div>
+                            <div class="menu-item">
+                                <a href="<?= base_url('documentacion/aspirantes'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                    Documentacion Aspirante
+                                </a>
+                            </div>
+                            <div class="menu-item">
+                                <a href="<?= base_url('admin/crear_documento'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                    Documentos
+                                </a>
+                            </div>
 
-                        <div class="menu-item">
-                            <a href="<?= base_url('grupos/curso'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
-                                Grupos de curso de Nivelacion
-                            </a>
+                            <div class="menu-item">
+                                <a href="<?= base_url('grupos/curso'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                    Grupos de curso de Nivelacion
+                                </a>
+                            </div>
                         </div>
-                       
-                        
                     </div>
-                </div>
+                <?php endif; ?>
             </div>
             <!-- End of Sidebar Menu -->
         </div>

@@ -47,8 +47,7 @@ class Documentacion extends ResourceController
         foreach ($documentosSubidos as $doc) {
             $subidosMap[$doc['documento_id']] = $doc;
         }
-
-        return view('base/publico/documentacion_aspirante', [
+        $data = [
             'titulo'     => 'Documentación',
             'miga'       => 'Aspirante',
             'url_miga'   => base_url('aspirante/documentacion'),
@@ -58,7 +57,9 @@ class Documentacion extends ResourceController
             'documentos' => $documentos,
             'subidos' => $subidosMap,
             'miga' => 'Documentacion',
-        ]);
+        ];
+
+        return view('base/publico/documentacion_aspirante', $data);
     }
 
 
@@ -314,6 +315,142 @@ class Documentacion extends ResourceController
         return view('base/administrador/documentos', $data);
     }
 
+    public function indexCrearDocumento()
+    {
+        if (!auth()->loggedIn()) {
+            return redirect()->to(site_url('Acceso/login'))->with('error', 'Debes iniciar sesión.');
+        }
+
+        $user = auth()->user();
+        if (!in_array($user->nivel, [0, 1])) {
+            return redirect()->to(site_url('Acceso/login'))->with('error', 'No tienes permiso para acceder a esta sección.');
+        }
+
+        $documentosModel = new \App\Models\DocumentosModel();
+        $documentos = $documentosModel->orderBy('id', 'desc')->findAll();
+
+
+        $data = [
+
+
+            'titulo'        => 'Crear Documento',
+            'miga'          => 'Administración',
+            'url_miga'      => base_url() . 'admin/crear_documentos',
+            'sub_miga'      => 'documentos',
+            'user_info'     => datos_usuario(),
+            'documentos'    => $documentos,
+        ];
+
+        return view('base/administrador/crear_documento', $data);
+    }
+
+
+    public function crearDocumento()
+    {
+        if (!auth()->loggedIn()) {
+            return redirect()->to(site_url('Acceso/login'))->with('error', 'Debes iniciar sesión.');
+        }
+
+        $user = auth()->user();
+        // Solo admin (nivel 0) o developer (nivel 1)
+        if (!in_array($user->nivel, [0, 1])) {
+            return redirect()->to(site_url('Acceso/login'))->with('error', 'No tienes permiso para acceder a esta sección.');
+        }
+
+        $validation = \Config\Services::validation();
+        $rules = [
+            'nombre'      => 'required|max_length[100]',
+            'descripcion' => 'required|max_length[255]',
+            'obligatorio' => 'required|in_list[0,1]',
+            'activo'      => 'required|in_list[0,1]',
+        ];
+
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('error', implode(' ', $validation->getErrors()));
+        }
+
+        $documentosModel = new \App\Models\DocumentosModel();
+        $documentosModel->insert([
+            'nombre'      => $this->request->getPost('nombre'),
+            'descripcion' => $this->request->getPost('descripcion'),
+            'obligatorio' => $this->request->getPost('obligatorio'),
+            'activo'      => $this->request->getPost('activo'),
+            'creado_en'   => date('Y-m-d H:i:s'),
+        ]);
+
+        return redirect()->to(site_url('admin/crear_documento'))->with('success', 'Documento creado correctamente.');
+    }
+    // Método para ver el documento (formulario de edición)
+    public function verDoc($id)
+    {
+        if (!auth()->loggedIn()) {
+            return redirect()->to(site_url('Acceso/login'))->with('error', 'Debes iniciar sesión.');
+        }
+
+        $user = auth()->user();
+        if (!in_array($user->nivel, [0, 1])) {
+            return redirect()->to(site_url('Acceso/login'))->with('error', 'No tienes permiso para acceder a esta sección.');
+        }
+
+        $documentosModel = new \App\Models\DocumentosModel();
+        $documento = $documentosModel->find($id);
+
+        if (!$documento) {
+            return redirect()->to(site_url('admin/crear_documento'))->with('error', 'Documento no encontrado.');
+        }
+
+
+        $data = [
+
+
+            'titulo'        => 'Editar Documento',
+            'miga'          => 'Administración',
+            'url_miga'      => base_url() . 'admin/editar_documentos',
+            'sub_miga'      => 'documentos',
+            'user_info'     => datos_usuario(),
+            'documento' => $documento
+        ];
+
+        return view('base/administrador/editar_documento', $data);
+    }
+
+    // Método para actualizar el documento
+    public function actualizarDocumento()
+    {
+        if (!auth()->loggedIn()) {
+            return redirect()->to(site_url('Acceso/login'))->with('error', 'Debes iniciar sesión.');
+        }
+
+        $user = auth()->user();
+        if (!in_array($user->nivel, [0, 1])) {
+            return redirect()->to(site_url('Acceso/login'))->with('error', 'No tienes permiso para acceder a esta sección.');
+        }
+
+        $validation = \Config\Services::validation();
+        $rules = [
+            'id'          => 'required|is_natural_no_zero',
+            'nombre'      => 'required|max_length[100]',
+            'descripcion' => 'required|max_length[255]',
+            'obligatorio' => 'required|in_list[0,1]',
+            'activo'      => 'required|in_list[0,1]',
+        ];
+
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('error', implode(' ', $validation->getErrors()));
+        }
+
+        $documentosModel = new \App\Models\DocumentosModel();
+        $id = $this->request->getPost('id');
+
+        $documentosModel->update($id, [
+            'nombre'      => $this->request->getPost('nombre'),
+            'descripcion' => $this->request->getPost('descripcion'),
+            'obligatorio' => $this->request->getPost('obligatorio'),
+            'activo'      => $this->request->getPost('activo'),
+        ]);
+
+        return redirect()->to(site_url('admin/crear_documento'))->with('success', 'Documento actualizado correctamente.');
+    }
 
     public function ver($curp)
     {

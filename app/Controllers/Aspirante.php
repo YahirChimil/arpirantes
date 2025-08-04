@@ -602,11 +602,30 @@ class Aspirante extends ResourceController
             ->where('aspirantes.examen', 1)
             ->findAll();
 
-        return view('base/administrador/imprimir_seleccionados', [
+        // Logo TecNM en base64
+        $logoPath = FCPATH . 'images/logos/logo_discere_svg_negro.svg';
+        $logoBase64 = '';
+        if (file_exists($logoPath)) {
+            $imageData = file_get_contents($logoPath);
+            $logoBase64 = 'data:image/png;base64,' . base64_encode($imageData);
+        }
+
+        // Renderizar vista HTML para PDF
+        $html = view('pdf/aspirantes_seleccionados', [
             'aspirantes' => $aspirantes,
-            'user_info'  => datos_usuario(),
-            'titulo'     => 'Aspirantes Seleccionados'
+            'logoBase64' => $logoBase64,
         ]);
+
+        // Generar PDF con Dompdf
+        $options = new \Dompdf\Options();
+        $options->set('defaultFont', 'Helvetica');
+        $dompdf = new \Dompdf\Dompdf($options);
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->render();
+
+        // Descargar PDF
+        $dompdf->stream('aspirantes_seleccionados.pdf', ['Attachment' => true]);
     }
 
 

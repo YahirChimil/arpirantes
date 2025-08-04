@@ -409,7 +409,7 @@ class Grupo extends Controller
             ->select('aspirantes.curp, aspirantes.nombre, aspirantes.primer_apellido, aspirantes.segundo_apellido, carreras.nombre AS nombre_carrera')
             ->join('carreras', 'aspirantes.carrera = carreras.id')
             ->where('grupo_nivelacion', $grupoId)
-            ->where('nivelacion_aprobado', 1)
+
             ->findAll();
 
         // Generar HTML desde la vista

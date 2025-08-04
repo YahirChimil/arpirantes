@@ -90,6 +90,48 @@ License:
 <!-- Scripts -->
 <script src="<?php echo base_url(); ?>assets/js/core.bundle.js">
 </script>
+<!-- ...existing code... -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- 1. Forzar mayúsculas en campos específicos ---
+        document.querySelectorAll('.mayusculas').forEach(function(input) {
+            input.addEventListener('input', function() {
+                this.value = this.value.toUpperCase();
+            });
+        });
+
+        // --- 2. No permitir fechas anteriores a hoy ---
+        const today = new Date().toISOString().split('T')[0];
+        const dateInputs = document.querySelectorAll('input[type="date"]');
+        dateInputs.forEach(input => input.setAttribute('min', today));
+
+        // --- 3. Encadenar fechas para que no se pueda seleccionar anterior a la anterior ---
+        const fechaCadena = [
+            ['registro_inicio', 'registro_fin'],
+            ['registro_fin', 'preficha_inicio'],
+            ['preficha_inicio', 'preficha_fin'],
+            ['preficha_fin', 'documentos_inicio'],
+            ['documentos_inicio', 'documentos_fin']
+        ];
+
+        fechaCadena.forEach(([anterior, siguiente]) => {
+            const campoAnterior = document.querySelector(`[name="${anterior}"]`);
+            const campoSiguiente = document.querySelector(`[name="${siguiente}"]`);
+
+            if (campoAnterior && campoSiguiente) {
+                campoAnterior.addEventListener('change', () => {
+                    if (campoAnterior.value) {
+                        campoSiguiente.min = campoAnterior.value;
+                        if (campoSiguiente.value < campoAnterior.value) {
+                            campoSiguiente.value = '';
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>
+<!-- ...existing code... -->
 
 <!-- End of Scripts -->
 </body>

@@ -139,8 +139,10 @@ $routes->post('aspirante/eliminar_documento', 'Documentacion::eliminar_documento
 $routes->get('documentacion/aspirantes', 'Documentacion::indexAdmin');
 $routes->get('admin/documentos/ver/(:segment)', 'Documentacion::ver/$1');
 $routes->post('admin/documentos/actualizar', 'Documentacion::actualizar');
-
-
+$routes->get('admin/crear_documento', 'Documentacion::indexCrearDocumento');
+$routes->post('admin/crear_documento', 'Documentacion::crearDocumento');
+$routes->get('admin/documentos/editar_documento/(:segment)', 'Documentacion::verDoc/$1');
+$routes->post('admin/documentos/actualizar_documento/(:segment)', 'Documentacion::actualizarDocumento/$1');
 
 
 

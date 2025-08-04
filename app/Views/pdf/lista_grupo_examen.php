@@ -1,10 +1,9 @@
-<!-- filepath: app/Views/base/publico/pdf_aprobados.php -->
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <title>Aspirantes Aprobados</title>
+    <title>Lista de Aspirantes - Grupo Examen</title>
     <style>
         body {
             font-family: Helvetica, Arial, sans-serif;
@@ -46,21 +45,27 @@
         th {
             background: #e5e7eb;
         }
+
+        .firma {
+            height: 35px;
+        }
     </style>
 </head>
 
 <body>
     <div class="header">
-        <?php if (!empty($logoBase64)): ?>
+        <?php if ($logoBase64): ?>
             <img src="<?= $logoBase64 ?>" alt="TecNM" class="logo" style="height:60px;">
         <?php endif; ?>
-        <h1>Aspirantes Aprobados - Grupo de Curso</h1>
+        <h1>Lista de Aspirantes - Grupo de Examen</h1>
         <div>Instituto Tecnológico de Oaxaca</div>
     </div>
     <div class="info">
-        <strong>Sede:</strong> <?= esc($grupo['nombre_sede'] ?? '') ?> &nbsp; | &nbsp;
-        <strong>Aula:</strong> <?= esc($grupo['nombre_aula'] ?? '') ?> &nbsp; | &nbsp;
-        <strong>Carrera:</strong> <?= esc($grupo['nombre_carrera'] ?? '') ?>
+        <strong>Sede:</strong> <?= esc($grupo['nombre_sede']) ?> &nbsp; | &nbsp;
+        <strong>Aula:</strong> <?= esc($grupo['nombre_aula']) ?> &nbsp; | &nbsp;
+        <strong>Carrera:</strong> <?= esc($grupo['nombre_carrera']) ?> <br>
+        <strong>Fecha:</strong> <?= esc($grupo['fecha']) ?> &nbsp; | &nbsp;
+        <strong>Hora:</strong> <?= esc($grupo['hora']) ?>
     </div>
     <table>
         <thead>
@@ -70,12 +75,13 @@
                 <th>Nombre</th>
                 <th>Primer Apellido</th>
                 <th>Segundo Apellido</th>
+                <th>Firma</th>
             </tr>
         </thead>
         <tbody>
             <?php if (empty($aspirantes)): ?>
                 <tr>
-                    <td colspan="5" style="text-align:center;">No hay aspirantes aprobados en este grupo.</td>
+                    <td colspan="6" style="text-align:center;">No hay aspirantes asignados a este grupo.</td>
                 </tr>
             <?php else: ?>
                 <?php $i = 1;
@@ -86,6 +92,7 @@
                         <td><?= esc($asp['nombre']) ?></td>
                         <td><?= esc($asp['primer_apellido']) ?></td>
                         <td><?= esc($asp['segundo_apellido']) ?></td>
+                        <td class="firma"></td>
                     </tr>
                 <?php endforeach; ?>
             <?php endif; ?>

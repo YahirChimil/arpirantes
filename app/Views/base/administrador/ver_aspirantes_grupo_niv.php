@@ -100,6 +100,7 @@ License:
                             </button>
                         </div>
                     </form>
+
                 </div>
 
 
@@ -117,6 +118,13 @@ License:
                     <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded mb-4">
                         Guardar Asignación
                     </button>
+                    <div class="mb-4 flex flex-wrap gap-2 items-center">
+                        <a href="<?= base_url('grupo/exportar_aprobados/' . $grupo['id']) ?>"
+                            target="_blank"
+                            class="inline-flex items-center bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition text-sm font-medium">
+                            🖨️ Imprimir Lista
+                        </a>
+                    </div>
 
                     <table class="min-w-full border border-gray-300 rounded-lg overflow-hidden shadow-sm">
                         <thead class="bg-gradient-to-r from-blue-600 to-blue-400 text-white">

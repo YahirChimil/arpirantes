@@ -1,10 +1,9 @@
-<!-- filepath: app/Views/base/publico/pdf_aprobados.php -->
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <title>Aspirantes Aprobados</title>
+    <title>Aspirantes Seleccionados</title>
     <style>
         body {
             font-family: Helvetica, Arial, sans-serif;
@@ -26,11 +25,6 @@
             margin-bottom: 0.5em;
         }
 
-        .info {
-            margin-bottom: 10px;
-            font-size: 13px;
-        }
-
         table {
             width: 100%;
             border-collapse: collapse;
@@ -40,7 +34,7 @@
         th,
         td {
             border: 1px solid #888;
-            padding: 7px;
+            padding: 8px;
         }
 
         th {
@@ -51,41 +45,32 @@
 
 <body>
     <div class="header">
-        <?php if (!empty($logoBase64)): ?>
+        <?php if ($logoBase64): ?>
             <img src="<?= $logoBase64 ?>" alt="TecNM" class="logo" style="height:60px;">
         <?php endif; ?>
-        <h1>Aspirantes Aprobados - Grupo de Curso</h1>
+        <h1>Aspirantes Seleccionados</h1>
         <div>Instituto Tecnológico de Oaxaca</div>
-    </div>
-    <div class="info">
-        <strong>Sede:</strong> <?= esc($grupo['nombre_sede'] ?? '') ?> &nbsp; | &nbsp;
-        <strong>Aula:</strong> <?= esc($grupo['nombre_aula'] ?? '') ?> &nbsp; | &nbsp;
-        <strong>Carrera:</strong> <?= esc($grupo['nombre_carrera'] ?? '') ?>
+        <div style="font-size:11px; color:#666;">Lista generada automáticamente</div>
     </div>
     <table>
         <thead>
             <tr>
-                <th>#</th>
                 <th>CURP</th>
-                <th>Nombre</th>
-                <th>Primer Apellido</th>
-                <th>Segundo Apellido</th>
+                <th>Sede</th>
+                <th>Carrera</th>
             </tr>
         </thead>
         <tbody>
             <?php if (empty($aspirantes)): ?>
                 <tr>
-                    <td colspan="5" style="text-align:center;">No hay aspirantes aprobados en este grupo.</td>
+                    <td colspan="3" style="text-align:center;">No hay aspirantes seleccionados.</td>
                 </tr>
             <?php else: ?>
-                <?php $i = 1;
-                foreach ($aspirantes as $asp): ?>
+                <?php foreach ($aspirantes as $asp): ?>
                     <tr>
-                        <td><?= $i++ ?></td>
                         <td><?= esc($asp['curp']) ?></td>
-                        <td><?= esc($asp['nombre']) ?></td>
-                        <td><?= esc($asp['primer_apellido']) ?></td>
-                        <td><?= esc($asp['segundo_apellido']) ?></td>
+                        <td><?= esc($asp['nombre_sede']) ?></td>
+                        <td><?= esc($asp['nombre_carrera']) ?></td>
                     </tr>
                 <?php endforeach; ?>
             <?php endif; ?>

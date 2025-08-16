@@ -45,11 +45,7 @@ License:
                             <?php echo $miga; ?> :: <?php echo $sub_miga; ?>
                         </div>
                     </div>
-                    <div class="flex items-center gap-2.5">
-                        <a class="btn btn-sm btn-light" href="#">
-                            Boton accion1
-                        </a>
-                    </div>
+
                 </div>
             </div>
             <!-- End of Container -->
@@ -92,7 +88,7 @@ License:
                             </div>
                             <div class="card-footer justify-center">
                                 <a class="btn btn-link" href="#">
-                                    Ir a xxxxxx
+
                                 </a>
                             </div>
                         </div>

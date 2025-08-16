@@ -56,10 +56,9 @@ class GruposExamen extends ResourceController
             'url_miga' => base_url('grupos-examen'),
             'sub_miga' => 'grupos-examen',
             'user_info' => datos_usuario(),
-            'grupos' => (new \App\Models\GruposExamenModel())->findAll(),
             'sedes' => (new \App\Models\SedesModel())->findAll(),
             'carreras' => (new \App\Models\CarrerasModel())->findAll(),
-            'aulas' => (new \App\Models\AulasModel())->findAll(),
+            'aulas' => (new \App\Models\AulasModel())->where('tipo', 3)->findAll(),
             'convocatorias' => (new \App\Models\ConvocatoriaModel())->findAll(),
             'aspirantesSinGrupo' => $aspirantesSinGrupo,
             'convocatoriaSeleccionada' => $convocatoriaSeleccionada,
@@ -84,7 +83,6 @@ class GruposExamen extends ResourceController
             'carrera_id'          => 'required|is_natural_no_zero',
             'aula_id'             => 'required|is_natural_no_zero',
             'fecha'               => 'required|valid_date',
-            'hora'                => 'required',
             'capacidad'           => 'required|numeric',
         ];
 
@@ -99,8 +97,8 @@ class GruposExamen extends ResourceController
         // Validar si la misma aula está ocupada en el mismo lapso de tiempo (3 horas desde la hora especificada)
         $aulaId = $this->request->getPost('aula_id');
         $fecha = $this->request->getPost('fecha');
-        $hora = $this->request->getPost('hora');
 
+        $hora = $this->request->getPost('hora_h') . ':' . $this->request->getPost('hora_m') . ':00';
         // Calcular el rango de tiempo (hora + 3 horas)
         $horaFin = date('H:i:s', strtotime($hora . ' +3 hours'));
 
@@ -126,7 +124,7 @@ class GruposExamen extends ResourceController
             'carrera_id'          => $this->request->getPost('carrera_id'),
             'aula_id'             => $this->request->getPost('aula_id'),
             'fecha'               => $this->request->getPost('fecha'),
-            'hora'                => $this->request->getPost('hora'),
+            'hora'                => $this->request->getPost('hora_h') . ':' . $this->request->getPost('hora_m') . ':00',
             'capacidad'           => $this->request->getPost('capacidad'),
         ];
 

@@ -1,0 +1,128 @@
+ERROR - 2025-08-11 13:41:44 --> mysqli_sql_exception: Unknown column 'aspirantes.seleccionado' in 'where clause' in C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\rockstar\rockstar\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspiran...', 0)
+#1 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspiran...')
+#2 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspiran...')
+#3 C:\xampp\htdocs\rockstar\rockstar\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspiran...', Array, false)
+#4 C:\xampp\htdocs\rockstar\rockstar\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rockstar\rockstar\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\rockstar\rockstar\app\Controllers\Aspirante.php(973): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(933): App\Controllers\Aspirante->indexExamen()
+#8 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+#9 C:\xampp\htdocs\rockstar\rockstar\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\rockstar\rockstar\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\rockstar\rockstar\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\rockstar\rockstar\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-08-11 13:41:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'aspirantes.seleccionado' in 'where clause'
+[Method: GET, Route: administracion/seleccionados]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+WHERE `aspirantes`.`seleccionado` = :aspirantes.seleccionado:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Aspirante.php(973): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexExamen()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-08-11 13:41:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'aspirantes.seleccionado' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+WHERE `aspirantes`.`seleccionado` = 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+WHERE `aspirantes`.`seleccionado` = 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+WHERE `aspirantes`.`seleccionado` = :aspirantes.seleccionado:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Aspirante.php(973): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexExamen()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-08-11 13:41:44 --> [Caused by] mysqli_sql_exception: Unknown column 'aspirantes.seleccionado' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+WHERE `aspirantes`.`seleccionado` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+WHERE `aspirantes`.`seleccionado` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+WHERE `aspirantes`.`seleccionado` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `aspirantes`.*, `sedes`.`nombre_sede` as `sede`, `carreras`.`nombre` as `carrera`
+FROM `aspirantes`
+JOIN `sedes` ON `sedes`.`id_sede` = `aspirantes`.`sede`
+JOIN `carreras` ON `carreras`.`id` = `aspirantes`.`carrera`
+WHERE `aspirantes`.`seleccionado` = :aspirantes.seleccionado:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Aspirante.php(973): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexExamen()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-08-11 13:42:12 --> ErrorException: Undefined variable $user_info
+[Method: GET, Route: administracion/seleccionados]
+in APPPATH\Views\base\template\header.php on line 36.
+ 1 APPPATH\Views\base\template\header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_info', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\template\\header.php', 36)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/template/header', [], true)
+ 5 APPPATH\Views\base\administrador\Aspirantes_seleccionados.php(28): view('base/template/header')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\Aspirantes_seleccionados.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/Aspirantes_seleccionados', [], true)
+ 9 APPPATH\Controllers\Aspirante.php(984): view('base/administrador/Aspirantes_seleccionados', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexExamen()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-08-11 13:55:55 --> ErrorException: Undefined variable $aspirantesPagina
+[Method: GET, Route: administracion/seleccionados]
+in APPPATH\Views\base\administrador\Aspirantes_seleccionados.php on line 127.
+ 1 APPPATH\Views\base\administrador\Aspirantes_seleccionados.php(127): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $aspirantesPagina', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\Aspirantes_seleccionados.php', 127)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\administrador\\Aspirantes_seleccionados.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/administrador/Aspirantes_seleccionados', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(998): view('base/administrador/Aspirantes_seleccionados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->indexExamen()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')

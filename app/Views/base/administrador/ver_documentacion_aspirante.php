@@ -61,7 +61,7 @@ License:
 
                                 <!-- Estatus -->
                                 <label class="block text-sm font-medium text-gray-700">Estatus:</label>
-                                <select name="estatus" class="w-full border-gray-300 rounded">
+                                <select name="estatus" id="estatus-<?= $docSubido['id'] ?>" class="w-full border-gray-300 rounded" onchange="toggleObservaciones(<?= $docSubido['id'] ?>)">
                                     <option value="0" <?= $docSubido['estatus'] == 0 ? 'selected' : '' ?>>🕒 Sin revisar</option>
                                     <option value="1" <?= $docSubido['estatus'] == 1 ? 'selected' : '' ?>>📝 Con observaciones</option>
                                     <option value="2" <?= $docSubido['estatus'] == 2 ? 'selected' : '' ?>>✅ Aprobado</option>
@@ -69,7 +69,7 @@ License:
 
                                 <!-- Observaciones -->
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Observaciones:</label>
-                                <select name="observaciones" class="w-full border-gray-300 rounded px-2 py-1" required>
+                                <select name="observaciones" id="observaciones-<?= $docSubido['id'] ?>" class="w-full border-gray-300 rounded px-2 py-1" <?= $docSubido['estatus'] == 2 ? 'disabled' : '' ?>>
                                     <option value="">Sin observaciones</option>
                                     <option value="EL DOCUMENTO NO CORRESPONDE. El documento no es una constacia de estudios." <?= (isset($docSubido['observaciones']) && $docSubido['observaciones'] === 'EL DOCUMENTO NO CORRESPONDE. El documento no es una constacia de estudios.') ? 'selected' : '' ?>>El documento no corresponde</option>
 
@@ -131,8 +131,18 @@ License:
 <script src="<?php echo base_url(); ?>assets/js/core.bundle.js">
 </script>
 
-
-
+<script>
+    function toggleObservaciones(id) {
+        var estatus = document.getElementById('estatus-' + id).value;
+        var obs = document.getElementById('observaciones-' + id);
+        if (estatus == '2') {
+            obs.disabled = true;
+            obs.value = '';
+        } else {
+            obs.disabled = false;
+        }
+    }
+</script>
 
 <!-- End of Scripts -->
 </body>

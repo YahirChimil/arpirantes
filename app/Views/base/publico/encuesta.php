@@ -16,7 +16,11 @@
 
             <div class="container mx-auto px-4 py-6">
                 <h2 class="text-2xl font-bold mb-4">Encuesta socio-económica para Aspirantes</h2>
-                <p class="text-sm text-gray-600 mb-4">Por favor, contesta la encuesta con datos verdaderos para evitar problemas en el proceso. escribir "no" en campos donde no tengas respuesta</p> <?php if (session()->getFlashdata('success')): ?>
+                <p class="text-sm text-gray-600 mb-4"> Hola <?= esc($aspirante['nombre']) ?> Por favor, contesta la encuesta con datos verdaderos para evitar problemas en el proceso. </p>
+                <p class="text-sm text-gray-600 mb-4">
+                    <span class="text-red-600 font-bold">*</span> Campos obligatorios
+                </p>
+                <?php if (session()->getFlashdata('success')): ?>
             </div>
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
                 <strong class="font-bold">¡encuesta registrada con exito! </strong>
@@ -34,32 +38,16 @@
 
         <form action="<?= base_url('encuesta/guardar') ?>" method="post" class="space-y-6">
             <!-- Datos del aspirante -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-100 p-4 rounded-md shadow">
-                <div>
-                    <label class="block text-sm font-medium">CURP</label>
-                    <input type="text" name="curp" value="<?= esc($aspirante['curp']) ?>" readonly class="input input-bordered w-full mt-1" />
-                </div>
-                <div>
-                    <label class="block text-sm font-medium">Nombre</label>
-                    <input type="text" value="<?= esc($aspirante['nombre']) ?>" readonly class="input input-bordered w-full mt-1" />
-                </div>
-                <div>
-                    <label class="block text-sm font-medium">Primer Apellido</label>
-                    <input type="text" value="<?= esc($aspirante['primer_apellido']) ?>" readonly class="input input-bordered w-full mt-1" />
-                </div>
-                <div>
-                    <label class="block text-sm font-medium">Segundo Apellido</label>
-                    <input type="text" value="<?= esc($aspirante['segundo_apellido']) ?>" readonly class="input input-bordered w-full mt-1" />
-                </div>
-                <div>
-                    <label class="block text-sm font-medium">Género</label>
-                    <input type="text" value="<?= esc($aspirante['genero']) ?>" readonly class="input input-bordered w-full mt-1" />
-                </div>
-                <div>
-                    <label class="block text-sm font-medium">Fecha de nacimiento</label>
-                    <input type="text" value="<?= esc($aspirante['fecha_nacimiento']) ?>" readonly class="input input-bordered w-full mt-1" />
-                </div>
+            <div>
+                <input type="hidden" name="curp" value="<?= esc($aspirante['curp']) ?>" readonly class="input input-bordered w-full mt-1" />
             </div>
+            <div>
+                <input type="hidden" value="<?= esc($aspirante['genero']) ?>" readonly class="input input-bordered w-full mt-1" />
+            </div>
+            <div>
+                <input type="hidden" value="<?= esc($aspirante['fecha_nacimiento']) ?>" readonly class="input input-bordered w-full mt-1" />
+            </div>
+
 
             <!-- Preguntas con paginación -->
             <?php
@@ -86,13 +74,16 @@
                     <div class="pregunta <?= $esHija ? 'pregunta-hija hidden' : '' ?>"
                         data-pregunta-id="<?= esc($pregunta['id']) ?>"
                         <?= isset($pregunta['pregunta_padre']) ? 'data-pregunta-padre="' . esc($pregunta['pregunta_padre']) . '"' : '' ?>>
-                        <label class="block text-sm font-semibold mb-1"><?= esc($pregunta['texto']) ?></label>
+                        <label class="block text-sm font-semibold mb-1">
+                            <?= esc($pregunta['texto']) ?>
+                            <span class="text-red-600 font-bold" title="Campo obligatorio">*</span>
+                        </label>
 
                         <?php if ($pregunta['tipo_respuesta'] === 'texto'): ?>
-                            <input type="text" name="respuestas[<?= $pregunta['id'] ?>]" class="input input-bordered w-full" />
+                            <input type="text" name="respuestas[<?= $pregunta['id'] ?>]" class="input input-bordered w-full" required />
 
                         <?php elseif ($pregunta['tipo_respuesta'] === 'numero'): ?>
-                            <input type="number" name="respuestas[<?= $pregunta['id'] ?>]" class="input input-bordered w-full" />
+                            <input type="number" name="respuestas[<?= $pregunta['id'] ?>]" class="input input-bordered w-full" required />
 
                         <?php elseif ($pregunta['tipo_respuesta'] === 'opcion' && !empty($pregunta['opciones'])): ?>
                             <select name="respuestas[<?= $pregunta['id'] ?>]" class="select select-bordered w-full"
@@ -106,7 +97,7 @@
                         <?php elseif ($pregunta['tipo_respuesta'] === 'multiple' && !empty($pregunta['opciones'])): ?>
                             <?php foreach (explode('|', $pregunta['opciones']) as $opcion): ?>
                                 <label class="inline-flex items-center mr-3">
-                                    <input type="checkbox" name="respuestas[<?= $pregunta['id'] ?>][]" value="<?= esc($opcion) ?>" class="checkbox mr-2">
+                                    <input type="checkbox" name="respuestas[<?= $pregunta['id'] ?>][]" value="<?= esc($opcion) ?>" class="checkbox mr-2" <?= $esHija ? '' : '' ?>>
                                     <?= esc($opcion) ?>
                                 </label>
                             <?php endforeach; ?>
@@ -223,37 +214,73 @@
         mostrarSeccion(seccionActual);
     </script>
     <script>
+        function ocultarHijasRecursivo(padreId) {
+            document.querySelectorAll(`[data-pregunta-padre="${padreId}"]`).forEach(hija => {
+                hija.classList.add("hidden");
+                hija.querySelectorAll("input, select, textarea").forEach(input => {
+                    input.value = ''; // limpiar si se oculta
+                    input.removeAttribute("required");
+                });
+                // Oculta también las hijas de la hija (nietas, bisnietas, etc.)
+                const hijaId = hija.getAttribute('data-pregunta-id');
+                ocultarHijasRecursivo(hijaId);
+            });
+        }
+
         document.addEventListener("DOMContentLoaded", function() {
             document.querySelectorAll("select[data-controlador]").forEach(select => {
                 select.addEventListener("change", function() {
                     const idControladora = this.dataset.controlador;
                     const valor = this.value;
 
-                    document.querySelectorAll(`[data-pregunta-padre="${idControladora}"]`).forEach(hija => {
-                        if (valor === "Sí") {
+                    if (valor === "Sí") {
+                        document.querySelectorAll(`[data-pregunta-padre="${idControladora}"]`).forEach(hija => {
                             hija.classList.remove("hidden");
-                        } else {
-                            hija.classList.add("hidden");
                             hija.querySelectorAll("input, select, textarea").forEach(input => {
-                                input.value = ''; // limpiar si se oculta
+                                input.setAttribute("required", "required");
                             });
-                        }
-                    });
+                        });
+                    } else {
+                        ocultarHijasRecursivo(idControladora);
+                    }
                 });
             });
         });
     </script>
     <script>
         document.querySelector("form").addEventListener("submit", function(e) {
-            const selects = this.querySelectorAll("select[required]");
-            let valido = true;
+            // Quitar required de inputs ocultos antes de validar
+            this.querySelectorAll("select[required], input[required], textarea[required], input[type='checkbox'][required]").forEach(input => {
+                if (input.offsetParent === null) {
+                    input.removeAttribute("required");
+                } else {
+                    input.setAttribute("required", "required");
+                }
+            });
 
-            selects.forEach(select => {
-                if (select.value.trim() === "") {
-                    select.classList.add("border-red-500", "border-2");
+            let valido = true;
+            // Validar todos los campos visibles y requeridos
+            this.querySelectorAll("select[required], input[required], textarea[required]").forEach(input => {
+                if (input.offsetParent !== null && (!input.value || input.value.trim() === "")) {
+                    input.classList.add("border-red-500", "border-2");
                     valido = false;
                 } else {
-                    select.classList.remove("border-red-500", "border-2");
+                    input.classList.remove("border-red-500", "border-2");
+                }
+            });
+
+            // Validar checkboxes visibles y requeridos
+            this.querySelectorAll("input[type='checkbox'][required]").forEach(checkbox => {
+                if (checkbox.offsetParent !== null) {
+                    const group = this.querySelectorAll(`input[name='${checkbox.name}']:checked`);
+                    if (group.length === 0) {
+                        checkbox.classList.add("border-red-500", "border-2");
+                        valido = false;
+                    } else {
+                        checkbox.classList.remove("border-red-500", "border-2");
+                    }
+                } else {
+                    checkbox.removeAttribute("required");
                 }
             });
 

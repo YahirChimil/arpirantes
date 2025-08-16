@@ -35,7 +35,7 @@ class Documentacion extends ResourceController
         // Obtener documentos disponibles desde la base de datos
         $documentoModel = new \App\Models\DocumentosModel();
         $documentos = $documentoModel->where('activo', 1)->findAll();
-
+        $documentosNecesarios = count($documentos);
         // Obtener documentos ya cargados por el aspirante
         $documentosAspiranteModel = new \App\Models\DocumentosAspirantesModel();
         $documentosSubidos = $documentosAspiranteModel
@@ -56,6 +56,8 @@ class Documentacion extends ResourceController
             'aspirante' => $aspirante,
             'documentos' => $documentos,
             'subidos' => $subidosMap,
+            'documentosNecesarios' => $documentosNecesarios, // <-- aquí lo pasas
+
             'miga' => 'Documentacion',
         ];
 
@@ -227,7 +229,8 @@ class Documentacion extends ResourceController
         // Eliminar el registro por su id (primaria)
         $model->delete($documento['id']);
 
-        return redirect()->back()->with('success', 'Documento eliminado correctamente.');
+
+        return redirect()->to(base_url('aspirante/documentacion'))->with('success', 'Documento eliminado correctamente.');
     }
 
 
@@ -264,14 +267,24 @@ class Documentacion extends ResourceController
         $paginaActual = (int)($this->request->getGet('page') ?? 1);
         $porPagina = 10;
 
-        // Obtener CURPs de aspirantes con documentos subidos
-        $documentosAspiranteModel = new \App\Models\DocumentosAspirantesModel();
-        $curps = $documentosAspiranteModel
-            ->select('aspirante_curp')
-            ->distinct()
-            ->findAll();
-        $curpList = array_column($curps, 'aspirante_curp');
+        // Obtener documentos activos (necesarios)
+        $documentosModel = new \App\Models\DocumentosModel();
+        $documentosNecesarios = $documentosModel->where('activo', 1)->countAllResults();
 
+        // Obtener CURPs de aspirantes que hayan subido todos los documentos necesarios
+        $documentosAspiranteModel = new \App\Models\DocumentosAspirantesModel();
+        $curpsCompletos = $documentosAspiranteModel
+            ->select('aspirante_curp')
+            ->groupBy('aspirante_curp')
+            ->having('COUNT(documento_id) >=', $documentosNecesarios)
+            ->where('ruta IS NOT NULL', null, false)
+            ->findAll();
+
+        $curpList = array_column($curpsCompletos, 'aspirante_curp');
+
+        if (empty($curpList)) {
+            $curpList = ['-']; // Valor que nunca existirá como curp
+        }
         // Construir consulta con filtros
         $aspiranteModel = new \App\Models\AspiranteModel();
         $builder = $aspiranteModel->whereIn('curp', $curpList);
@@ -314,7 +327,6 @@ class Documentacion extends ResourceController
 
         return view('base/administrador/documentos', $data);
     }
-
     public function indexCrearDocumento()
     {
         if (!auth()->loggedIn()) {
@@ -452,6 +464,72 @@ class Documentacion extends ResourceController
         return redirect()->to(site_url('admin/crear_documento'))->with('success', 'Documento actualizado correctamente.');
     }
 
+    /**
+     * Envía un correo al aspirante cuando TODOS sus documentos han sido revisados (aceptados u observados).
+     * @param string $curp
+     */
+    public function enviarCorreoRevisionDocumentos($curp)
+    {
+        $documentosModel = new \App\Models\DocumentosModel();
+        $documentosAspiranteModel = new \App\Models\DocumentosAspirantesModel();
+        $aspiranteModel = new \App\Models\AspiranteModel();
+
+        // Total de documentos activos
+        $documentosNecesarios = $documentosModel->where('activo', 1)->countAllResults();
+
+        // Documentos subidos por el aspirante
+        $docsAspirante = $documentosAspiranteModel
+            ->where('aspirante_curp', $curp)
+            ->findAll();
+
+        // ¿Todos los documentos tienen estatus diferente de 0 (sin revisar)?
+        $revisados = 0;
+        foreach ($docsAspirante as $doc) {
+            if ($doc['estatus'] != 0) {
+                $revisados++;
+            }
+        }
+
+        if ($revisados == $documentosNecesarios && $documentosNecesarios > 0) {
+            // Obtener datos del aspirante
+            $aspirante = $aspiranteModel->where('curp', $curp)->first();
+
+            // Mensaje personalizado
+            $mensaje = '
+        <div style="font-family: Inter, Arial, sans-serif; background: #f7f7f7; padding: 32px;">
+            <div style="max-width: 500px; margin: auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px #0001; padding: 32px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                    <img src="' . base_url('images/logos/logo_discere_svg_negro.svg') . '" alt="Logo TecNM" style="height: 30px;">
+                    <h2 style="color: #1a202c; font-weight: 700; margin: 0; flex: 1; text-align: center;"></h2>
+                    <img src="' . base_url('images/logos/logo_ito.png') . '" alt="Logo ITO" style="height: 60px;">
+                </div>
+                <p style="font-size: 1.1em; color: #222; margin-bottom: 18px;">
+                    <strong>¡Tus documentos han sido revisados!</strong>
+                </p>
+                <div style="background: #f1f5f9; border-radius: 8px; padding: 18px; margin-bottom: 18px;">
+                    <p style="margin: 0 0 8px 0; color: #333;">Estimado(a) ' . esc($aspirante['nombre']) . ' ' . esc($aspirante['primer_apellido']) . ' ' . esc($aspirante['segundo_apellido']) . ',</p>
+                    <p style="margin: 0;">El administrador ha revisado todos tus documentos. Ingresa a la plataforma para consultar el estatus y observaciones de cada uno.</p>
+                </div>
+                <p style="color: #222; margin-bottom: 18px;">
+                    Si tienes observaciones, por favor realiza las correcciones necesarias y vuelve a subir el documento correspondiente.<br>
+                    Si todos tus documentos están aceptados, ¡felicidades! Has finalizado el proceso de documentación.
+                </p>
+                <div style="text-align: center; margin-top: 32px;">
+                    <p style="color: #888; font-size: 0.95em; margin-top: 8px;">Saludos cordiales,<br>Instituto Tecnológico de Oaxaca</p>
+                </div>
+            </div>
+        </div>
+        ';
+
+            $emailService = \Config\Services::email();
+            $emailService->setTo($aspirante['correo']);
+            $emailService->setSubject('Tus documentos han sido revisados');
+            $emailService->setMessage($mensaje);
+            $emailService->setMailType('html');
+            $emailService->send();
+        }
+    }
+
     public function ver($curp)
     {
         if (!auth()->loggedIn()) {
@@ -507,7 +585,7 @@ class Documentacion extends ResourceController
         $estatus = $this->request->getPost('estatus');
         $observaciones = $this->request->getPost('observaciones');
 
-        $model = new DocumentosAspirantesModel();
+        $model = new \App\Models\DocumentosAspirantesModel();
         $documento = $model->find($id);
 
         if (!$documento) {
@@ -518,6 +596,9 @@ class Documentacion extends ResourceController
             'estatus' => $estatus,
             'observaciones' => $observaciones,
         ]);
+
+        // Solo enviar correo al aspirante relacionado si todos sus documentos están revisados
+        // $this->enviarCorreoRevisionDocumentos($documento['aspirante_curp']);
 
         return redirect()->back()->with('success', 'Documento actualizado correctamente.');
     }

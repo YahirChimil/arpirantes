@@ -167,7 +167,7 @@ class Encuesta extends ResourceController
         }
 
         $fechaAsignada = clone $fechaInicio;
-        $limiteDiario = 50;
+        $limiteDiario = 120;
 
         $builder = $db->table('fechas_preficha');
         $builder->truncate(); // Limpiar tabla (opcional, depende del caso)

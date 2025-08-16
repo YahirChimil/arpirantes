@@ -43,18 +43,18 @@
                                     src="<?php echo base_url(); ?>images/foto_perfil/<?php echo $user_info['foto'] ?>">
                                 <div class="flex flex-col gap-1.5">
                                     <span class="text-sm text-gray-800 font-semibold leading-none">
-                                    <?php echo $user_info['nombre'] ?>
+                                        <?php echo $user_info['nombre'] ?>
                                     </span>
                                     <a class="text-xs text-gray-600 hover:text-primary font-medium leading-none"
                                         href="#">
                                         <?php echo $user_info['username'] ?>
                                     </a>
                                     <span class="badge badge-xs badge-success badge-outline">
-                                        <?php if($user_info['nivel']==0) echo 'Developer'; ?>
-                                        <?php if($user_info['nivel']==1) echo 'Administrador'; ?>
-                                        <?php if($user_info['nivel']==2) echo 'Docente'; ?>
-                                        <?php if($user_info['nivel']==3) echo 'Alumno'; ?>
-                                        <?php if($user_info['nivel']==4) echo 'Aspirante'; ?>
+                                        <?php if ($user_info['nivel'] == 0) echo 'Developer'; ?>
+                                        <?php if ($user_info['nivel'] == 1) echo 'Administrador'; ?>
+                                        <?php if ($user_info['nivel'] == 2) echo 'Docente'; ?>
+                                        <?php if ($user_info['nivel'] == 3) echo 'Alumno'; ?>
+                                        <?php if ($user_info['nivel'] == 4) echo 'Aspirante'; ?>
                                     </span>
                                 </div>
                                 </img>
@@ -103,17 +103,17 @@
     <!-- Contenedor principal header -->
 </header>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         const numericInputs = document.querySelectorAll('input[type="number"]');
 
         numericInputs.forEach(input => {
-            input.addEventListener('input', function () {
+            input.addEventListener('input', function() {
                 if (this.value < 0) {
                     this.value = '';
                 }
             });
 
-            input.addEventListener('keypress', function (e) {
+            input.addEventListener('keypress', function(e) {
                 if (e.key === '-' || e.key === '+') {
                     e.preventDefault();
                 }

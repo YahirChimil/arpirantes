@@ -3,8 +3,8 @@
     <?php if (isset($titulo)) {
         echo $titulo . ' ::';
     } ?> <?php if (isset($titulo)) {
-        echo $miga . ' ::';
-    } ?>
+                echo $miga . ' ::';
+            } ?>
     <?php echo config_namesystem; ?> :: <?php echo config_clientname; ?> v<?php echo config_version; ?>
 </title>
 <meta charset="utf-8" />
@@ -31,3 +31,16 @@
 <link href="<?php echo base_url(); ?>assets/css/styles.css" rel="stylesheet" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('form').forEach(function(form) {
+            form.addEventListener('submit', function(e) {
+                var btn = form.querySelector('button[type="submit"]');
+                if (btn) {
+                    btn.disabled = true;
+                    btn.innerHTML = '<span class="animate-spin inline-block mr-2 w-5 h-5 border-2 border-t-2 border-gray-200 border-t-blue-600 rounded-full"></span>Procesando...';
+                }
+            });
+        });
+    });
+</script>

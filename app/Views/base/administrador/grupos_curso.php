@@ -123,11 +123,36 @@ License:
                             </select>
 
                             <label class="block text-xs font-semibold text-gray-600">Hora inicio</label>
-                            <input type="time" name="hora_inicio" required class="w-full border rounded px-2 py-1 text-sm">
+                            <div class="flex gap-2 mb-2">
+                                <select name="hora_inicio_h" required class="border rounded px-2 py-1 text-sm">
+                                    <?php for ($h = 7; $h <= 15; $h++): ?>
+                                        <option value="<?= sprintf('%02d', $h) ?>"><?= sprintf('%02d', $h) ?></option>
+                                    <?php endfor; ?>
+                                </select>
+                                <span class="self-center">:</span>
+                                <select name="hora_inicio_m" required class="border rounded px-2 py-1 text-sm">
+                                    <option value="00">00</option>
+                                    <option value="15">15</option>
+                                    <option value="30">30</option>
+                                    <option value="45">45</option>
+                                </select>
+                            </div>
 
                             <label class="block text-xs font-semibold text-gray-600">Hora fin</label>
-                            <input type="time" name="hora_fin" required class="w-full border rounded px-2 py-1 text-sm">
-
+                            <div class="flex gap-2 mb-2">
+                                <select name="hora_fin_h" required class="border rounded px-2 py-1 text-sm">
+                                    <?php for ($h = 7; $h <= 15; $h++): ?>
+                                        <option value="<?= sprintf('%02d', $h) ?>"><?= sprintf('%02d', $h) ?></option>
+                                    <?php endfor; ?>
+                                </select>
+                                <span class="self-center">:</span>
+                                <select name="hora_fin_m" required class="border rounded px-2 py-1 text-sm">
+                                    <option value="00">00</option>
+                                    <option value="15">15</option>
+                                    <option value="30">30</option>
+                                    <option value="45">45</option>
+                                </select>
+                            </div>
 
                             <label class="block text-xs font-semibold text-gray-600">Capacidad</label>
                             <input type="number" name="capacidad"
@@ -137,8 +162,14 @@ License:
 
 
                             <label class="block text-xs font-semibold text-gray-600">Catedrático</label>
-                            <input type="text" name="catedratico" placeholder="Nombre del catedrático"
-                                class="w-full border rounded px-2 py-1 text-sm">
+                            <select name="catedratico" required class="w-full border rounded px-2 py-1 text-sm">
+                                <option value="">Selecciona un catedrático</option>
+                                <option value="Juan Pérez">Juan Pérez</option>
+                                <option value="María López">María López</option>
+                                <option value="Carlos Ramírez">Carlos Ramírez</option>
+                                <option value="Ana Torres">Ana Torres</option>
+                                <option value="Luis Hernández">Luis Hernández</option>
+                            </select>
 
                             <label class="block text-xs font-semibold text-gray-600">Tipo</label>
                             <select name="tipo" required class="w-full border rounded px-2 py-1 text-sm">

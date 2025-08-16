@@ -25,6 +25,7 @@ class Acceso extends BaseController
             $data['sub_miga'] = 'inicio';
             $data['user_info'] = datos_usuario();
 
+
             return view('base/vista_base', $data);
         } else {
             return redirect()->to(site_url('Acceso/login'));

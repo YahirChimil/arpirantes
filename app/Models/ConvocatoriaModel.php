@@ -12,8 +12,16 @@ class ConvocatoriaModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['codigo','registro_inicio','registro_fin','preficha_inicio',
-                                'preficha_fin','documentos_inicio','documentos_fin','examen_inicio'];
+    protected $allowedFields    = [
+        'codigo',
+        'registro_inicio',
+        'registro_fin',
+        'preficha_inicio',
+        'preficha_fin',
+        'documentos_inicio',
+        'documentos_fin',
+        'examen_inicio'
+    ];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
@@ -45,13 +53,11 @@ class ConvocatoriaModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-public function obtenerConvocatoriaActiva()
-{
-    $hoy = date('Y-m-d');
-    return $this->where('registro_inicio <=', $hoy)
-                ->where('registro_fin >=', $hoy)
-                ->first();
-}
-
-    
+    public function obtenerConvocatoriaActiva()
+    {
+        $hoy = date('Y-m-d');
+        return $this->where('registro_inicio <=', $hoy)
+            ->where('examen_inicio >=', $hoy)
+            ->first();
+    }
 }

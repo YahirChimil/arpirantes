@@ -31,6 +31,17 @@ License:
         <!-- Content -->
         <main class="grow content pt-5" id="content" role="content">
             <div class="max-w-6xl mx-auto px-4 py-8">
+                <?php if (session()->getFlashdata('error')): ?>
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                        <?= session()->getFlashdata('error') ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if (session()->getFlashdata('success')): ?>
+                    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+                        <?= session()->getFlashdata('success') ?>
+                    </div>
+                <?php endif; ?>
                 <h2 class="text-2xl font-semibold text-gray-800 mb-6">Editar Convocatoria</h2>
                 <form method="post" action="<?= site_url('convocatoria/actualizar/' . $convocatoria['id']) ?>" class="bg-white shadow rounded-lg p-6 mb-8">
                     <?= csrf_field() ?>
@@ -101,9 +112,7 @@ License:
         });
 
         // --- 2. No permitir fechas anteriores a hoy ---
-        const today = new Date().toISOString().split('T')[0];
-        const dateInputs = document.querySelectorAll('input[type="date"]');
-        dateInputs.forEach(input => input.setAttribute('min', today));
+
 
         // --- 3. Encadenar fechas para que no se pueda seleccionar anterior a la anterior ---
         const fechaCadena = [

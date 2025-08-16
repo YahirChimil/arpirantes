@@ -47,7 +47,7 @@ class Grupo extends Controller
             'user_info'  => datos_usuario(),
             'grupos' => $grupos,
             'sedes'  => $sedes,
-            'aulas' => (new \App\Models\AulasModel())->findAll(),
+            'aulas' => (new \App\Models\AulasModel())->where('tipo', 1)->findAll(),
             'aspirantesSinGrupoCurso' => $aspirantesSinGrupo,
             'convocatoriaSeleccionada' => $convocatoriaSeleccionada,
 
@@ -75,27 +75,24 @@ class Grupo extends Controller
     }
 
 
-
     public function crear()
     {
         $grupoModel = new \App\Models\GrupoModel();
 
-        // Validación básica (puedes extenderla según sea necesario)
+        // Validación básica
         $validationRules = [
             'nombre'        => 'required|min_length[3]',
             'capacidad'     => 'required|integer|min_length[1]',
-            'hora_inicio'   => 'required',
-            'hora_fin'      => 'required',
             'tipo'          => 'required',
             'sede_id'       => 'required|is_natural_no_zero',
             'aula_id'       => 'required|is_natural_no_zero',
             'carrera_id'    => 'required|is_natural_no_zero',
+            'catedratico'   => 'required',
+            // No validamos hora_inicio y hora_fin aquí porque los armamos abajo
         ];
 
         if (!$this->validate($validationRules)) {
             $errores = $this->validator->getErrors();
-
-            // Unir todos los errores en un solo string
             $mensaje = "Datos inválidos: " . implode(' ', $errores);
 
             return redirect()->back()
@@ -103,15 +100,17 @@ class Grupo extends Controller
                 ->with('mensaje', $mensaje);
         }
 
+        // Armar hora_inicio y hora_fin desde los selects
+        $hora_inicio = $this->request->getPost('hora_inicio_h') . ':' . $this->request->getPost('hora_inicio_m') . ':00';
+        $hora_fin = $this->request->getPost('hora_fin_h') . ':' . $this->request->getPost('hora_fin_m') . ':00';
+
         // Validar si la misma aula está ocupada en el mismo lapso de tiempo
         $aulaId = $this->request->getPost('aula_id');
-        $horaInicio = $this->request->getPost('hora_inicio');
-        $horaFin = $this->request->getPost('hora_fin');
 
         $grupoExistente = $grupoModel
             ->where('aula', $aulaId)
-            ->where('hora_inicio <=', $horaFin)
-            ->where('hora_fin >=', $horaInicio)
+            ->where('hora_inicio <=', $hora_fin)
+            ->where('hora_fin >=', $hora_inicio)
             ->first();
 
         if ($grupoExistente) {
@@ -122,8 +121,8 @@ class Grupo extends Controller
         $grupoModel->insert([
             'nombre'        => $this->request->getPost('nombre'),
             'capacidad'     => $this->request->getPost('capacidad'),
-            'hora_inicio'   => $this->request->getPost('hora_inicio'),
-            'hora_fin'      => $this->request->getPost('hora_fin'),
+            'hora_inicio'   => $hora_inicio,
+            'hora_fin'      => $hora_fin,
             'tipo'          => $this->request->getPost('tipo'),
             'catedratico'   => $this->request->getPost('catedratico'),
             'sede'          => $this->request->getPost('sede_id'),
@@ -323,12 +322,12 @@ class Grupo extends Controller
         $validationRules = [
             'nombre'        => 'required|min_length[3]',
             'capacidad'     => 'required|integer|min_length[1]',
-            'hora_inicio'   => 'required',
-            'hora_fin'      => 'required',
             'tipo'          => 'required',
             'sede_id'       => 'required|is_natural_no_zero',
             'aula_id'       => 'required|is_natural_no_zero',
             'carrera_id'    => 'required|is_natural_no_zero',
+            'catedratico'   => 'required',
+            // No validamos hora_inicio y hora_fin aquí porque los armamos abajo
         ];
 
         if (!$this->validate($validationRules)) {
@@ -340,16 +339,17 @@ class Grupo extends Controller
                 ->with('mensaje', $mensaje);
         }
 
+        // Armar hora_inicio y hora_fin desde los selects
+        $hora_inicio = $this->request->getPost('hora_inicio_h') . ':' . $this->request->getPost('hora_inicio_m') . ':00';
+        $hora_fin = $this->request->getPost('hora_fin_h') . ':' . $this->request->getPost('hora_fin_m') . ':00';
+
         // Validar si la misma aula está ocupada en el mismo lapso de tiempo (excepto el grupo actual)
         $aulaId = $this->request->getPost('aula_id');
-        $horaInicio = $this->request->getPost('hora_inicio');
-        $horaFin = $this->request->getPost('hora_fin');
-
 
         $grupoExistente = $grupoModel
             ->where('aula', $aulaId)
-            ->where('hora_inicio <=', $horaFin)
-            ->where('hora_fin >=', $horaInicio)
+            ->where('hora_inicio <=', $hora_fin)
+            ->where('hora_fin >=', $hora_inicio)
             ->where('id !=', (int)$id)
             ->first();
         if ($grupoExistente) {
@@ -359,8 +359,8 @@ class Grupo extends Controller
         $grupoModel->update($id, [
             'nombre'        => $this->request->getPost('nombre'),
             'capacidad'     => $this->request->getPost('capacidad'),
-            'hora_inicio'   => $this->request->getPost('hora_inicio'),
-            'hora_fin'      => $this->request->getPost('hora_fin'),
+            'hora_inicio'   => $hora_inicio,
+            'hora_fin'      => $hora_fin,
             'tipo'          => $this->request->getPost('tipo'),
             'catedratico'   => $this->request->getPost('catedratico'),
             'sede'          => $this->request->getPost('sede_id'),

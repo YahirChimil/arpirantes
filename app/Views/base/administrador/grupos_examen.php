@@ -141,7 +141,20 @@ License:
                                     <input type="date" name="fecha" required class="w-full border rounded px-2 py-1 text-sm">
 
                                     <label for="hora" class="block text-xs font-semibold text-gray-600">Hora</label>
-                                    <input type="time" name="hora" required class="w-full border rounded px-2 py-1 text-sm">
+                                    <div class="flex gap-2">
+                                        <select name="hora_h" required class="border rounded px-2 py-1 text-sm">
+                                            <?php for ($h = 7; $h <= 15; $h++): ?>
+                                                <option value="<?= sprintf('%02d', $h) ?>"><?= sprintf('%02d', $h) ?></option>
+                                            <?php endfor; ?>
+                                        </select>
+                                        <span class="self-center">:</span>
+                                        <select name="hora_m" required class="border rounded px-2 py-1 text-sm">
+                                            <option value="00">00</option>
+                                            <option value="15">15</option>
+                                            <option value="30">30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                    </div>
 
                                     <label class="block text-xs font-semibold text-gray-600">Aula</label>
                                     <select name="aula_id" id="aula_id_<?= $grupo['sede_id'] . '_' . $grupo['carrera_id'] ?>"
@@ -360,6 +373,22 @@ License:
                         botonCrear.classList.remove('opacity-50', 'cursor-not-allowed');
                     }
                 }
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Limitar el input de hora a 24h y solo entre 07:00 y 15:00
+            document.querySelectorAll('input[type="time"][name="hora"]').forEach(function(input) {
+                input.setAttribute('min', '07:00');
+                input.setAttribute('max', '15:00');
+                input.setAttribute('step', '60'); // solo horas exactas, puedes cambiar a '900' para intervalos de 15 min
+
+                input.addEventListener('change', function() {
+                    if (this.value < '07:00') this.value = '07:00';
+                    if (this.value > '15:00') this.value = '15:00';
+                });
             });
         });
     </script>

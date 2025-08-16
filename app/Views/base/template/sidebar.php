@@ -30,7 +30,9 @@
                         </div>
                         <div class="menu-accordion gap-0.5 relative before:absolute before:start-[32px] ps-[22px] before:top-0 before:bottom-0 before:border-s before:border-gray-200">
                             <div class="menu-item">
-
+                                <a href="<?= base_url('aspirantes/info'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                    informacion
+                                </a>
                             </div>
                             <div class="menu-item">
                                 <a href="<?= base_url('Acceso/encuesta'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
@@ -210,6 +212,15 @@
                                 <a href="<?= base_url('grupos/curso'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
                                     Grupos de curso de Nivelacion
                                 </a>
+                            </div>
+
+                            <div class="menu-item">
+                                <a href="<?= base_url('administracion/pagos'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                    Pagos Aspirantes </a>
+                            </div>
+                            <div class="menu-item">
+                                <a href="<?= base_url('administracion/preficha'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                    Prefichas </a>
                             </div>
                         </div>
                     </div>

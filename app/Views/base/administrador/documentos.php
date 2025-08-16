@@ -77,7 +77,7 @@ License:
             <?php endif; ?>
 
             <?php if (empty($aspirantes)): ?>
-                <p class="text-gray-600">No hay aspirantes con documentos subidos.</p>
+                <p class="text-gray-600">No hay aspirantes con todos los docuementos cargados.</p>
             <?php else: ?>
                 <div class="overflow-x-auto bg-white rounded shadow">
                     <table class="min-w-full divide-y divide-gray-200">

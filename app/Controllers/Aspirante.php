@@ -17,19 +17,29 @@ class Aspirante extends ResourceController
      *
      * @return ResponseInterface
      */
+
     public function index()
     {
         $convocatoriaModel = new \App\Models\ConvocatoriaModel();
         $convocatoria = $convocatoriaModel->obtenerConvocatoriaActiva();
 
-        // Si no hay convocatoria activa, redirigir a otra vista
+        // Si no hay convocatoria activa, buscar la próxima convocatoria
         if (!$convocatoria) {
-            return view('base/publico/sin_convocatoria');
+            $proxima = $convocatoriaModel
+                ->where('registro_inicio >', date('Y-m-d'))
+                ->orderBy('registro_inicio', 'ASC')
+                ->first();
+
+            return view('base/publico/sin_convocatoria', [
+                'periodo' => $proxima['codigo'] ?? '',
+                'registro_inicio' => $proxima['registro_inicio'] ?? '',
+                'registro_fin' => $proxima['registro_fin'] ?? '',
+            ]);
         }
 
         return view('base/publico/aspirantes', [
             'convocatoria' => $convocatoria,
-            'periodo'          => $convocatoria['codigo'] ?? null,
+            'periodo'      => $convocatoria['codigo'] ?? null,
         ]);
     }
 
@@ -156,11 +166,19 @@ class Aspirante extends ResourceController
 
         $userModel = new UserModel();
 
+
+        // ...antes de crear el usuario Shield...
+        $nombre = $this->request->getPost('nombre');
+        $primer_apellido = $this->request->getPost('primer_apellido');
+        $segundo_apellido = $this->request->getPost('segundo_apellido');
+
         $user = new User([
             'username' => $curp,
             'email'    => $correo,
             'password' => $password,
-            'nivel' => 4 // Shield la encripta automáticamente
+            'nivel'    => 4,
+            'foto'     => 'default.png',
+            'nombre'   => $nombre . ' ' . $primer_apellido . ' ' . $segundo_apellido // Nombre completo
         ]);
 
         if (! $userModel->save($user)) {
@@ -177,15 +195,41 @@ class Aspirante extends ResourceController
         $emailService->setTo($correo);
         $emailService->setSubject('Tu cuenta como aspirante');
         $emailService->setMessage(
-            "Hola,\n\n" .
-                "Gracias por registrarte como aspirante.\n\n" .
-                "Tu nombre de usuario: $curp\n" .
-                "Tu contraseña: $password\n\n" .
-                "Por favor, guarda esta información de forma segura.\n\n" .
-                "Te invitamos a dirigirte a la página de Discere, en el apartado de aspirantes y encuesta, para contestar la encuesta correspondiente.\n\n" .
-                "Si tienes alguna duda, no dudes en contactarnos.\n\n" .
-                "Saludos cordiales."
+            '
+            <div style="font-family: Inter, Arial, sans-serif; background: #f7f7f7; padding: 32px;">
+                <div style="max-width: 500px; margin: auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px #0001; padding: 32px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                        <img src="' . base_url('images/logos/logo_discere_svg_negro.svg') . '" alt="Logo TecNM" style="height: 30px;">
+                        <h2 style="color: #1a202c; font-weight: 700; margin: 0; flex: 1; text-align: center;"></h2>
+                        <img src="' . base_url('images/logos/logo_ito.png') . '" alt="Logo ITO" style="height: 60px;">
+                    </div>
+                    <p style="font-size: 1.1em; color: #222; margin-bottom: 18px;">
+                        <strong>¡Gracias por registrarte como aspirante!</strong>
+                    </p>
+                    <div style="background: #f1f5f9; border-radius: 8px; padding: 18px; margin-bottom: 18px;">
+                        <p style="margin: 0 0 8px 0; color: #333;">Tus credenciales de acceso:</p>
+                        <p style="margin: 0; font-size: 1.05em;">
+                            <b>Usuario (CURP):</b> <span style="color: #2563eb;">' . esc($curp) . '</span><br>
+                            <b>Contraseña:</b> <span style="color: #2563eb;">' . esc($password) . '</span>
+                        </p>
+                    </div>
+                    <p style="color: #222; margin-bottom: 18px;">
+                        Por favor, guarda esta información de forma segura.<br>
+                        Ingresa a la plataforma <b>Discere</b> en el apartado de <b>Aspirantes</b> y <b>Encuesta</b> para contestar la encuesta correspondiente.
+                    </p>
+                    <p style="color: #222; margin-bottom: 18px;">
+                        Si tienes alguna duda, visita nuestro sitio oficial:<br>
+                        <a href="https://www.itoaxaca.edu.mx" style="color: #2563eb; text-decoration: underline;" target="_blank">www.itoaxaca.edu.mx</a>
+                        <br>o contáctanos por correo.
+                    </p>
+                    <div style="text-align: center; margin-top: 32px;">
+                        <p style="color: #888; font-size: 0.95em; margin-top: 8px;">Saludos cordiales,<br>Instituto Tecnológico de Oaxaca</p>
+                    </div>
+                </div>
+            </div>
+            '
         );
+        $emailService->setMailType('html');
 
         if (! $emailService->send()) {
             return redirect()->to(base_url('Acceso/aspirante'))
@@ -196,6 +240,75 @@ class Aspirante extends ResourceController
             ->with('success', 'Registro guardado. El usuario y contraseña han sido enviados al correo proporcionado.');
     }
 
+    public function obtenerAvanceAspirante($curp)
+    {
+        $aspiranteModel = new \App\Models\AspiranteModel();
+        $userModel = new \CodeIgniter\Shield\Models\UserModel();
+        $respuestasModel = new \App\Models\RespuestasModel();
+        $prefichasModel = new \App\Models\PrefichasModel();
+        $documentosModel = new \App\Models\DocumentosModel();
+        $documentosAspiranteModel = new \App\Models\DocumentosAspirantesModel();
+
+        // Paso 1: Registro
+        $aspirante = $aspiranteModel->where('curp', $curp)->first();
+        $registro = $aspirante ? true : false;
+
+        // Paso 2: Usuario creado en sistema
+        $usuario = $userModel->where('username', $curp)->first();
+        $usuarioCreado = $usuario ? true : false;
+
+        // Paso 3: Encuesta contestada
+        $respuestas = $respuestasModel->where('aspirante_curp', $curp)->countAllResults();
+        $encuestaContestada = $respuestas > 0;
+
+        // Paso 4: Pago realizado (campo preficha en tabla aspirantes, 1=pagado, 0=no pagado)
+        $pagoRealizado = ($aspirante && isset($aspirante['preficha']) && $aspirante['preficha'] == 1);
+
+        // Paso 5: Preficha generada por el instituto
+        $preficha = $prefichasModel->where('curp', $curp)->first();
+        $prefichaGenerada = $preficha ? true : false;
+
+        // Documentos necesarios
+        $documentosNecesarios = $documentosModel->where('activo', 1)->countAllResults();
+
+        // Paso extra: Documentación subida (todos los documentos subidos, sin importar estatus)
+        $documentosSubidos = $documentosAspiranteModel
+            ->where('aspirante_curp', $curp)
+            ->where('ruta IS NOT NULL', null, false)
+            ->countAllResults();
+        $documentacionSubida = ($documentosSubidos == $documentosNecesarios && $documentosNecesarios > 0);
+
+        // Paso extra: Documentación aprobada (todos los documentos con estatus 2)
+        $documentosAprobados = $documentosAspiranteModel
+            ->where('aspirante_curp', $curp)
+            ->where('estatus', 2)
+            ->countAllResults();
+        $documentacionAprobada = ($documentosAprobados == $documentosNecesarios && $documentosNecesarios > 0);
+
+        // Calcular avance
+        $totalPasos = 7;
+        $pasosCompletados = ($registro ? 1 : 0)
+            + ($usuarioCreado ? 1 : 0)
+            + ($encuestaContestada ? 1 : 0)
+            + ($pagoRealizado ? 1 : 0)
+            + ($prefichaGenerada ? 1 : 0)
+            + ($documentacionSubida ? 1 : 0) // Nuevo paso: documentación subida
+            + ($documentacionAprobada ? 1 : 0); // Documentación aprobada
+
+        $porcentaje = intval(($pasosCompletados / $totalPasos) * 100);
+
+        return [
+            'registro' => $registro,
+            'usuarioCreado' => $usuarioCreado,
+            'encuestaContestada' => $encuestaContestada,
+            'pagoRealizado' => $pagoRealizado,
+            'prefichaGenerada' => $prefichaGenerada,
+            'documentacionSubida' => $documentacionSubida, // Nuevo campo
+            'documentacionAprobada' => $documentacionAprobada,
+            'porcentaje' => $porcentaje,
+            'preficha' => $preficha
+        ];
+    }
 
 
 
@@ -549,7 +662,7 @@ class Aspirante extends ResourceController
 
         return $this->response->setJSON(['success' => $actualizado]);
     }
-    public function cargarCSV()
+    public function cargarCSVExamen()
     {
         if (!auth()->loggedIn() || !in_array(auth()->user()->nivel, [0, 1])) {
             return redirect()->to(site_url('Acceso/login'))->with('error', 'No autorizado.');
@@ -566,24 +679,34 @@ class Aspirante extends ResourceController
             return redirect()->back()->with('error', 'No se pudo leer el archivo CSV.');
         }
 
-        $db = \Config\Database::connect();
         $aspiranteModel = new \App\Models\AspiranteModel();
         $actualizados = 0;
+        $noEncontrados = [];
 
         while (($row = fgetcsv($handle, 1000, ',')) !== false) {
             $curp = trim($row[0] ?? '');
 
             if ($curp !== '') {
-                $updated = $aspiranteModel->where('curp', $curp)->set(['examen' => 1])->update();
-                if ($updated) {
-                    $actualizados++;
+                $aspirante = $aspiranteModel->where('curp', $curp)->first();
+                if ($aspirante) {
+                    $updated = $aspiranteModel->where('curp', $curp)->set(['examen' => 1])->update();
+                    if ($updated) {
+                        $actualizados++;
+                    }
+                } else {
+                    $noEncontrados[] = $curp;
                 }
             }
         }
 
         fclose($handle);
 
-        return redirect()->back()->with('mensaje', "Se actualizaron $actualizados aspirantes desde el CSV.");
+        $mensaje = "Se actualizaron $actualizados aspirantes desde el CSV.";
+        if (!empty($noEncontrados)) {
+            $mensaje .= " No encontrados: " . implode(', ', $noEncontrados);
+        }
+
+        return redirect()->back()->with('success', $mensaje);
     }
 
 
@@ -738,5 +861,92 @@ class Aspirante extends ResourceController
 
         return redirect()->to(base_url('aspirante/asignarGrupoVista/' . $curp))
             ->with('mensaje', 'Aspirante asignado correctamente.');
+    }
+
+
+    public function indexExamen()
+    {
+        if (!auth()->loggedIn()) {
+            return redirect()->to(site_url('Acceso/login'))->with('error', 'Debes iniciar sesión.');
+        }
+
+        $user = auth()->user();
+        if (!in_array($user->nivel, [0, 1])) {
+            return redirect()->to(site_url('Acceso/login'))->with('error', 'No tienes permiso para acceder a esta sección.');
+        }
+
+        $sede     = $this->request->getGet('sede');
+        $carrera  = $this->request->getGet('carrera');
+        $examen = $this->request->getGet('examen');
+
+        $buscar   = $this->request->getGet('buscar');
+        $porPagina = 25;
+        $paginaActual = (int)($this->request->getGet('page') ?? 1);
+        if ($paginaActual < 1) $paginaActual = 1;
+        $offset = ($paginaActual - 1) * $porPagina;
+
+        $aspirantes = [];
+        $totalRegistros = 0;
+        $totalPaginas = 1;
+
+        // Solo buscar si hay algún filtro o búsqueda
+        if ($sede || $carrera || $examen !== '' || $buscar) {
+            $aspiranteModel = new \App\Models\AspiranteModel();
+            $query = $aspiranteModel
+                ->select('aspirantes.*, sedes.nombre_sede as sede_nombre, carreras.nombre as carrera_nombre')
+                ->join('sedes', 'sedes.id_sede = aspirantes.sede')
+                ->join('carreras', 'carreras.id = aspirantes.carrera');
+
+            if (!empty($sede) && $sede !== 'todas') {
+                $query->where('sedes.id_sede', $sede);
+            }
+            if (!empty($carrera) && $carrera !== 'todas') {
+                $query->where('carreras.id', $carrera);
+            }
+            if ($examen === '1' || $examen === '0') {
+                $query->where('aspirantes.preficha', $examen);
+            }
+            if (!empty($preficha) && $preficha !== 'todas' && $preficha !== '1' && $preficha !== '0') {
+                // No filtrar por preficha si es "todas"
+            }
+
+            if (!empty($buscar)) {
+                $query->groupStart()
+                    ->like('aspirantes.curp', $buscar)
+                    ->orLike('aspirantes.nombre', $buscar)
+                    ->orLike('aspirantes.primer_apellido', $buscar)
+                    ->orLike('aspirantes.segundo_apellido', $buscar)
+                    ->groupEnd();
+            }
+
+            $totalRegistros = $query->countAllResults(false);
+            $aspirantes = $query->limit($porPagina, $offset)->find();
+            $totalPaginas = $totalRegistros > 0 ? ceil($totalRegistros / $porPagina) : 1;
+        }
+
+        // Para los filtros
+        $sedeModel = new \App\Models\SedesModel();
+        $carreraModel = new \App\Models\CarrerasModel();
+        $sedes = $sedeModel->findAll();
+        $carreras = $carreraModel->findAll();
+
+        $data = [
+            'aspirantes'    => $aspirantes,
+            'sedes'         => $sedes,
+            'carreras'      => $carreras,
+            'filtro_sede'   => $sede,
+            'filtro_carrera' => $carrera,
+            'filtro_examen' => $examen,
+            'buscar'        => $buscar,
+            'paginaActual'  => $paginaActual,
+            'totalPaginas'  => $totalPaginas,
+            'totalRegistros' => $totalRegistros,
+            'titulo'        => 'Pagos de Aspirantes',
+            'miga'          => 'Administración',
+            'sub_miga'      => 'Seleccionados',
+            'user_info'     => datos_usuario(),
+        ];
+
+        return view('base/administrador/Aspirantes_seleccionados', $data);
     }
 }

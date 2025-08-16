@@ -41,24 +41,75 @@ License:
                 Documentación del Aspirante: <?= esc($aspirante['nombre']) . ' ' . esc($aspirante['primer_apellido']) . ' ' . esc($aspirante['segundo_apellido']) ?>
             </h2>
 
+            <?php
+            // Determina si todos los documentos subidos están aceptados (estatus == 2)
+            $totalAceptados = 0;
+            foreach ($subidos as $doc) {
+                if ($doc['estatus'] == 2) {
+                    $totalAceptados++;
+                }
+            }
+            $procesoFinalizado = ($totalAceptados == $documentosNecesarios && $documentosNecesarios > 0);
+            ?>
+
             <!-- Aviso estilizado -->
             <div class="mb-8">
-                <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 p-4 rounded shadow flex items-center gap-3">
-                    <svg class="w-7 h-7 text-yellow-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-800 p-4 rounded shadow flex items-center gap-3">
+                    <svg class="w-7 h-7 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" />
                     </svg>
                     <div>
                         <span class="font-semibold">¡Importante!</span>
-                        <span>Conserva esta documentación. Una vez revisada, deberás entregarla en Servicios Escolares.</span>
+                        <span>Conserva la documentación aceptada. Una vez revisada, deberás entregarla en Servicios Escolares y todavía pueden rechazártela si presenta observaciones.</span>
                     </div>
                 </div>
+                <?php
+                // Detecta si ya subió todos los archivos (sin importar si están aceptados)
+                $totalSubidos = 0;
+                foreach ($documentos as $documento) {
+                    if (isset($subidos[$documento['id']])) {
+                        $totalSubidos++;
+                    }
+                }
+                $todosSubidos = ($totalSubidos == $documentosNecesarios && $documentosNecesarios > 0);
+                ?>
+                <?php if ($procesoFinalizado): ?>
+                    <div class="bg-green-100 border-l-4 border-green-500 text-green-800 p-4 rounded shadow flex items-center gap-3">
+                        <svg class="w-7 h-7 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" />
+                        </svg>
+                        <div>
+                            <span class="font-semibold">¡Proceso finalizado!</span>
+                            <span>Todos tus documentos han sido aceptados. El proceso de documentación está finalizado.</span>
+                        </div>
+                    </div>
+                <?php elseif ($todosSubidos): ?>
+                    <div class="bg-pink-100 border-l-4 border-pink-500 text-pink-800 p-4 rounded shadow flex items-center gap-3">
+                        <svg class="w-7 h-7 text-pink-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" />
+                        </svg>
+                        <div>
+                            <span class="font-semibold">¡Listo!</span>
+                            <span>Ya subiste todos tus documentos. <strong>Espera a que el administrador los revise</strong> para finalizar el proceso.</span>
+                        </div>
+                    </div>
+                <?php else: ?>
+                    <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-800 p-4 rounded shadow flex items-center gap-3">
+                        <svg class="w-7 h-7 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" />
+                        </svg>
+                        <div>
+                            <span class="font-semibold">¡Importante!</span>
+                            <span>Debes subir <strong>todos los archivos</strong> para que el Administrador los pueda revisar.</span>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <?php foreach ($documentos as $documento): ?>
                     <div class="mb-6 p-4 border rounded bg-gray-50 shadow-sm">
                         <h3 class="text-lg font-semibold text-gray-700 mb-2"><?= esc($documento['descripcion']) ?></h3>
-
                         <?php $docSubido = $subidos[$documento['id']] ?? null; ?>
 
                         <?php if ($docSubido): ?>
@@ -86,7 +137,6 @@ License:
                         <?php endif; ?>
 
                         <?php if ($docSubido): ?>
-                            <!-- Documento ya subido -->
                             <div class="flex items-center gap-4 mb-3">
                                 <!-- Ver documento -->
                                 <a href="<?= base_url('uploads/' . $docSubido['ruta']) ?>" target="_blank"
@@ -98,35 +148,29 @@ License:
                                     <span>Ver Documento</span>
                                 </a>
 
-                                <!-- Eliminar documento -->
-                                <form action="<?= base_url('aspirante/eliminar_documento') ?>" method="post" onsubmit="return confirmarEliminar(this);">
-                                    <?= csrf_field() ?>
-                                    <input type="hidden" name="documento_id" value="<?= $documento['id'] ?>">
-                                    <input type="hidden" name="aspirante_curp" value="<?= esc($aspirante['curp']) ?>">
-                                    <button type="submit"
-                                        class="flex items-center space-x-1 text-red-600 hover:text-red-800 text-sm font-medium">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5-4h4m-4 0a1 1 0 00-1 1v1h6V4a1 1 0 00-1-1m-4 0h4" />
-                                        </svg>
-                                        <span>Eliminar</span>
-                                    </button>
-                                </form>
+                                <!-- Eliminar documento solo si NO está aceptado -->
+                                <?php if ($docSubido['estatus'] != 2): ?>
+                                    <form action="<?= base_url('aspirante/eliminar_documento') ?>" method="post" onsubmit="return confirmarEliminar(this);">
+                                        <?= csrf_field() ?>
+                                        <input type="hidden" name="documento_id" value="<?= $documento['id'] ?>">
+                                        <input type="hidden" name="aspirante_curp" value="<?= esc($aspirante['curp']) ?>">
+                                        <button type="submit"
+                                            class="flex items-center space-x-1 text-red-600 hover:text-red-800 text-sm font-medium">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5-4h4m-4 0a1 1 0 00-1 1v1h6V4a1 1 0 00-1-1m-4 0h4" />
+                                            </svg>
+                                            <span>Eliminar</span>
+                                        </button>
+                                    </form>
+                                <?php endif; ?>
                             </div>
+                        <?php endif; ?>
 
-                            <p class="text-sm text-gray-500 italic">Ya has subido este documento. Elimina el actual para subir otro.</p>
-
-                            <form class="mt-3">
-                                <input type="file" class="mb-2 cursor-not-allowed block w-full border border-gray-300 rounded bg-gray-100" disabled>
-                                <button type="button" class="bg-gray-400 text-white px-4 py-2 rounded cursor-not-allowed w-full" disabled>
-                                    Subir
-                                </button>
-                            </form>
-                        <?php else: ?>
+                        <?php if (!$docSubido): ?>
                             <!-- Formulario para subir documento -->
                             <form action="<?= base_url('aspirante/subir_documento') ?>" method="post" enctype="multipart/form-data" class="mt-3 space-y-2">
                                 <?= csrf_field() ?>
                                 <input type="hidden" name="documento_id" value="<?= $documento['id'] ?>">
-
                                 <input type="file" name="archivo" accept="application/pdf" class="block w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required>
                                 <button type="submit"
                                     class="flex items-center justify-center space-x-1 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-full transition">

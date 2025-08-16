@@ -128,9 +128,11 @@ $routes->get('grupo/exportar_aprobados/(:num)', 'Grupo::exportarPDF/$1');
 $routes->get('Acceso/respondida', 'Acceso::encuesta_respondida');
 $routes->get('aspirante/generarFalsosAspirantes/(:num)', 'Aspirante::generarFalsosAspirantes/$1');
 $routes->post('aspirante/toggle-examen', 'Aspirante::toggleExamen');
-$routes->post('aspirantes/cargarCSV', 'Aspirante::cargarCSV');
+$routes->post('aspirantes/cargarCSV', 'Aspirante::cargarCSVExamen');
 $routes->get('aspirantes/imprimirSeleccionados', 'Aspirante::imprimirSeleccionados');
 $routes->get('aspirantes/referencia-bancaria', 'Encuesta::referenciaBancaria');
+$routes->get('aspirantes/info', 'Aspirante::infoAspirante');
+
 
 $routes->get('aspirante/documentacion', 'Documentacion::index');
 $routes->get('ver_documento/(:segment)/(:segment)', 'Documentacion::verDocumento/$1/$2');
@@ -143,7 +145,7 @@ $routes->get('admin/crear_documento', 'Documentacion::indexCrearDocumento');
 $routes->post('admin/crear_documento', 'Documentacion::crearDocumento');
 $routes->get('admin/documentos/editar_documento/(:segment)', 'Documentacion::verDoc/$1');
 $routes->post('admin/documentos/actualizar_documento/(:segment)', 'Documentacion::actualizarDocumento/$1');
-
+$routes->post('aspirante/finalizar_documentacion', 'Documentacion::finalizar_documentacion');
 
 
 
@@ -185,8 +187,16 @@ $routes->post('grupos-examen/agregarManual/(:num)', 'GruposExamen::agregarManual
 
 
 
+$routes->get('administracion/pagos', 'Pagos::index');
+$routes->post('admin/registrar_preficha', 'Pagos::registrar_preficha');
+$routes->post('admin/registrar_pago', 'Pagos::registrar_pago');
+$routes->post('admin/cargar_csv_preficha', 'Pagos::cargar_csv_preficha');
+$routes->post('admin/cargar_csv_curso', 'Pagos::cargar_csv_curso');
+$routes->get('administracion/preficha', 'Preficha::index');
 
+$routes->get('aspirantes/descargarFicha/(:any)', 'Preficha::descargarFicha/$1');
 
+$routes->get('administracion/seleccionados', 'Aspirante::indexExamen');
 
 
 $routes->get('Servicios/entrega', 'Preficha::vistaEntregaDocumentacion');

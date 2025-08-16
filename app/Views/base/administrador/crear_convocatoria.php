@@ -155,9 +155,6 @@ License:
         });
 
         // --- 2. No permitir fechas anteriores a hoy ---
-        const today = new Date().toISOString().split('T')[0];
-        const dateInputs = document.querySelectorAll('input[type="date"]');
-        dateInputs.forEach(input => input.setAttribute('min', today));
 
         // --- 3. Encadenar fechas para que no se pueda seleccionar anterior a la anterior ---
         const fechaCadena = [

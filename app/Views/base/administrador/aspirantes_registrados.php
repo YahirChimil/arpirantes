@@ -83,28 +83,7 @@ License:
                     </button>
                 </form>
 
-                <div class="mt-4 flex flex-wrap gap-3">
-                    <!-- Botón: Generar Prefichas -->
-                    <form action="<?= base_url('aspirantes/generarPrefichas') ?>" method="post" onsubmit="return confirm('¿Estás seguro de generar las prefichas?');">
-                        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
-                            Generar Prefichas
-                        </button>
-                    </form>
 
-                    <!-- Botón: Cargar Aspirantes Seleccionados -->
-                    <form action="<?= base_url('aspirantes/cargarCSV') ?>" method="post" enctype="multipart/form-data" class="mt-4 flex items-center gap-4" onsubmit="return confirm('¿Deseas cargar los CURPs del CSV?');">
-                        <?= csrf_field() ?>
-                        <input type="file" name="csv_file" accept=".csv" required class="border rounded px-3 py-2 text-sm">
-                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded text-sm">
-                            Cargar CSV de Aspirantes Seleccionados
-                        </button>
-                    </form>
-                    <a href="<?= base_url('aspirantes/imprimirSeleccionados') ?>" target="_blank"
-                        class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
-                        Lista selccionados
-                    </a>
-
-                </div>
             </div>
 
             <!-- Tabla de aspirantes -->
@@ -116,8 +95,6 @@ License:
                             <th class="px-4 py-2 text-left">Nombre Completo</th>
                             <th class="px-4 py-2 text-left">Sede</th>
                             <th class="px-4 py-2 text-left">Carrera</th>
-                            <th class="px-4 py-2 text-center">Pagos</th>
-                            <th class="px-4 py-2 text-center">Examen</th>
                             <th class="px-4 py-2 text-center">Acciones</th>
                         </tr>
                     </thead>
@@ -128,29 +105,8 @@ License:
                                 <td class="px-4 py-2"><?= esc($aspirante['nombre'] . ' ' . $aspirante['primer_apellido'] . ' ' . $aspirante['segundo_apellido']) ?></td>
                                 <td class="px-4 py-2"><?= esc($aspirante['sede']) ?></td>
                                 <td class="px-4 py-2"><?= esc($aspirante['carrera']) ?></td>
-                                <td class="px-4 py-2 text-center">
-                                    <!-- Estado de Preficha -->
-                                    <div>
-                                        <?= $aspirante['preficha'] == 1
-                                            ? '<span class="text-green-700 bg-green-100 px-2 py-1 rounded text-xs">Preficha: Pagada</span>'
-                                            : '<span class="text-red-700 bg-red-100 px-2 py-1 rounded text-xs">Preficha: No Pagada</span>' ?>
-                                    </div>
-                                    <!-- Estado de Pago del Curso -->
-                                    <div>
-                                        <?= $aspirante['pago_curso'] == 1
-                                            ? '<span class="text-green-700 bg-green-100 px-2 py-1 rounded text-xs">Curso: Pagado</span>'
-                                            : '<span class="text-red-700 bg-red-100 px-2 py-1 rounded text-xs">Curso: No Pagado</span>' ?>
-                                    </div>
-                                </td>
-                                <td class="px-4 py-2 text-center">
-                                    <label class="inline-flex items-center cursor-pointer">
-                                        <input type="checkbox"
-                                            class="toggle-examen"
-                                            data-curp="<?= esc($aspirante['curp']) ?>"
-                                            <?= $aspirante['examen'] == 1 ? 'checked' : '' ?>>
-                                        <span class="ml-2 text-sm"><?= $aspirante['examen'] == 1 ? 'Sí' : 'No' ?></span>
-                                    </label>
-                                </td>
+
+
                                 <td class="px-4 py-2 text-center">
                                     <a href="<?= base_url('aspirante/editar/' . $aspirante['curp']) ?>"
                                         class="text-blue-600 hover:underline text-sm">

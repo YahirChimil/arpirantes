@@ -38,37 +38,16 @@ License:
             <?php endif; ?>
             <div class="container mt-5">
                 <div class="alert alert-warning text-center" role="alert">
-                    <h4 class="alert-heading">¡Encuesta ya respondida!</h4>
+                    <h4 class="alert-heading">¡Encuesta respondida!</h4>
                     <p>Gracias por participar. Ya hemos registrado tus respuestas.</p>
                     <hr>
                     <p class="mb-0">Si necesitas hacer alguna corrección, comunícate con el administrador.</p>
                 </div>
 
                 <div class="text-center mt-4">
-                    <p>Estado de preficha:
-                        <strong class="<?= $estadoPreficha && $fechaPreficha ? 'text-success' : 'text-danger' ?>">
-                            <?= $estadoPreficha && $fechaPreficha ? 'Disponible' : 'No disponible' ?>
-                        </strong>
-                    </p>
 
-                    <?php if ($estadoPreficha): ?>
-                        <div class="alert alert-success text-center mt-3" role="alert">
-                            <p>¡Tu pago ya se ha reflejado correctamente!</p>
-                        </div>
-                    <?php endif; ?>
 
-                    <?php if ($estadoPreficha && $fechaPreficha): ?>
-                        <a href="<?= site_url('aspirantes/preficha') ?>" target="_blank" class="btn btn-primary mt-3">
-                            Descargar ficha
-                        </a>
-                        <a href="<?= site_url('aspirantes/referencia-bancaria') ?>" target="_blank" class="btn btn-outline-second mt-3 ml-2">
-                            Descargar referencia bancaria
-                        </a>
-                    <?php else: ?>
-                        <button class="btn btn-secondary mt-3" disabled>
-                            Todavía no tengo fecha de entrega
-                        </button>
-                    <?php endif; ?>
+
                 </div>
 
 

@@ -66,8 +66,20 @@ License:
                     <div class="lg:col-span-3">
                         <div class="card h-full">
                             <div class="card-body p-8 entry-callout-bg">
+                                <div class="mb-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div class="p-3 bg-blue-50 border border-blue-200 rounded text-blue-800">
+                                        <strong>Total de aspirantes en la convocatoria:</strong> <?= $totalAspirantesConvocatoria ?>
+                                    </div>
+                                    <div class="p-3 bg-green-50 border border-green-200 rounded text-green-800">
+                                        <strong>Cumplen criterios para preficha:</strong> <?= $totalCriterioPreficha ?>
+                                    </div>
+                                    <div class="p-3 bg-yellow-50 border border-yellow-200 rounded text-yellow-800">
+                                        <strong>No cumplen criterios para preficha:</strong> <?= $totalNoCriterioPreficha ?>
+                                    </div>
+                                </div>
                                 <div class="flex flex-wrap items-center gap-4 mb-6">
-                                    <form action="<?= base_url('aspirantes/generarPrefichas') ?>" method="post" onsubmit="return confirm('¿Estás seguro de generar las prefichas?');">
+
+                                    <form action="<?= base_url('aspirantes/generarPrefichas') ?>" method="post" id="formPrefichas">
                                         <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
                                             Generar Prefichas
                                         </button>
@@ -82,39 +94,8 @@ License:
                                         </div>
                                     </form>
                                 </div>
+
                                 <?php if (isset($aspirantes) && count($aspirantes) > 0): ?>
-                                    <div class="overflow-x-auto">
-                                        <table class="min-w-full bg-white border rounded shadow text-sm">
-                                            <thead>
-                                                <tr class="bg-gray-200">
-                                                    <th class="px-3 py-2 border">CURP</th>
-                                                    <th class="px-3 py-2 border">Nombre</th>
-                                                    <th class="px-3 py-2 border">Sede</th>
-                                                    <th class="px-3 py-2 border">Carrera</th>
-                                                    <th class="px-3 py-2 border">Preficha</th>
-                                                    <th class="px-3 py-2 border">Descargar ficha</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php foreach ($aspirantes as $aspirante): ?>
-                                                    <tr>
-                                                        <td class="px-3 py-2 border"><?= esc($aspirante['curp']) ?></td>
-                                                        <td class="px-3 py-2 border"><?= esc($aspirante['nombre']) ?> <?= esc($aspirante['primer_apellido']) ?> <?= esc($aspirante['segundo_apellido']) ?></td>
-                                                        <td class="px-3 py-2 border"><?= esc($aspirante['sede_nombre']) ?></td>
-                                                        <td class="px-3 py-2 border"><?= esc($aspirante['carrera_nombre']) ?></td>
-                                                        <td class="px-3 py-2 border"><?= $aspirante['preficha'] == 1 ? 'Generada' : 'Pendiente' ?></td>
-                                                        <td class="px-3 py-2 border text-center">
-                                                            <a href="<?= base_url('aspirantes/descargarFicha/' . esc($aspirante['curp'])) ?>"
-                                                                class="bg-blue-500 hover:bg-blue-700 text-white px-2 py-1 rounded text-xs"
-                                                                target="_blank">
-                                                                Descargar
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                <?php endforeach; ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
                                     <p class="mt-4 text-sm text-gray-700">Total: <strong><?= count($aspirantes) ?></strong> aspirantes para el <strong><?= esc($fecha) ?></strong></p>
                                 <?php elseif (isset($fecha)): ?>
                                     <div class="p-4 bg-yellow-50 border border-yellow-200 rounded text-yellow-700 mt-4">
@@ -125,6 +106,39 @@ License:
                                         Selecciona una fecha para ver los aspirantes que deben entregar preficha.
                                     </div>
                                 <?php endif; ?>
+                                <div class="overflow-x-auto">
+                                    <table class="min-w-full bg-white border rounded shadow text-sm">
+                                        <thead>
+                                            <tr class="bg-gray-200">
+                                                <th class="px-3 py-2 border">CURP</th>
+                                                <th class="px-3 py-2 border">Nombre</th>
+                                                <th class="px-3 py-2 border">Sede</th>
+                                                <th class="px-3 py-2 border">Carrera</th>
+                                                <th class="px-3 py-2 border">Preficha</th>
+                                                <th class="px-3 py-2 border">Descargar ficha</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php foreach ($aspirantes as $aspirante): ?>
+                                                <tr>
+                                                    <td class="px-3 py-2 border"><?= esc($aspirante['curp']) ?></td>
+                                                    <td class="px-3 py-2 border"><?= esc($aspirante['nombre']) ?> <?= esc($aspirante['primer_apellido']) ?> <?= esc($aspirante['segundo_apellido']) ?></td>
+                                                    <td class="px-3 py-2 border"><?= esc($aspirante['sede_nombre']) ?></td>
+                                                    <td class="px-3 py-2 border"><?= esc($aspirante['carrera_nombre']) ?></td>
+                                                    <td class="px-3 py-2 border"><?= $aspirante['preficha'] == 1 ? 'Generada' : 'Pendiente' ?></td>
+                                                    <td class="px-3 py-2 border text-center">
+                                                        <a href="<?= base_url('aspirantes/descargarFicha/' . esc($aspirante['curp'])) ?>"
+                                                            class="bg-blue-500 hover:bg-blue-700 text-white px-2 py-1 rounded text-xs"
+                                                            target="_blank">
+                                                            Descargar
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -146,7 +160,25 @@ License:
 <!-- Scripts -->
 <script src="<?php echo base_url(); ?>assets/js/core.bundle.js">
 </script>
-
+<script>
+    document.getElementById('formPrefichas').addEventListener('submit', function(e) {
+        e.preventDefault();
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "¿Estás seguro de generar las prefichas? ya que solo se pueden crear una vez por convocatoria",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, generar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                e.target.submit();
+            }
+        });
+    });
+</script>
 <!-- End of Scripts -->
 </body>
 

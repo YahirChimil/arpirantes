@@ -1,0 +1,90 @@
+CRITICAL - 2025-08-22 13:14:54 --> ErrorException: Undefined variable $totalAspirantes
+[Method: GET, Route: administracion/preficha]
+in APPPATH\Views\base\publico\generacion_prefichas.php on line 72.
+ 1 APPPATH\Views\base\publico\generacion_prefichas.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalAspirantes', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\generacion_prefichas.php', 72)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\generacion_prefichas.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/generacion_prefichas', [], true)
+ 5 APPPATH\Controllers\Preficha.php(71): view('base/publico/generacion_prefichas', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Preficha->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Preficha))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-08-22 17:24:27 --> ErrorException: Undefined variable $logo2Base64
+[Method: POST, Route: aspirantes/preficha]
+in APPPATH\Views\pdf\preficha.php on line 80.
+ 1 APPPATH\Views\pdf\preficha.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $logo2Base64', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\pdf\\preficha.php', 80)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\pdf\\preficha.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pdf/preficha', [], true)
+ 5 APPPATH\Controllers\Encuesta.php(244): view('pdf/preficha', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->obtenerPreficha()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-08-22 17:25:07 --> ErrorException: Undefined variable $logo2Base64
+[Method: POST, Route: aspirantes/preficha]
+in APPPATH\Views\pdf\preficha.php on line 80.
+ 1 APPPATH\Views\pdf\preficha.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $logo2Base64', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\pdf\\preficha.php', 80)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\pdf\\preficha.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pdf/preficha', [], true)
+ 5 APPPATH\Controllers\Encuesta.php(244): view('pdf/preficha', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->obtenerPreficha()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-08-22 17:29:04 --> ErrorException: Undefined variable $logo2Base64
+[Method: POST, Route: aspirantes/preficha]
+in APPPATH\Views\pdf\preficha.php on line 80.
+ 1 APPPATH\Views\pdf\preficha.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $logo2Base64', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\pdf\\preficha.php', 80)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\pdf\\preficha.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pdf/preficha', [], true)
+ 5 APPPATH\Controllers\Encuesta.php(244): view('pdf/preficha', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->obtenerPreficha()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-08-22 17:29:10 --> ErrorException: Undefined variable $logo2Base64
+[Method: POST, Route: aspirantes/preficha]
+in APPPATH\Views\pdf\preficha.php on line 80.
+ 1 APPPATH\Views\pdf\preficha.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $logo2Base64', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\pdf\\preficha.php', 80)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\pdf\\preficha.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pdf/preficha', [], true)
+ 5 APPPATH\Controllers\Encuesta.php(244): view('pdf/preficha', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->obtenerPreficha()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-08-22 17:36:59 --> ErrorException: Undefined variable $logo2Base64
+[Method: POST, Route: aspirantes/preficha]
+in APPPATH\Views\pdf\preficha.php on line 80.
+ 1 APPPATH\Views\pdf\preficha.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $logo2Base64', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\pdf\\preficha.php', 80)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\pdf\\preficha.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pdf/preficha', [], true)
+ 5 APPPATH\Controllers\Encuesta.php(244): view('pdf/preficha', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Encuesta->obtenerPreficha()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Encuesta))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')

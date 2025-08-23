@@ -45,6 +45,29 @@ class Preficha extends BaseController
             }
         }
 
+
+        $aspiranteModel = new \App\Models\AspiranteModel();
+
+        // 1. Obtener todos los aspirantes de la convocatoria (ajusta el filtro si tienes campo de convocatoria)
+        $aspirantesConvocatoria = $aspiranteModel->findAll();
+        $totalAspirantesConvocatoria = count($aspirantesConvocatoria);
+
+        // 2. Criterios para preficha (ajusta según tus reglas)
+        $totalCriterioPreficha = 0;
+        $totalNoCriterioPreficha = 0;
+
+        foreach ($aspirantesConvocatoria as $aspirante) {
+            // Ejemplo de criterios: pago realizado y encuesta contestada
+            $pagoRealizado = isset($aspirante['preficha']) && $aspirante['preficha'] == 1;
+            // Puedes agregar más criterios aquí
+
+            if ($pagoRealizado) {
+                $totalCriterioPreficha++;
+            } else {
+                $totalNoCriterioPreficha++;
+            }
+        }
+
         $data = [
             'titulo' => 'Prefichas por día',
             'miga' => 'Prefichas',
@@ -52,6 +75,11 @@ class Preficha extends BaseController
             'fecha' => $fecha,
             'aspirantes' => $aspirantes,
             'user_info'     => datos_usuario(),
+            // Totales para la vista
+            'totalAspirantesConvocatoria' => $totalAspirantesConvocatoria,
+            'totalCriterioPreficha' => $totalCriterioPreficha,
+            'totalNoCriterioPreficha' => $totalNoCriterioPreficha,
+
         ];
 
         return view('base/publico/generacion_prefichas', $data);
@@ -89,9 +117,17 @@ class Preficha extends BaseController
         // Ruta al logo
         $logoPath = FCPATH . 'images/logos/logo_discere_svg_negro.svg';
         $logoBase64 = '';
+
         if (file_exists($logoPath)) {
             $imageData = file_get_contents($logoPath);
             $logoBase64 = 'data:image/svg+xml;base64,' . base64_encode($imageData);
+        }
+
+        $logo2Path = FCPATH . 'images/logos_discere/logo_cliente.png'; // Cambia el nombre y extensión según tu imagen
+        $logo2Base64 = '';
+        if (file_exists($logo2Path)) {
+            $imageData2 = file_get_contents($logo2Path);
+            $logo2Base64 = 'data:image/png;base64,' . base64_encode($imageData2);
         }
 
         // Renderizar vista HTML
@@ -100,6 +136,9 @@ class Preficha extends BaseController
             'fecha_entrega'  => $preficha['fecha'],
             'periodo'        => $preficha['periodo'],
             'logoBase64'     => $logoBase64,
+            'logo2Base64'    => $logo2Base64,
+            'logo3Base64'    => $logo3Base64 ?? '', // si usas logo3
+
         ]);
 
         // Configurar Dompdf

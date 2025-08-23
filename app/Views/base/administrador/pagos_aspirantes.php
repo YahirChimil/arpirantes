@@ -57,22 +57,23 @@ License:
                     <div class="lg:col-span-3">
 
                         <div class="card h-full h-full">
+                            <?php if (session()->getFlashdata('error')): ?>
+                                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                                    <?= session()->getFlashdata('error') ?>
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if (session()->getFlashdata('success')): ?>
+                                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+                                    <?= session()->getFlashdata('success') ?>
+                                </div>
+                            <?php endif; ?>
                             <div
                                 class="card-body p-10 bg-[length:80%] rtl:[background-position:-70%_25%] [background-position:175%_25%] bg-no-repeat entry-callout-bg">
                                 <div class="flex flex-col justify-center gap-4">
                                     <!-- Secciones de carga masiva, compactas y separadas visualmente del filtro -->
                                     <div class="flex gap-4 mb-4">
-                                        <?php if (session()->getFlashdata('error')): ?>
-                                            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
-                                                <?= session()->getFlashdata('error') ?>
-                                            </div>
-                                        <?php endif; ?>
 
-                                        <?php if (session()->getFlashdata('success')): ?>
-                                            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
-                                                <?= session()->getFlashdata('success') ?>
-                                            </div>
-                                        <?php endif; ?>
                                         <!-- Preficha -->
                                         <div class="card w-1/2">
                                             <div class="card-body p-3">

@@ -1,0 +1,60 @@
+CRITICAL - 2025-08-20 13:56:33 --> ErrorException: Undefined variable $steps
+[Method: GET, Route: aspirantes/info]
+in APPPATH\Views\base\publico\aspirante_info.php on line 119.
+ 1 APPPATH\Views\base\publico\aspirante_info.php(119): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $steps', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirante_info.php', 119)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirante_info.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirante_info', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(342): view('base/publico/aspirante_info', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->infoAspirante()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-08-20 13:58:40 --> ErrorException: Undefined variable $steps
+[Method: GET, Route: aspirantes/info]
+in APPPATH\Views\base\publico\aspirante_info.php on line 121.
+ 1 APPPATH\Views\base\publico\aspirante_info.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $steps', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirante_info.php', 121)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirante_info.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirante_info', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(342): view('base/publico/aspirante_info', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->infoAspirante()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-08-20 13:58:43 --> ErrorException: Undefined variable $steps
+[Method: GET, Route: aspirantes/info]
+in APPPATH\Views\base\publico\aspirante_info.php on line 121.
+ 1 APPPATH\Views\base\publico\aspirante_info.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $steps', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirante_info.php', 121)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirante_info.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirante_info', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(342): view('base/publico/aspirante_info', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->infoAspirante()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')
+CRITICAL - 2025-08-20 14:01:24 --> ErrorException: Undefined array key "label"
+[Method: GET, Route: aspirantes/info]
+in APPPATH\Views\base\publico\aspirante_info.php on line 144.
+ 1 APPPATH\Views\base\publico\aspirante_info.php(144): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "label"', 'C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirante_info.php', 144)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\rockstar\\rockstar\\app\\Views\\base\\publico\\aspirante_info.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('base/publico/aspirante_info', [], true)
+ 5 APPPATH\Controllers\Aspirante.php(342): view('base/publico/aspirante_info', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Aspirante->infoAspirante()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Aspirante))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\rockstar\\rockstar\\public\\index.php')

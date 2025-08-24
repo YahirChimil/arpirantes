@@ -80,9 +80,8 @@ License:
                                     <p class="text-sm font-normal text-gray-700 leading-5.5">
                                         Bienvenido al sistema DISCERE CRM
                                         <br />
-                                        Iingresa a la seccion de Aspirante y contesta la encuesta socioeconomica.
+                                        Iingresa a la seccion de informacion para continuar con tu proceso.
                                         <br />
-                                        Despues continua con la carga de tus documentos.
                                     </p>
                                 </div>
                             </div>

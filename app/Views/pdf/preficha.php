@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Preficha de Entrega</title>
@@ -55,7 +56,8 @@
             margin-top: 10px;
         }
 
-        .docs th, .docs td {
+        .docs th,
+        .docs td {
             border: 1px solid #ccc;
             padding: 8px;
             text-align: left;
@@ -67,10 +69,24 @@
         }
     </style>
 </head>
+
 <body>
 
     <header>
-       <img src="<?= $logoBase64 ?>" alt="Logo" style="width: 120px; height: auto; margin-bottom: 20px;">
+
+
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+            <div style="flex: 1; text-align: left;">
+                <img src="<?= $logoBase64 ?>" alt="Logo Izquierdo" style="height: 60px; width: auto; object-fit: contain;">
+            </div>
+            <div style="flex: 1; text-align: right;">
+                <?php if (!empty($logo2Base64)): ?>
+                    <img src="<?= $logo2Base64 ?>" alt="Logo Derecho" style="height: 80px; width: auto; object-fit: contain;">
+                <?php endif; ?>
+            </div>
+        </div>
+
 
 
         <div>
@@ -92,18 +108,35 @@
     <div class="docs">
         <h3>Documentos Requeridos (Originales):</h3>
         <table>
-            <tr><th>#</th><th>Documento</th></tr>
-            <tr><td>1</td><td>Acta de nacimiento</td></tr>
-            <tr><td>2</td><td>CURP</td></tr>
-            <tr><td>3</td><td>Certificado o Constancia de estudios</td></tr>
-            <tr><td>4</td><td>Recibo de pago</td></tr>
-             <tr><td>4</td><td>2 fotos tamaño infantil</td></tr>
+            <tr>
+                <th>#</th>
+                <th>Documento</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Acta de nacimiento</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>CURP</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Certificado o Constancia de estudios</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Recibo de pago</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>2 fotos tamaño infantil</td>
+            </tr>
         </table>
     </div>
 
     <p class="footer-note">Preséntate puntualmente con tus documentos completos en el horario y fecha indicada. Gracias por tu atención.</p>
 
 </body>
+
 </html>
-
-

@@ -37,10 +37,22 @@
             form.addEventListener('submit', function(e) {
                 var btn = form.querySelector('button[type="submit"]');
                 if (btn) {
+                    // Guarda el texto original solo si no lo tiene guardado
+                    if (!btn.hasAttribute('data-original-text')) {
+                        btn.setAttribute('data-original-text', btn.innerHTML);
+                    }
                     btn.disabled = true;
                     btn.innerHTML = '<span class="animate-spin inline-block mr-2 w-5 h-5 border-2 border-t-2 border-gray-200 border-t-blue-600 rounded-full"></span>Procesando...';
+                    // Si el form tiene target="_blank", quita la animación después de 3 segundos y restaura el texto original
+                    if (form.target === '_blank') {
+                        setTimeout(function() {
+                            btn.disabled = false;
+                            btn.innerHTML = btn.getAttribute('data-original-text');
+                        }, 3000);
+                    }
                 }
             });
         });
     });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

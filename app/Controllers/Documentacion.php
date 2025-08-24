@@ -598,7 +598,7 @@ class Documentacion extends ResourceController
         ]);
 
         // Solo enviar correo al aspirante relacionado si todos sus documentos están revisados
-        // $this->enviarCorreoRevisionDocumentos($documento['aspirante_curp']);
+        $this->enviarCorreoRevisionDocumentos($documento['aspirante_curp']);
 
         return redirect()->back()->with('success', 'Documento actualizado correctamente.');
     }

@@ -142,22 +142,30 @@ class Encuesta extends ResourceController
             return redirect()->back()->with('error', 'No puedes generar prefichas hasta que haya pasado la fecha de finalización de prefichas.');
         }
 
-        $aspiranteModel = new \App\Models\AspiranteModel();
-        $convocatoriaModel = new \App\Models\ConvocatoriaModel(); // Asegúrate de tener este modelo
         $db = \Config\Database::connect();
+        $builder = $db->table('fechas_preficha');
 
-        $convocatoria = $convocatoriaModel->first(); // Puedes filtrar por la convocatoria activa si es necesario
+        // Validación: si ya existen registros, no volver a generar
+        if ($builder->countAllResults() > 0) {
+            return redirect()->back()->with('error', 'Ya se han generado las prefichas anteriormente.');
+        }
+
+        $aspiranteModel = new \App\Models\AspiranteModel();
+        $convocatoriaModel = new \App\Models\ConvocatoriaModel();
+
+        $convocatoria = $convocatoriaModel->first();
         $fechaInicio = new \DateTime($convocatoria['preficha_inicio']);
         $periodo = $convocatoria['codigo'];
 
+        // Solo aspirantes con preficha = 1
         $aspirantes = $aspiranteModel
             ->select('aspirantes.curp, aspirantes.carrera, aspirantes.sede, carreras.nombre as carrera_nombre, sedes.nombre_sede')
             ->join('carreras', 'carreras.id = aspirantes.carrera')
             ->join('sedes', 'sedes.id_sede = aspirantes.sede')
+            ->where('aspirantes.preficha', 1)
             ->orderBy("(CASE WHEN aspirantes.sede = 1 THEN 0 ELSE 1 END)", 'ASC')
             ->orderBy('aspirantes.carrera', 'ASC')
             ->findAll();
-
 
         // Agrupar por sede y carrera
         $agrupados = [];
@@ -169,8 +177,7 @@ class Encuesta extends ResourceController
         $fechaAsignada = clone $fechaInicio;
         $limiteDiario = 120;
 
-        $builder = $db->table('fechas_preficha');
-        $builder->truncate(); // Limpiar tabla (opcional, depende del caso)
+        // $builder->truncate(); // Ya no se limpia la tabla automáticamente
 
         foreach ($agrupados as $grupo) {
             $total = count($grupo);
@@ -186,7 +193,7 @@ class Encuesta extends ResourceController
                         'periodo' => $periodo,
                     ]);
                 }
-                $fechaAsignada->modify('+1 day'); // Avanza un día solo si se usó un bloque
+                $fechaAsignada->modify('+1 day');
             }
         }
 
@@ -233,12 +240,25 @@ class Encuesta extends ResourceController
             $imageData = file_get_contents($logoPath);
             $logoBase64 = 'data:image/svg+xml;base64,' . base64_encode($imageData);
         }
+
+        $logo2Path = FCPATH . 'images/logos_discere/logo_cliente.png'; // Cambia el nombre y extensión según tu imagen
+        $logo2Base64 = '';
+        if (file_exists($logo2Path)) {
+            $imageData2 = file_get_contents($logo2Path);
+            $logo2Base64 = 'data:image/png;base64,' . base64_encode($imageData2);
+        }
+
+
+
+
+
         // Renderizar vista HTML
         $html = view('pdf/preficha', [
             'aspirante'      => $aspirante,
             'fecha_entrega'          => $preficha['fecha'],
             'periodo'        => $preficha['periodo'],
             'logoBase64'     => $logoBase64,
+            'logo2Base64'      => $logo2Base64
         ]);
 
 

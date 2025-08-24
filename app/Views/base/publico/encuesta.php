@@ -139,10 +139,12 @@
 
             </div>
 
-
+            <!-- Agrega esto justo antes de los botones de navegación -->
+            <div id="avance-seccion" class="mb-4 text-sm text-black font-semibold"></div>
 
             <!-- Botones de navegación -->
             <div class="flex justify-between mt-6">
+                <!-- Agrega esto justo antes de los botones de navegación -->
                 <button type="button" id="anterior" class="btn btn-secondary" disabled>Anterior</button>
                 <button type="button" id="siguiente" class="btn btn-primary">Siguiente</button>
             </div>
@@ -169,6 +171,7 @@
         const btnSiguiente = document.getElementById('siguiente');
         const btnEnviar = document.getElementById('boton-enviar');
 
+        // Reemplaza la función mostrarSeccion por esta versión:
         function mostrarSeccion(index) {
             secciones.forEach((sec, i) => {
                 sec.classList.toggle('hidden', i !== index);
@@ -176,8 +179,13 @@
             btnAnterior.disabled = index === 0;
             btnSiguiente.classList.toggle('hidden', index === secciones.length - 1);
             btnEnviar.classList.toggle('hidden', index !== secciones.length - 1);
+
+            // Mostrar avance de sección
+            document.getElementById('avance-seccion').textContent = `Sección ${index + 1} de ${secciones.length}`;
         }
 
+        // Y asegúrate de tener esta línea después de definir los botones y secciones:
+        mostrarSeccion(seccionActual);
         btnAnterior.addEventListener('click', () => {
             if (seccionActual > 0) {
                 seccionActual--;
@@ -200,7 +208,12 @@
             });
 
             if (!valido) {
-                alert("Responde todas las preguntas requeridas antes de continuar.");
+                Swal.fire({
+                    icon: 'warning',
+                    title: '¡Atención!',
+                    text: 'Responde todas las preguntas requeridas antes de continuar.',
+                    confirmButtonText: 'Aceptar'
+                });
                 return; // No avanzar si no está válido
             }
 

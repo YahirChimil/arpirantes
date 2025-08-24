@@ -236,9 +236,10 @@ class Aspirante extends ResourceController
                 ->with('error', 'No se pudo enviar el correo electrónico.');
         }
 
-        return redirect()->to(base_url('Acceso/aspirante'))
+        return redirect()->to(base_url('/'))
             ->with('success', 'Registro guardado. El usuario y contraseña han sido enviados al correo proporcionado.');
     }
+
 
     public function obtenerAvanceAspirante($curp)
     {
@@ -284,16 +285,33 @@ class Aspirante extends ResourceController
             ->where('estatus', 2)
             ->countAllResults();
         $documentacionAprobada = ($documentosAprobados == $documentosNecesarios && $documentosNecesarios > 0);
+        // Paso extra: Grupo de examen asignado (si existe el curp en la tabla aspirante_grupo_examen)
+        $db = \Config\Database::connect();
+        $grupoExamenAsignado = $db->table('aspirante_grupo_examen')->where('curp', $curp)->countAllResults() > 0;
 
-        // Calcular avance
-        $totalPasos = 7;
+        // Paso extra: Aspirante aceptado (si grupo_nivelacion tiene valor)
+        $aceptado = ($aspirante && !empty($aspirante['examen']));
+
+
+        // Paso extra: Pago de grupo de nivelación (nuevo paso, ajusta el campo según tu BD)
+        $pagoGrupoNivelacion = ($aspirante && !empty($aspirante['pago_curso']) && $aspirante['pago_curso'] == 1);
+
+        // Paso extra: Grupo de curso de nivelación asignado (puedes ajustar si tienes otra lógica)
+        $grupoNivelacionAsignado = ($aspirante && !empty($aspirante['grupo_nivelacion']));
+
+        // Calcular avance (ajusta el total de pasos)
+        $totalPasos = 11;
         $pasosCompletados = ($registro ? 1 : 0)
             + ($usuarioCreado ? 1 : 0)
             + ($encuestaContestada ? 1 : 0)
             + ($pagoRealizado ? 1 : 0)
             + ($prefichaGenerada ? 1 : 0)
-            + ($documentacionSubida ? 1 : 0) // Nuevo paso: documentación subida
-            + ($documentacionAprobada ? 1 : 0); // Documentación aprobada
+            + ($documentacionSubida ? 1 : 0)
+            + ($documentacionAprobada ? 1 : 0)
+            + ($grupoExamenAsignado ? 1 : 0)
+            + ($aceptado ? 1 : 0)
+            + ($pagoGrupoNivelacion ? 1 : 0)
+            + ($grupoNivelacionAsignado ? 1 : 0);
 
         $porcentaje = intval(($pasosCompletados / $totalPasos) * 100);
 
@@ -303,13 +321,151 @@ class Aspirante extends ResourceController
             'encuestaContestada' => $encuestaContestada,
             'pagoRealizado' => $pagoRealizado,
             'prefichaGenerada' => $prefichaGenerada,
-            'documentacionSubida' => $documentacionSubida, // Nuevo campo
+            'documentacionSubida' => $documentacionSubida,
             'documentacionAprobada' => $documentacionAprobada,
+            'grupoExamenAsignado' => $grupoExamenAsignado,
+            'aceptado' => $aceptado,
+            'pagoGrupoNivelacion' => $pagoGrupoNivelacion,
+            'grupoNivelacionAsignado' => $grupoNivelacionAsignado,
             'porcentaje' => $porcentaje,
             'preficha' => $preficha
         ];
     }
+    public function infoAspirante()
+    {
+        // Obtener el usuario autenticado
+        $user = auth()->user();
+        if (!$user) {
+            return redirect()->to(site_url('Acceso/login'))->with('error', 'Debes iniciar sesión.');
+        }
 
+        // El username es el CURP
+        $curp = $user->username;
+
+        // Buscar al aspirante por CURP
+        $aspiranteModel = new \App\Models\AspiranteModel();
+        $aspirante = $aspiranteModel
+            ->select('aspirantes.*, sedes.nombre_sede as sede_nombre, carreras.nombre as carrera_nombre')
+            ->join('sedes', 'sedes.id_sede = aspirantes.sede')
+            ->join('carreras', 'carreras.id = aspirantes.carrera')
+            ->where('aspirantes.curp', $curp)
+            ->first();
+
+        if (!$aspirante) {
+            return redirect()->to(base_url('Acceso/aspirante'))->with('error', 'Aspirante no encontrado.');
+        }
+
+        // Obtener avance usando el método existente
+        $avance = $this->obtenerAvanceAspirante($curp);
+
+        // Pasos para la barra de avance (incluyendo los nuevos pasos)
+        $steps = [
+            [
+                'key' => 'registro',
+                'ok'  => '✔️ Registro',
+                'pending' => 'Registro pendiente',
+                'label' => 'Registro',
+                'desc' => 'Datos personales',
+                'num' => '01'
+            ],
+            [
+                'key' => 'usuarioCreado',
+                'ok'  => '✔️ Usuario creado',
+                'pending' => 'Usuario pendiente',
+                'label' => 'Usuario',
+                'desc' => 'Cuenta creada',
+                'num' => '02'
+            ],
+            [
+                'key' => 'encuestaContestada',
+                'ok'  => '✔️ Encuesta contestada',
+                'pending' => 'Encuesta pendiente',
+                'label' => 'Encuesta',
+                'desc' => 'Cuestionario',
+                'num' => '03'
+            ],
+            [
+                'key' => 'pagoRealizado',
+                'ok'  => '✔️ Pago realizado',
+                'pending' => '⏳ Pago pendiente',
+                'label' => 'Pago',
+                'desc' => 'Referencia bancaria',
+                'num' => '04'
+            ],
+            [
+                'key' => 'prefichaGenerada',
+                'ok'  => '✔️ Preficha generada',
+                'pending' => '⏳ Esperando generación de preficha',
+                'label' => 'Preficha',
+                'desc' => 'Documento generado',
+                'num' => '05'
+            ],
+            [
+                'key' => 'documentacionSubida',
+                'ok'  => '✔️ Documentación subida',
+                'pending' => '⏳ Documentación pendiente',
+                'label' => 'Documentos',
+                'desc' => 'Subida de archivos',
+                'num' => '06'
+            ],
+            [
+                'key' => 'documentacionAprobada',
+                'ok'  => '✔️ Documentación aprobada',
+                'pending' => '⏳ Documentación por aprobar',
+                'label' => 'Aprobación',
+                'desc' => 'Revisión final',
+                'num' => '07'
+            ],
+            [
+                'key' => 'grupoExamenAsignado',
+                'ok'  => '✔️ Grupo de examen asignado',
+                'pending' => '⏳ Sin grupo de examen',
+                'label' => 'Examen',
+                'desc' => 'Grupo asignado',
+                'num' => '08'
+            ],
+            [
+                'key' => 'aceptado',
+                'ok'  => '✔️ Aspirante Seleccionado',
+                'pending' => '⏳ No seleccionado',
+                'label' => 'Seleccionado',
+                'desc' => 'Seleccion',
+                'num' => '09'
+            ],
+            [
+                'key' => 'pagoGrupoNivelacion',
+                'ok'  => '✔️ Pago de nivelación',
+                'pending' => '⏳ Pago de nivelación pendiente',
+                'label' => 'Pago ',
+                'desc' => 'Pago curso nivelación',
+                'num' => '10'
+            ],
+            [
+                'key' => 'grupoNivelacionAsignado',
+                'ok'  => '✔️ Grupo de nivelación asignado',
+                'pending' => '⏳ Sin grupo de nivelación',
+                'label' => 'Nivelación',
+                'desc' => 'Curso asignado',
+                'num' => '11'
+            ],
+        ];
+
+        $prefichaModel = new \App\Models\PrefichasModel();
+        $preficha = $prefichaModel->where('curp', $curp)->first();
+
+
+        return view('base/publico/aspirante_info', [
+            'aspirante' => $aspirante,
+            'avance'    => $avance,
+            'titulo'    => 'Mi Información',
+            'miga'      => 'Aspirantes',
+            'url_miga'  => base_url('aspirante'),
+            'sub_miga'  => 'Información',
+            'user_info' => datos_usuario(),
+            'steps'     => $steps,
+            'preficha'  => $preficha
+        ]);
+    }
 
 
 

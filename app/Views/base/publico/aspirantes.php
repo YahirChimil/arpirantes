@@ -67,9 +67,13 @@ License:
                                 <a href="https://www.gob.mx/curp" target="_blank" class="text-blue-600 hover:underline font-medium ">www.gob.mx/curp</a>.
                                 Asegúrate de que sea la versión digital, no deben ser fotos o capturas de pantalla en formato PDF ya que tomaremos datos a partir de este.
                             </span>
+                            <span class="block text-xs text-red-500 mb-2">
+                                Los campos marcados con <span class="font-bold">*</span> son obligatorios.
+                            </span>
 
                         </label>
                         <input type="file" name="curp" accept=".pdf" required class="w-full border rounded p-2 mt-1 text-sm font-sans">
+                        <span class="text-red-500 text-xs font-bold mt-1 block">* Este campo es obligatorio.</span>
                     </div>
                     <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition font-sans">Analizar CURP</button>
                 </form>
@@ -157,21 +161,21 @@ License:
                             </select>
                         </div>
                         <div>
-                            <label class="block font-medium text-gray-700 mb-1">Sede Segunda opción</label>
+                            <label class="block font-medium text-gray-700 mb-1">Sede Segunda opción<span class="text-red-500">*</span></label>
                             <select id="sede_alt" name="sede_alternativa"
                                 class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                                 <option value="">Selecciona una sede</option>
                             </select>
                         </div>
                         <div>
-                            <label class="block font-medium text-gray-700 mb-1">Carrera Segunda opción</label>
+                            <label class="block font-medium text-gray-700 mb-1">Carrera Segunda opción<span class="text-red-500">*</span></label>
                             <select id="carrera_alt" name="carrera_alternativa"
                                 class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                                 <option value="">Selecciona una carrera</option>
                             </select>
                         </div>
                         <div>
-                            <label class="block font-medium text-gray-700 mb-1">¿Es Reingreso?</label>
+                            <label class="block font-medium text-gray-700 mb-1">¿Es Reingreso?<span class="text-red-500">*</span></label>
                             <select name="reingreso" required
                                 class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                                 <option value="">Selecciona</option>

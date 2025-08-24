@@ -222,6 +222,10 @@
                                 <a href="<?= base_url('administracion/preficha'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
                                     Prefichas </a>
                             </div>
+                            <div class="menu-item">
+                                <a href="<?= base_url('administracion/seleccionados'); ?>" class="menu-link text-sm py-2 text-gray-700 hover:text-blue-600">
+                                    Seleccion de Aspirantes </a>
+                            </div>
                         </div>
                     </div>
                 <?php endif; ?>

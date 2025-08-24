@@ -130,7 +130,7 @@ $routes->get('aspirante/generarFalsosAspirantes/(:num)', 'Aspirante::generarFals
 $routes->post('aspirante/toggle-examen', 'Aspirante::toggleExamen');
 $routes->post('aspirantes/cargarCSV', 'Aspirante::cargarCSVExamen');
 $routes->get('aspirantes/imprimirSeleccionados', 'Aspirante::imprimirSeleccionados');
-$routes->get('aspirantes/referencia-bancaria', 'Encuesta::referenciaBancaria');
+$routes->post('aspirantes/referencia-bancaria', 'Encuesta::referenciaBancaria');
 $routes->get('aspirantes/info', 'Aspirante::infoAspirante');
 
 
@@ -158,7 +158,7 @@ $routes->post('convocatoria/actualizar/(:num)', 'Convocatoria::actualizar/$1');
 
 
 $routes->post('aspirantes/generarPrefichas', 'Encuesta::generarPrefichas');
-$routes->get('aspirantes/preficha', 'Encuesta::obtenerPreficha');
+$routes->post('aspirantes/preficha', 'Encuesta::obtenerPreficha');
 
 $routes->get('aulas/crear', 'Aulas::index');
 $routes->post('aulas/guardar', 'Aulas::guardar');

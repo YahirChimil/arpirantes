@@ -130,6 +130,7 @@ class Pagos extends BaseController
 
         return redirect()->back()->with('success', 'Pago de curso actualizado.');
     }
+
     public function cargar_csv_preficha()
     {
         $aspiranteModel = new \App\Models\AspiranteModel();

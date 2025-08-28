@@ -4,3 +4,6 @@ writable/logs/
 writable/session/
 writable/debugbar/
 /writable/session/
+/writable/session/
+/writable/uploads/
+/writable/logs/

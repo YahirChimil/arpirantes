@@ -434,9 +434,17 @@ class GruposExamen extends ResourceController
         // Logo TecNM en base64
         $logoPath = FCPATH . 'images/logos/logo_discere_svg_negro.svg';
         $logoBase64 = '';
+
         if (file_exists($logoPath)) {
             $imageData = file_get_contents($logoPath);
-            $logoBase64 = 'data:image/png;base64,' . base64_encode($imageData);
+            $logoBase64 = 'data:image/svg+xml;base64,' . base64_encode($imageData);
+        }
+
+        $logo2Path = FCPATH . 'images/logos_discere/logo_cliente.png'; // Cambia el nombre y extensión según tu imagen
+        $logo2Base64 = '';
+        if (file_exists($logo2Path)) {
+            $imageData2 = file_get_contents($logo2Path);
+            $logo2Base64 = 'data:image/png;base64,' . base64_encode($imageData2);
         }
 
         // Renderizar vista PDF
@@ -444,6 +452,7 @@ class GruposExamen extends ResourceController
             'grupo' => $grupo,
             'aspirantes' => $aspirantes,
             'logoBase64' => $logoBase64,
+            'logo2Base64' => $logo2Base64,
         ]);
 
         // Generar PDF con Dompdf

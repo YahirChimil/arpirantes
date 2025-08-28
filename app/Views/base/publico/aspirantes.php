@@ -14,25 +14,28 @@ License:
 
 <body class="antialiased flex flex-col min-h-screen text-base text-gray-700 [--tw-page-bg:#fefefe] bg-[--tw-page-bg]">
     <!-- Header con logo y título -->
-    <header class="w-full bg-orange-400 py-4 shadow mb-6">
-        <div class="max-w-6xl mx-auto px-4 flex flex-row items-center justify-between">
+    <header class="w-full bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-300 py-5 shadow-lg mb-8 border-b border-orange-300">
+        <div class="max-w-6xl mx-auto px-4 flex flex-row items-center justify-between gap-4">
             <!-- Logo izquierdo -->
-            <div class="flex-shrink-0">
-                <img src="<?= base_url(); ?>images/logos/logo_cliente.png" alt="Logo izquierdo" class="h-20 w-auto">
+            <div class="flex-shrink-0 flex items-center justify-center bg-white rounded-xl shadow-md p-2 border border-orange-200">
+                <img src="<?= base_url(); ?>images/logos/logo_cliente.png" alt="Logo izquierdo" class="h-20 w-auto object-contain">
             </div>
             <!-- Título -->
-            <div class="flex-1 flex flex-col items-center">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-1">Instituto Tecnológico de Oaxaca</h2>
-                <span class="text-base font-normal text-gray-700">Registro de Aspirante - Convocatoria: <?= esc($periodo ?? '') ?></span>
-                <span class="block mt-2">
-                    <strong>¿Ya estás registrado o culminaste tu registro?</strong>
+            <div class="flex-1 flex flex-col items-center text-center px-2">
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-1 drop-shadow-sm tracking-tight">Instituto Tecnológico de Oaxaca</h2>
+                <span class="text-lg font-medium text-gray-800 bg-white/70 rounded px-3 py-1 shadow-sm mb-1">
+                    Registro de Aspirante - Convocatoria: <span class="font-bold text-orange-700"><?= esc($periodo ?? '') ?></span>
+                </span>
+                <span class="block mt-3 text-base text-gray-700 bg-white/60 rounded px-3 py-2 shadow">
+                    <strong class="text-orange-700">¿Ya estás registrado o culminaste tu registro?</strong>
+                    <br>
                     Ingresa al sistema para consultar tu avance o descargar tus documentos.
-                    <a href="<?= base_url('/') ?>" class="underline text-blue font-semibold hover:text-blue-200 ml-1">Haz clic aquí para entrar</a>
+                    <a href="<?= base_url('/') ?>" class="underline text-blue-700 font-semibold hover:text-blue-500 ml-1 transition-colors">Haz clic aquí para entrar</a>
                 </span>
             </div>
             <!-- Logo derecho -->
-            <div class="flex-shrink-0">
-                <img src="<?= base_url(); ?>images/logos/logo_ito.png" alt="Logo derecho" class="h-20 w-auto">
+            <div class="flex-shrink-0 flex items-center justify-center bg-white rounded-xl shadow-md p-2 border border-orange-200">
+                <img src="<?= base_url(); ?>images/logos/logo_ito.png" alt="Logo derecho" class="h-20 w-auto object-contain">
             </div>
         </div>
     </header>
@@ -79,61 +82,57 @@ License:
                 </form>
             <?php else: ?>
                 <form action="<?= base_url('guardar-aspirante') ?>" method="post" class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
-                    <span class="block text-sm font-normal text-gray-500 mt-1">
+                    <span class="block text-sm font-normal text-gray-500 mt-1 mb-4">
                         <strong>Aviso:</strong> Los datos <b>CURP, FECHA DE NACIMIENTO, EDAD, GÉNERO Y NOMBRE COMPLETO</b> se extraen directamente de tu documento CURP y <b>no se pueden editar</b>.
-                        Si existe un error en estos campos, completa tu registro y contacta a la <b>Coordinación de Servicios e Internet al correo
-                            <a href="mailto:soporte@itoaxaca.edu.mx" target="_blank" class="text-blue-700 underline font-semibold" onclick="navigator.clipboard.writeText('soporte@itoaxaca.edu.mx'); return false;">soporte@itoaxaca.edu.mx</a></b> para solicitar la corrección. Los demás datos solicitados son responsabilidad del aspirante y deben ser ingresados correctamente.
-
+                        Si existe un error en estos campos, completa tu registro y contacta a la <b>Coordinación de Servicios e Internet</b> al correo
+                        <a href="mailto:soporte@itoaxaca.edu.mx" target="_blank" class="text-blue-700 underline font-semibold" onclick="navigator.clipboard.writeText('soporte@itoaxaca.edu.mx'); return false;">soporte@itoaxaca.edu.mx</a> para solicitar la corrección.
                     </span>
                     <span class="block text-xs text-red-500 mb-2">
                         Los campos marcados con <span class="font-bold">*</span> son obligatorios.
                     </span>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-                        <!-- Datos precargados como etiquetas y ocultos como input -->
+                        <!-- Datos precargados -->
                         <div>
                             <label class="block font-medium text-gray-700 mb-1">CURP</label>
-                            <span class="block px-4 py-2 text-gray-700 font-semibold"><?= esc($curp) ?></span>
+                            <div class="bg-gray-100 px-4 py-2 rounded text-gray-700 font-semibold"><?= esc($curp) ?></div>
                             <input type="hidden" name="curp" value="<?= esc($curp) ?>">
                         </div>
                         <div>
                             <label class="block font-medium text-gray-700 mb-1">Fecha de nacimiento</label>
-                            <span class="block px-4 py-2 text-gray-700 font-semibold"><?= esc($fecha_nacimiento) ?></span>
+                            <div class="bg-gray-100 px-4 py-2 rounded text-gray-700 font-semibold"><?= esc($fecha_nacimiento) ?></div>
                             <input type="hidden" name="fecha_nacimiento" value="<?= esc($fecha_nacimiento) ?>">
                         </div>
                         <div>
                             <label class="block font-medium text-gray-700 mb-1">Edad</label>
-                            <span class="block px-4 py-2 text-gray-700 font-semibold"><?= esc($edad) ?></span>
+                            <div class="bg-gray-100 px-4 py-2 rounded text-gray-700 font-semibold"><?= esc($edad) ?></div>
                             <input type="hidden" name="edad" value="<?= esc($edad) ?>">
                         </div>
                         <div>
                             <label class="block font-medium text-gray-700 mb-1">Género</label>
-                            <span class="block px-4 py-2 text-gray-700 font-semibold"><?= esc($genero) ?></span>
+                            <div class="bg-gray-100 px-4 py-2 rounded text-gray-700 font-semibold"><?= esc($genero) ?></div>
                             <input type="hidden" name="genero" value="<?= esc($genero) ?>">
                         </div>
-                        <!-- Campos editables -->
                         <div>
                             <label class="block font-medium text-gray-700 mb-1">Primer Apellido</label>
-                            <span class="block px-4 py-2 text-gray-700 font-semibold"><?= esc($primer_apellido) ?></span>
+                            <div class="bg-gray-100 px-4 py-2 rounded text-gray-700 font-semibold"><?= esc($primer_apellido) ?></div>
                             <input type="hidden" name="primer_apellido" value="<?= esc($primer_apellido) ?>">
                         </div>
                         <div>
                             <label class="block font-medium text-gray-700 mb-1">Segundo Apellido</label>
-                            <span class="block px-4 py-2 text-gray-700 font-semibold"><?= esc($segundo_apellido) ?></span>
+                            <div class="bg-gray-100 px-4 py-2 rounded text-gray-700 font-semibold"><?= esc($segundo_apellido) ?></div>
                             <input type="hidden" name="segundo_apellido" value="<?= esc($segundo_apellido) ?>">
                         </div>
                         <div>
                             <label class="block font-medium text-gray-700 mb-1">Nombre</label>
-                            <span class="block px-4 py-2 text-gray-700 font-semibold"><?= esc($nombre) ?></span>
+                            <div class="bg-gray-100 px-4 py-2 rounded text-gray-700 font-semibold"><?= esc($nombre) ?></div>
                             <input type="hidden" name="nombre" value="<?= esc($nombre) ?>">
                         </div>
-
+                        <!-- Campos editables -->
                         <div>
                             <label class="block font-medium text-gray-700 mb-1">Correo <span class="text-red-500">*</span></label>
-                            <span class="block text-xs text-gray-500 mb-1">
-                                El correo debe ser personal ya que tu registro se asocia con tu correo.
-                            </span>
                             <input type="email" name="correo" required
-                                class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                placeholder="ejemplo@correo.com">
                         </div>
                         <div>
                             <label class="block font-medium text-gray-700 mb-1">Teléfono <span class="text-red-500">*</span></label>
@@ -143,7 +142,7 @@ License:
                                 inputmode="numeric"
                                 title="Ingresa un número de teléfono de 10 dígitos"
                                 class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                                placeholder="10 dígitos" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
                             <span class="text-xs text-gray-500">Debe contener exactamente 10 dígitos numéricos.</span>
                         </div>
                         <div>
@@ -174,12 +173,11 @@ License:
                                 <option value="">Selecciona una carrera</option>
                             </select>
                         </div>
-                        <div>
+                        <div class="md:col-span-2">
                             <label class="block font-medium text-gray-700 mb-1">¿Es Reingreso?<span class="text-red-500">*</span></label>
                             <select name="reingreso" required
                                 class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                                 <option value="">Selecciona</option>
-
                                 <option value="NO">No, nunca he estado inscrito en algún plantel del Tecnológico Nacional de México.</option>
                                 <option value="SI AUTORIZADO">Sí, pero ya cuento con mi baja autorizada por comité académico.</option>
                                 <option value="SI TITULADO">Sí, pero ya cuento con mi Título y cédula o acta de examen profesional.</option>
@@ -198,7 +196,7 @@ License:
                     </div>
                     <div class="mt-8 flex justify-center">
                         <button type="submit"
-                            class="px-6 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors duration-200 shadow-sm hover:shadow-md border border-blue-700">
+                            class="px-6 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors duration-200 shadow-sm hover:shadow-md border border-blue-700 w-full md:w-auto">
                             Guardar Aspirante
                         </button>
                     </div>

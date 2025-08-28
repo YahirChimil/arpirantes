@@ -400,11 +400,17 @@ class Grupo extends Controller
         $aspiranteModel = new \App\Models\AspiranteModel();
         $grupoModel = new \App\Models\GrupoModel();
 
-        $grupo = $grupoModel->find($grupoId);
+        $grupo = $grupoModel
+            ->select('grupos.*, sedes.nombre_sede, aulas.nombre AS nombre_aula, carreras.nombre AS nombre_carrera')
+            ->join('sedes', 'sedes.id_sede = grupos.sede')
+            ->join('aulas', 'aulas.id = grupos.aula')
+            ->join('carreras', 'carreras.id = grupos.carrera')
+            ->where('grupos.id', $grupoId)
+            ->first();
+
         if (!$grupo) {
             return redirect()->back()->with('error', 'Grupo no encontrado.');
         }
-
         $aspirantes = $aspiranteModel
             ->select('aspirantes.curp, aspirantes.nombre, aspirantes.primer_apellido, aspirantes.segundo_apellido, carreras.nombre AS nombre_carrera')
             ->join('carreras', 'aspirantes.carrera = carreras.id')
@@ -412,10 +418,28 @@ class Grupo extends Controller
 
             ->findAll();
 
+
+        $logoPath = FCPATH . 'images/logos/logo_discere_svg_negro.svg';
+        $logoBase64 = '';
+
+        if (file_exists($logoPath)) {
+            $imageData = file_get_contents($logoPath);
+            $logoBase64 = 'data:image/svg+xml;base64,' . base64_encode($imageData);
+        }
+
+        $logo2Path = FCPATH . 'images/logos_discere/logo_cliente.png'; // Cambia el nombre y extensión según tu imagen
+        $logo2Base64 = '';
+        if (file_exists($logo2Path)) {
+            $imageData2 = file_get_contents($logo2Path);
+            $logo2Base64 = 'data:image/png;base64,' . base64_encode($imageData2);
+        }
+
         // Generar HTML desde la vista
         $html = view('base/publico/pdf_aprobados', [
             'aspirantes' => $aspirantes,
-            'grupo' => $grupo
+            'grupo' => $grupo,
+            'logoBase64' => $logoBase64,
+            'logo2Base64' => $logo2Base64,
         ]);
 
         // Configurar DOMPDF

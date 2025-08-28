@@ -50,10 +50,18 @@
 </head>
 
 <body>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <div style="flex: 1; text-align: left;">
+            <img src="<?= $logoBase64 ?>" alt="Logo Izquierdo" style="height: 60px; width: auto; object-fit: contain;">
+        </div>
+        <div style="flex: 1; text-align: right;">
+            <?php if (!empty($logo2Base64)): ?>
+                <img src="<?= $logo2Base64 ?>" alt="Logo Derecho" style="height: 80px; width: auto; object-fit: contain;">
+            <?php endif; ?>
+        </div>
+    </div>
     <div class="header">
-        <?php if (!empty($logoBase64)): ?>
-            <img src="<?= $logoBase64 ?>" alt="TecNM" class="logo" style="height:60px;">
-        <?php endif; ?>
+
         <h1>Aspirantes Aprobados - Grupo de Curso</h1>
         <div>Instituto Tecnológico de Oaxaca</div>
     </div>

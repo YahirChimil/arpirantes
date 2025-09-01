@@ -91,7 +91,7 @@
 
         <div>
             <h1>INSTITUTO TECNOLÓGICO DE OAXACA</h1>
-            <h2>Preficha para Entrega de Documentos</h2>
+            <h2>Ficha Escolar</h2>
         </div>
     </header>
 

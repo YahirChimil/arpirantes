@@ -20,6 +20,7 @@ class Aspirante extends ResourceController
 
     public function index()
     {
+
         $convocatoriaModel = new \App\Models\ConvocatoriaModel();
         $convocatoria = $convocatoriaModel->obtenerConvocatoriaActiva();
 

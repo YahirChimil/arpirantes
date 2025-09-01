@@ -10,6 +10,7 @@
  |
  | If you set 'display_errors' to '1', CI4's detailed error report will show.
  */
+date_default_timezone_set('America/Mexico_City');
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 

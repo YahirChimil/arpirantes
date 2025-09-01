@@ -66,11 +66,7 @@ class Acceso extends BaseController
         |  4 aspirante
         |
         */
-        $user = new User([
-            'username' => 'admin',
-            'email'    => 'ricardo@itoaxaca.edu.mx',
-            'password' => '4m4r4l3101',
-        ]);
+        $user = new User([]);
         $users->save($user);
         // To get the complete user object with ID, we need to get from the database
         print_r($users->findById($users->getInsertID()));

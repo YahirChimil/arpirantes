@@ -148,12 +148,103 @@ License:
                                 Tu documentación está siendo revisada. Revisa tu correo y esta página para conocer el resultado.
                             </p>
                         </div>
-                    <?php elseif (!empty($avance) && $avance['documentacionAprobada'] && !$avance['pagoRealizado']): ?>
-                        <div class="bg-green-50 border border-green-300 rounded p-3 mt-2">
-                            <strong class="text-green-800">¡Documentación aprobada!</strong>
-                            <p class="text-sm text-green-700 mb-0">
-                                Tu documentación ha sido aprobada. Ahora puedes realizar el pago para continuar con el proceso.
+                    <?php elseif (!empty($avance) && $avance['documentacionAprobada'] && empty($avance['grupoExamenAsignado'])): ?>
+                        <div class="bg-yellow-50 border border-yellow-300 rounded p-3 mt-2">
+                            <strong class="text-yellow-800">Grupo de Examen</strong>
+                            <p class="text-sm text-yellow-700 mb-2">
+                                Aún no se te ha asignado un grupo de examen. Por favor, mantente pendiente de esta página y tu correo electrónico.
                             </p>
+                        </div>
+
+                    <?php elseif (!empty($avance) && !empty($avance['grupoExamenAsignado']) && !$avance['pagoGrupoNivelacion']): ?>
+                        <div class="bg-blue-50 border border-blue-300 rounded p-3 mt-2">
+                            <strong class="text-blue-800">Grupo de Examen Asignado</strong>
+                            <p class="text-sm text-blue-700 mb-2">
+                                Ya se te ha asignado un grupo para tu examen de admisión.
+                            </p>
+                            <form action="<?= base_url('aspirante/horario/examen') ?>" method="get" target="_blank" class="inline">
+                                <?= csrf_field() ?>
+                                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded transition">
+                                    Descargar horario de examen
+                                </button>
+                            </form>
+                            <?php if (!empty($infoGrupoExamen)): ?>
+                                <div class="mt-2 text-sm text-gray-700">
+                                    <strong>Grupo:</strong> <?= esc($infoGrupoExamen['nombre'] ?? '') ?><br>
+                                    <strong>Sede:</strong> <?= esc($infoGrupoExamen['sede'] ?? '') ?><br>
+                                    <strong>Aula:</strong> <?= esc($infoGrupoExamen['aula'] ?? '') ?><br>
+                                    <strong>Fecha:</strong> <?= esc($infoGrupoExamen['fecha'] ?? '') ?><br>
+                                    <strong>Hora:</strong> <?= esc($infoGrupoExamen['hora'] ?? '') ?>
+                                </div> <?php endif; ?>
+
+                        </div>
+                        <?php if ($aspirante['examen'] == 1 && empty($avance['pagoGrupoNivelacion'])): ?>
+                            <div class="bg-green-50 border border-green-300 rounded p-3 mt-2">
+                                <strong class="text-green-800">¡Felicidades!</strong>
+                                <p class="text-sm text-green-700 mb-0">
+                                    Has sido seleccionado, para continuar con el proceso de ingreso, descarga tu referencia de pago para el curso de nivelación
+                                </p>
+                                <form action="<?= base_url('aspirantes/referencia-bancaria') ?>" method="post" target="_blank">
+                                    <?= csrf_field() ?>
+                                    <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-4 py-2 rounded transition">
+                                        Descargar referencia de pago
+                                    </button>
+                                </form>
+                            </div>
+                        <?php elseif ($aspirante['examen'] == 1 && !empty($avance['pagoGrupoNivelacion'])): ?>
+                            <div class="bg-blue-50 border border-blue-300 rounded p-3 mt-2">
+                                <strong class="text-blue-800">Grupo de Nivelación</strong>
+                                <p class="text-sm text-blue-700 mb-2">
+                                    Aún no se te ha asignado un grupo de nivelación. Por favor, mantente pendiente de esta página y tu correo electrónico.
+                                </p>
+                            </div>
+                        <?php else: ?>
+                            <div class="bg-yellow-50 border border-yellow-300 rounded p-3 mt-2">
+                                <strong class="text-yellow-800">Consulta la lista de aspirantes seleccionados</strong>
+                                <p class="text-sm text-yellow-700 mb-0">
+                                    Consulta la lista de aspirantes seleccionados publicada en la página principal del instituto.
+                                </p>
+                            </div>
+                        <?php endif; ?>
+
+
+
+                    <?php elseif (!empty($avance)  && empty($avance['grupoNivelacionAsignado']) && $avance['pagoGrupoNivelacion']): ?>
+                        <div class="bg-yellow-50 border border-yellow-300 rounded p-3 mt-2">
+                            <strong class="text-yellow-800">Grupo de Nivelación</strong>
+                            <p class="text-sm text-yellow-700 mb-2">
+                                Aún no se te ha asignado un grupo de nivelación. Por favor, mantente pendiente de esta página y tu correo electrónico.
+                            </p>
+                        </div>
+
+                    <?php elseif (!empty($avance)  && empty($avance['grupoNivelacionAsignado'])): ?>
+                        <div class="bg-yellow-50 border border-yellow-300 rounded p-3 mt-2">
+                            <strong class="text-yellow-800">Grupo de Nivelación</strong>
+                            <p class="text-sm text-yellow-700 mb-2">
+                                Aún no se te ha asignado un grupo de nivelación. Por favor, mantente pendiente de esta página y tu correo electrónico.
+                            </p>
+                        </div>
+
+                    <?php elseif (!empty($avance) && !empty($avance['grupoNivelacionAsignado'])): ?>
+                        <div class="bg-blue-50 border border-blue-300 rounded p-3 mt-2">
+                            <strong class="text-blue-800">Grupo de Nivelación Asignado</strong>
+                            <p class="text-sm text-blue-700 mb-2">
+                                Ya se te ha asignado un grupo de nivelación.
+                            </p>
+                            <form action="<?= base_url('aspirante/horario/nivelacion') ?>" method="get" target="_blank" class="inline">
+                                <?= csrf_field() ?>
+                                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded transition">
+                                    Descargar horario de grupo de nivelación
+                                </button>
+                            </form>
+                            <?php if (!empty($infoGrupoNivelacion)): ?>
+                                <div class="mt-2 text-sm text-gray-700">
+                                    <strong>Grupo:</strong> <?= esc($infoGrupoNivelacion['nombre'] ?? '') ?><br>
+                                    <strong>Sede:</strong> <?= esc($infoGrupoNivelacion['sede'] ?? '') ?><br>
+                                    <strong>Aula:</strong> <?= esc($infoGrupoNivelacion['aula'] ?? '') ?><br>
+                                    <strong>Hora:</strong> <?= esc($infoGrupoNivelacion['hora_inicio'] ?? '') ?>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     <?php endif; ?>
                 </div>

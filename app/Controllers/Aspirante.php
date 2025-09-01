@@ -290,8 +290,8 @@ class Aspirante extends ResourceController
         $grupoExamenAsignado = $db->table('aspirante_grupo_examen')->where('curp', $curp)->countAllResults() > 0;
 
         // Paso extra: Aspirante aceptado (si grupo_nivelacion tiene valor)
-        $aceptado = ($aspirante && !empty($aspirante['examen']));
 
+        $aceptado = ($aspirante && !empty($aspirante['examen']) && $aspirante['examen'] == 1);
 
         // Paso extra: Pago de grupo de nivelación (nuevo paso, ajusta el campo según tu BD)
         $pagoGrupoNivelacion = ($aspirante && !empty($aspirante['pago_curso']) && $aspirante['pago_curso'] == 1);
@@ -354,6 +354,34 @@ class Aspirante extends ResourceController
         if (!$aspirante) {
             return redirect()->to(base_url('Acceso/aspirante'))->with('error', 'Aspirante no encontrado.');
         }
+        $infoGrupoExamen = null;
+        $db = \Config\Database::connect();
+        $grupoExamen = $db->table('aspirante_grupo_examen')
+            ->where('curp', $curp)
+            ->get()
+            ->getRowArray();
+
+        if ($grupoExamen && !empty($grupoExamen['grupo_id'])) {
+            $grupoExamenModel = new \App\Models\GruposExamenModel();
+            $infoGrupoExamen = $grupoExamenModel
+                ->select('grupos_examen.*, sedes.nombre_sede as sede, aulas.nombre as aula')
+                ->join('sedes', 'sedes.id_sede = grupos_examen.sede_id')
+                ->join('aulas', 'aulas.id = grupos_examen.aula_id')
+                ->where('grupos_examen.id', $grupoExamen['grupo_id'])
+                ->first();
+        }
+        // Obtener info del grupo de nivelación (si existe)
+        $infoGrupoNivelacion = null;
+        if (!empty($aspirante['grupo_nivelacion'])) {
+            $grupoModel = new \App\Models\GrupoModel();
+            $infoGrupoNivelacion = $grupoModel
+                ->select('grupos.*, sedes.nombre_sede as sede, aulas.nombre as aula')
+                ->join('sedes', 'sedes.id_sede = grupos.sede')
+                ->join('aulas', 'aulas.id = grupos.aula')
+                ->where('grupos.id', $aspirante['grupo_nivelacion'])
+                ->first();
+        }
+
 
         // Obtener avance usando el método existente
         $avance = $this->obtenerAvanceAspirante($curp);
@@ -463,7 +491,9 @@ class Aspirante extends ResourceController
             'sub_miga'  => 'Información',
             'user_info' => datos_usuario(),
             'steps'     => $steps,
-            'preficha'  => $preficha
+            'preficha'  => $preficha,
+            'infoGrupoExamen' => $infoGrupoExamen,
+            'infoGrupoNivelacion' => $infoGrupoNivelacion,
         ]);
     }
 
@@ -1114,5 +1144,87 @@ class Aspirante extends ResourceController
         ];
 
         return view('base/administrador/Aspirantes_seleccionados', $data);
+    }
+
+
+    public function descargarHorario($tipo = 'examen')
+    {
+        $user = auth()->user();
+        if (!$user) {
+            return redirect()->to(site_url('Acceso/login'))->with('error', 'Debes iniciar sesión.');
+        }
+        $curp = $user->username;
+
+        $aspiranteModel = new \App\Models\AspiranteModel();
+
+        // Obtener datos del aspirante
+        $aspirante = $aspiranteModel
+            ->select('aspirantes.*, carreras.nombre as carrera_nombre')
+            ->join('carreras', 'carreras.id = aspirantes.carrera')
+            ->where('aspirantes.curp', $curp)
+            ->first();
+
+        $grupo = null;
+
+        if ($tipo === 'nivelacion') {
+            // TABLA grupos
+            $grupoModel = new \App\Models\GrupoModel();
+            $grupo = $grupoModel
+                ->select('grupos.*, sedes.nombre_sede, aulas.nombre AS nombre_aula')
+                ->join('sedes', 'sedes.id_sede = grupos.sede')
+                ->join('aulas', 'aulas.id = grupos.aula')
+                ->where('grupos.id', $aspirante['grupo_nivelacion'])
+                ->first();
+        } else {
+            // TABLA grupos_examen
+            $db = \Config\Database::connect();
+            $grupoExamen = $db->table('aspirante_grupo_examen')
+                ->where('curp', $aspirante['curp'])
+                ->get()
+                ->getRowArray();
+
+            if ($grupoExamen && !empty($grupoExamen['grupo_id'])) {
+                $grupoExamenModel = new \App\Models\GruposExamenModel();
+                $grupo = $grupoExamenModel
+                    ->select('grupos_examen.*, sedes.nombre_sede, aulas.nombre AS nombre_aula')
+                    ->join('sedes', 'sedes.id_sede = grupos_examen.sede_id')
+                    ->join('aulas', 'aulas.id = grupos_examen.aula_id')
+                    ->where('grupos_examen.id', $grupoExamen['grupo_id'])
+                    ->first();
+            }
+        }
+
+        // Logos en base64
+        $logoPath1 = FCPATH . 'images/logos/logo_cliente.png';
+        $logoPath2 = FCPATH . 'images/logos/logo_ito.png';
+        $logoBase64 = '';
+        $logo2Base64 = '';
+        if (file_exists($logoPath1)) {
+            $logoBase64 = 'data:image/png;base64,' . base64_encode(file_get_contents($logoPath1));
+        }
+        if (file_exists($logoPath2)) {
+            $logo2Base64 = 'data:image/png;base64,' . base64_encode(file_get_contents($logoPath2));
+        }
+
+        // Renderizar vista
+        $html = view('pdf/horario', [
+            'aspirante' => $aspirante,
+            'grupo' => $grupo,
+            'logoBase64' => $logoBase64,
+            'logo2Base64' => $logo2Base64,
+            'tipo' => $tipo
+        ]);
+
+        // Generar PDF
+        $dompdf = new \Dompdf\Dompdf();
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->render();
+
+        $filename = 'Horario_' . $tipo . '_' . $aspirante['curp'] . '.pdf';
+        return $this->response
+            ->setHeader('Content-Type', 'application/pdf')
+            ->setHeader('Content-Disposition', 'attachment; filename="' . $filename . '"')
+            ->setBody($dompdf->output());
     }
 }

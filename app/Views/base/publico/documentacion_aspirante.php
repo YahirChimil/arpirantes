@@ -207,12 +207,32 @@ License:
 
 <script>
     function confirmarEliminar(form) {
+        event.preventDefault(); // Siempre previene el submit
+
         const documentoId = form.querySelector('input[name="documento_id"]').value;
         const curp = form.querySelector('input[name="aspirante_curp"]').value;
 
+        // Usar SweetAlert2 para la confirmación
+        return Swal.fire({
+            title: '¿Estás seguro?',
+            text: "¿Deseas eliminar este documento?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                form.submit();
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                location.reload();
+            }
+            // Prevenir el submit por defecto
+            return false;
+        });
 
-
-        return confirm('¿Estás seguro de que deseas eliminar este documento?');
+        // El return false previene el submit inmediato
     }
 </script>
 

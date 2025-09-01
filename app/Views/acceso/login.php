@@ -7,8 +7,8 @@
         <?php if (isset($titulo)) {
             echo $titulo . ' ::';
         } ?> <?php if (isset($titulo)) {
-            echo $miga . ' ::';
-        } ?>
+                    echo $miga . ' ::';
+                } ?>
         <?php echo config_namesystem; ?> :: <?php echo config_clientname; ?> v<?php echo config_version; ?>
     </title>
     <meta charset="utf-8" />
@@ -73,10 +73,10 @@
             <div class="card max-w-[370px] w-full">
                 <form action="<?php echo base_url(); ?>Acceso/login" class="card-body flex flex-col gap-5 p-10" id="sign_in_form" method="post">
                     <div class="text-center mb-2.5">
-                    
+
                         <div class="flex items-center justify-center font-medium p-4">
                             <span class="">
-                                <img class="h-[70px] max-w-none"  src="<?php echo base_url(); ?>images/logos/logo_cliente.png" />
+                                <img class="h-[70px] max-w-none" src="<?php echo base_url(); ?>images/logos/logo_cliente.png" />
                             </span>
                         </div>
                         <h3 class="text-lg font-medium text-gray-900 leading-none mb-2.5">
@@ -106,7 +106,7 @@
                         <label class="form-label font-normal text-gray-900">
                             Usuario
                         </label>
-                        <input name="usuario" id="usuario" class="input" placeholder="" type="text" value="admin" />
+                        <input name="usuario" id="usuario" class="input" placeholder="" type="text" value="<?= old('usuario') ?>" />
                     </div>
                     <div class="flex flex-col gap-1">
                         <div class="flex items-center justify-between gap-1">
@@ -119,7 +119,7 @@
                             </a>
                         </div>
                         <div class="input" data-toggle-password="true">
-                            <input name="contrasena"  id="contrasena" placeholder="********" type="password" value="4m4r4l3101" />
+                            <input name="contrasena" id="contrasena" placeholder="********" type="password" value="" />
                         </div>
                     </div>
                     <label class="checkbox-group">
@@ -140,7 +140,7 @@
                 <a href="#">
                     <img class="h-[28px] max-w-none" src="<?php echo base_url(); ?>images/logos/logo_discere_solo_svg_transparente.svg" />
                 </a>
-                
+
                 <div class="flex flex-col gap-3">
                     <h3 class="text-2xl font-semibold text-gray-900">
                         Acceso Seguro a Plataforma
@@ -150,7 +150,7 @@
                         <br />
                         controla tus procesos
                         <span class="text-gray-900 font-semibold">
-                        de la manera mas eficiente
+                            de la manera mas eficiente
                         </span>
                         solo con DISCERE CRM
                     </div>

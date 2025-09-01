@@ -84,6 +84,8 @@ $routes->post('analizar-curp', 'Aspirante::analizar_curp');
 $routes->post('guardar-aspirante', 'Aspirante::create');
 $routes->get('getSedes', 'Sedes::getSedes');
 $routes->get('getCarrerasPorSede/(:num)', 'Sedes::getCarrerasPorSede/$1');
+$routes->get('aspirante/horario/(:segment)', 'Aspirante::descargarHorario/$1', ['as' => 'aspirante_horario']);
+
 
 $routes->get('Acceso/encuesta', 'Encuesta::index');
 $routes->post('encuesta/guardar', 'Encuesta::create');

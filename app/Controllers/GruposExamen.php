@@ -18,7 +18,7 @@ class GruposExamen extends ResourceController
             return redirect()->to(site_url('Acceso/login'))->with('error', 'No tienes permiso para acceder.');
         }
 
-        $convocatoriaSeleccionada = $this->request->getGet('convocatoria');
+        $convocatoriaSeleccionada = 'AGO25-DIC25'; // Valor por defecto
         $aspirantesSinGrupo = [];
 
         if ($convocatoriaSeleccionada) {
@@ -63,6 +63,7 @@ class GruposExamen extends ResourceController
             'aspirantesSinGrupo' => $aspirantesSinGrupo,
             'convocatoriaSeleccionada' => $convocatoriaSeleccionada,
             'grupos' => $grupos,
+
         ];
 
         return view('base/administrador/grupos_examen', $data);
